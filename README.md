@@ -28,14 +28,15 @@ I'm working on updating the extension to manifest v3...
 
 ### How to install the extension
 
-1. Unpack ZIP archive, remember location of the "Synology_Download_Station" folder.
-2. Open extension page by either:
+1. Download the latest [DownloadStation_Chrome_Extension.zip](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases) file.
+2. Unpack the DownloadStation_Chrome_Extension.zip archive. Remember the location of the "Synology_Download_Station" folder.
+3. Open extension page by either:
     - Type chrome://extensions in chrome's address bar.
-    - Click on the extensions icon.
-    - Use the menu: ⋮ > Extensions > Manage Extensions
+    - Click on the extensions icon > Manage Extensions.
+    - Use the menu: ⋮ > Extensions > Manage Extensions.
     - In older versions of Chrome use the menu: ⋮ > More tools > Extensions
-3. Enable "Developer mode" in the upper-right corner of the page.
-4. Select "Load unpacked" option.
-5. Find unpacked extension's folder "Synology_Download_Station".
-6. Open the folder.
-7. That's it. You can find the extension on the chrome://extensions page.
+4. Enable "Developer mode" in the upper-right corner of the page.
+5. Select "Load unpacked" option.
+6. Find the unpacked extension's folder "Synology_Download_Station".
+7. Open the folder.
+8. That's it. You can find the extension on the chrome://extensions page.
