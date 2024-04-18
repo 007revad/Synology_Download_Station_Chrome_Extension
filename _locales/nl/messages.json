@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station voor Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "Beheer downloads op uw Synology DiskStation vanuit uw browser."
+	},
+	"settingsGroupConnection": {
+		"message": "Verbinding"
+	},
+	"settingsGroupOther": {
+		"message": "Overige instellingen"
+	},
+	"settingsGroupHelp": {
+		"message": "Help"
+	},
+	"lblProtocol": {
+		"message": "Protocol"
+	},
+	"tooltipProtocol": {
+		"message": "Kies of je HTTP of HTTPS wil gebruiken. HTTPS moet ingeschakeld zijn in DSM en werkt op alle versies behalve DSM4.0-2166, 2197 en 2198. Update DSM als je één van deze versies gebruikt."
+	},
+	"lblDomain": {
+		"message": "Domein of IP-adres"
+	},
+	"placeholderDomain": {
+		"message": "Bijvoorbeeld syno.example.com of 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "De domeinnaam of het IP-adres van je DiskStation. Er kan een intern of extern IP gebruikt worden of een domeinnaam. Vul domeinnamen in zonder http:\/\/ of https:\/\/ (bijvoorbeeld syno.example.com of 10.0.0.1)."
+	},
+	"lblPort": {
+		"message": "Poort"
+	},
+	"tooltipPort": {
+		"message": "Vul hier het poortnummer van DSM in. De standaardpoort is 5000 voor HTTP en 5001 voor HTTPS. Om de extensie ook buiten je eigen netwerk te kunnen gebruiken moet deze poort in de router doorgestuurd worden naar DiskStation."
+	},
+	"lblUsername": {
+		"message": "Gebruikersnaam"
+	},
+	"tooltipUsername": {
+		"message": "Vul een gebruikersnaam voor DiskStation in. Deze gebruiker moet toegang tot Download Station hebben."
+	},
+	"lblPassword": {
+		"message": "Wachtwoord"
+	},
+	"btnSaveSettings": {
+		"message": "Bewaar instellingen"
+	},
+	"btnTestConnection": {
+		"message": "Verbinding testen"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Verberg seedende torrents."
+	},
+	"lblUpdateInBackground": {
+		"message": "Status op de achtergrond bijwerken (vereist voor notificaties)."
+	},
+	"lblRefreshInterval": {
+		"message": "Bijwerk interval (seconden)"
+	},
+	"lblEmail": {
+		"message": "E-mail"
+	},
+	"tooltipEmail": {
+		"message": "Vul je e-mail adres in als je een PayPal donatie gedaan hebt. Hierdoor zal de maandelijkse herinnering uitgeschakeld worden."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Openen met Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Selecteer de onderdelen die u met de Download Station extensie wilt openen."
+	},
+	"settingsSaved": {
+		"message": "Instellingen opgeslagen"
+	},
+	"settingsSavedMessage": {
+		"message": "De wijzigingen zijn opgeslagen."
+	},
+	"testDialogSuccess": {
+		"message": "Verbinding werkt"
+	},
+	"testResultSuccess": {
+		"message": "De verbinding werkt. Vergeet niet om de instellingen op te slaan."
+	},
+	"testDialogFailed": {
+		"message": "Test mislukt"
+	},
+	"clickToConfigure": {
+		"message": "Klik hier om Download Station in te stellen."
+	},
+	"loggingIn": {
+		"message": "Bezig met inloggen.."
+	},
+	"noActiveTasks": {
+		"message": "Er zijn geen actieve downloads"
+	},
+	"btnAddTask": {
+		"message": "Download toevoegen"
+	},
+	"btnClearQueue": {
+		"message": "Wis voltooide taken"
+	},
+	"btnPauseAll": {
+		"message": "Alles pauzeren"
+	},
+	"btnResumeAll": {
+		"message": "Alles hervatten"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Download Station openen"
+	},
+	"btnPause": {
+		"message": "Pauzeren"
+	},
+	"btnResume": {
+		"message": "Hervatten"
+	},
+	"btnStartSeeding": {
+		"message": "Start seeden"
+	},
+	"btnRemove": {
+		"message": "Verwijder"
+	},
+	"btnCancel": {
+		"message": "Annuleer"
+	},
+	"urlInputPlaceholder": {
+		"message": "Voer een download URL in"
+	},
+	"urlFormAddBtn": {
+		"message": "Voeg toe"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ van $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Download op $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Geavanceerd downloaden…"
+	},
+	"downloadTaskAdding": {
+		"message": "Download toevoegen.."
+	},
+	"downloadTaskAccepted": {
+		"message": "Download toegevoegd"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Download taak niet toegevoegd"
+	},
+	"task_status_waiting": {
+		"message": "Wachten"
+	},
+	"task_status_downloading": {
+		"message": "Downloaden"
+	},
+	"task_status_paused": {
+		"message": "Gepauzeerd"
+	},
+	"task_status_finishing": {
+		"message": "Afronden"
+	},
+	"task_status_finished": {
+		"message": "Voltooid"
+	},
+	"task_status_hash_checking": {
+		"message": "Controleren"
+	},
+	"task_status_seeding": {
+		"message": "Seeden"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Wacht op downloaden"
+	},
+	"task_status_extracting": {
+		"message": "Uitpakken"
+	},
+	"task_status_error": {
+		"message": "Fout"
+	},
+	"task_status_broken_link": {
+		"message": "Verbroken koppeling"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Doelmap bestaat niet"
+	},
+	"task_status_destination_denied": {
+		"message": "Geen toegang tot doelmap"
+	},
+	"task_status_disk_full": {
+		"message": "Schijf vol"
+	},
+	"task_status_quota_reached": {
+		"message": "Quota bereikt"
+	},
+	"task_status_timeout": {
+		"message": "Verbinding time-out"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Ongeldige torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Dubbele torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "Bestand bestaat niet"
+	},
+	"task_status_required_premium_account": {
+		"message": "Premium account vereist"
+	},
+	"task_status_extract_failed": {
+		"message": "Uitpakken mislukt"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Uitpakken mislukt: fout wachtwoord"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Uitpakken mislukt: ongeldig archief"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Uitpakken mislukt: quota bereikt"
+	},
+	"task_status_missing_python": {
+		"message": "Python pakket niet geïnstalleerd"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Uitpakken mislukt: schijf vol"
+	},
+	"task_status_unknown": {
+		"message": "Onbekende status"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Kan niet verbinden met DiskStation."
+	},
+	"api_error_unknownError": {
+		"message": "Er is een onbekende fout opgetreden."
+	},
+	"api_error_invalidParameter": {
+		"message": "Er is een onbekende fout opgetreden."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Het Download Station pakket is niet actief of te oud."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Het Download Station pakket is niet actief of te oud."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "De geïnstalleerde versie van Download Station ondersteund deze functie niet."
+	},
+	"api_error_featureNotSupported": {
+		"message": "De geïnstalleerde versie van Download Station ondersteund deze functie niet."
+	},
+	"api_error_permissionDenied": {
+		"message": "Deze gebruiker heeft geen rechten voor Download Station"
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Verkeerde gebruikersnaam of wachtwoord."
+	},
+	"api_error_accountDisabled": {
+		"message": "Het account van deze gebruiker is uitgeschakeld."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Deze gebruiker heeft 2-staps verificatie ingeschakeld. Deze extensie ondersteund alleen accounts zonder 2-staps verificatie."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Deze gebruiker heeft 2-staps verificatie ingeschakeld. Deze extensie ondersteund alleen accounts zonder 2-staps verificatie."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Het bestand kon niet geüpload worden naar Download Station."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Het maximale aantal downloads in Download Station is bereikt."
+	},
+	"api_error_destinationDenied": {
+		"message": "Deze gebruiker heeft geen rechten voor de gekozen doelmap."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "De doelmap bestaat niet."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Actie niet ondersteund voor deze download taak."
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Er is geen standaard doelmap ingesteld in Download Station. Kies een standaard doelmap in het configuratiescherm van Download Station."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Geen torrent bestand gevonden voor magnet link"
+	},
+	"downloadFinished": {
+		"message": "Download voltooid"
+	},
+	"downloadsFinished": {
+		"message": "Downloads voltooid"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ downloads voltooid",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Deze extensie is gratis, maar de ontwikkeling ervan kost veel tijd. Overweeg een kleine donatie om deze extensie te ondersteunen. Klik hier om een donatie te doen."
+	},
+	"newVersionAvailable": {
+		"message": "Er is een nieuwe versie van de Synology Download Station extensie beschikbaar. Klik hier om de nieuwste versie te downloaden."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Downloadtaak toevoegen"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL's"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Vul iedere URL in op een nieuwe regel of gescheiden met een spatie"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Gebruikersnaam"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP of FTP gebruikersnaam (optioneel)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Wachtwoord"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP of FTP wachtwoord (optioneel)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Unzip wachtwoord"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Vul het wachtwoord in om beveiligde gecomprimeerde bestanden automatisch uit te pakken (optioneel, automatisch uitpakken kan ingeschakeld worden in de instellingen van Download Station)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Je DSM versie ondersteund automatisch uitpakken niet. DSN 4.2 of nieuwer is vereist om een unzip wachtwoord op te geven."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Annuleren"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Download toevoegen"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Er staan meer dan $limit$ downloads in Download Station. Nieuwe items zullen pas zichtbaar worden nadat oudere items verwijderd zijn.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

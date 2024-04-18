@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station for Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "ブラウザーでSynology DiskStationのダウンロードを管理する。"
+	},
+	"settingsGroupConnection": {
+		"message": "接続"
+	},
+	"settingsGroupOther": {
+		"message": "その他の設定"
+	},
+	"settingsGroupHelp": {
+		"message": "ヘルプ"
+	},
+	"lblProtocol": {
+		"message": "プロトコル"
+	},
+	"tooltipProtocol": {
+		"message": "HTTPまたはセキュリティで保護されたHTTPSを使用するかどうかを指定します。 HTTPSは、DSMで有効にする必要があります。DSM4.0-2166 、2197および2198を除く、すべてのバージョンでサポートされています。もし、これらのバージョンの場合は、あなたのDiskStationを更新してください。"
+	},
+	"lblDomain": {
+		"message": "ドメインかIP"
+	},
+	"placeholderDomain": {
+		"message": "例: syno.example.com または 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "あなたのDiskStationのドメイン名またはIPアドレス。内部​​または外部IPアドレス（例: 10.0.0.1 ）が使用できます。ドメイン名は、 http:\/\/ または https:\/\/以外を入力します（例: syno.example.com ）"
+	},
+	"lblPort": {
+		"message": "ポート"
+	},
+	"tooltipPort": {
+		"message": "これは、DSMへのアクセスに使用するのと同じポートです。デフォルトのポートは、HTTP用が5000、HTTPS用が5001です。あなたがDiskStationと同一ネットワークで接続していない場合は、ポート転送をする必要があります。"
+	},
+	"lblUsername": {
+		"message": "ユーザ名"
+	},
+	"tooltipUsername": {
+		"message": "DiskStation のアカウントのユーザ名を入力。　このアカウントはDownload Stationを利用許可が必要です。"
+	},
+	"lblPassword": {
+		"message": "パスワード"
+	},
+	"btnSaveSettings": {
+		"message": "設定を保存する"
+	},
+	"btnTestConnection": {
+		"message": "接続をテストする"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "シードトレントを隠す"
+	},
+	"lblUpdateInBackground": {
+		"message": "バックグラウンドでダウンロードステータスを更新する（通知するには必須）"
+	},
+	"lblRefreshInterval": {
+		"message": "更新間隔（秒）"
+	},
+	"lblEmail": {
+		"message": "メール"
+	},
+	"tooltipEmail": {
+		"message": "PayPalで寄付した場合は、メールアドレスを入力してください。毎月の通知を無効にできます。"
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Download Stationで開く"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "以下の選択したファイルタイプをDownload Station Extensionで使います"
+	},
+	"settingsSaved": {
+		"message": "設定を保存しました"
+	},
+	"settingsSavedMessage": {
+		"message": "設定の変更は保存しました"
+	},
+	"testDialogSuccess": {
+		"message": "接続できました"
+	},
+	"testResultSuccess": {
+		"message": "接続は動作しています！拡張機能を使用するには設定を保存します"
+	},
+	"testDialogFailed": {
+		"message": "テストが失敗しました"
+	},
+	"clickToConfigure": {
+		"message": "接続設定を入力するには、ここをクリックします"
+	},
+	"loggingIn": {
+		"message": "ログイン中"
+	},
+	"noActiveTasks": {
+		"message": "アクティブダウンロードタスクなし"
+	},
+	"btnAddTask": {
+		"message": "タスク追加"
+	},
+	"btnClearQueue": {
+		"message": "完了タスクを削除"
+	},
+	"btnPauseAll": {
+		"message": "すべて一時停止"
+	},
+	"btnResumeAll": {
+		"message": "すべて再開"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Download StationのWEB UIを開く"
+	},
+	"btnPause": {
+		"message": "一時停止"
+	},
+	"btnResume": {
+		"message": "再開"
+	},
+	"btnStartSeeding": {
+		"message": "シード開始"
+	},
+	"btnRemove": {
+		"message": "削除"
+	},
+	"btnCancel": {
+		"message": "キャンセル"
+	},
+	"urlInputPlaceholder": {
+		"message": "ダウンロードURLを入力"
+	},
+	"urlFormAddBtn": {
+		"message": "追加"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ of $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "$deviceName$ にダウンロード",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "高度なダウンロード…"
+	},
+	"downloadTaskAdding": {
+		"message": "タスク追加中.."
+	},
+	"downloadTaskAccepted": {
+		"message": "タウンロードタスクが追加されました"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "タウンロードタスクの追加に失敗しました"
+	},
+	"task_status_waiting": {
+		"message": "待機中"
+	},
+	"task_status_downloading": {
+		"message": "ダウンロードしています"
+	},
+	"task_status_paused": {
+		"message": "一時停止しました"
+	},
+	"task_status_finishing": {
+		"message": "完了中"
+	},
+	"task_status_finished": {
+		"message": "完了しました"
+	},
+	"task_status_hash_checking": {
+		"message": "チェック中"
+	},
+	"task_status_seeding": {
+		"message": "シード中"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "ダウンロードを待っています"
+	},
+	"task_status_extracting": {
+		"message": "解凍中"
+	},
+	"task_status_error": {
+		"message": "エラー"
+	},
+	"task_status_broken_link": {
+		"message": "リンクが壊れています"
+	},
+	"task_status_destination_not_exist": {
+		"message": "保存先のフォルダが存在しません"
+	},
+	"task_status_destination_denied": {
+		"message": "保存先のフォルダへのアクセスが拒否されました"
+	},
+	"task_status_disk_full": {
+		"message": "ディスクがいっぱいです"
+	},
+	"task_status_quota_reached": {
+		"message": "容量に達しました"
+	},
+	"task_status_timeout": {
+		"message": "接続タイムアウト"
+	},
+	"task_status_torrent_invalid": {
+		"message": "無効なトレント"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "トレントの重複"
+	},
+	"task_status_file_not_exist": {
+		"message": "ファイルが存在しません"
+	},
+	"task_status_required_premium_account": {
+		"message": "プレミアムアカウントが必要です"
+	},
+	"task_status_extract_failed": {
+		"message": "解凍失敗"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Extract failed: 間違ったパスード"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Extract failed: 無効な圧縮ファイル"
+	},
+	"task_status_missing_python": {
+		"message": "Pythonパッケージがインストールされていません"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Extract failed: 容量に達しました"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Extract failed: ディスクがいっぱいです"
+	},
+	"task_status_unknown": {
+		"message": "不明なステータス"
+	},
+	"api_error_couldNotConnect": {
+		"message": "DiskStationに接続できませんでした"
+	},
+	"api_error_unknownError": {
+		"message": "不明なエラーが発生しました"
+	},
+	"api_error_invalidParameter": {
+		"message": "不明なエラーが発生しました"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "あなたのDownload Stationパッケージは、動作していないか、古いです"
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "あなたのDownload Stationパッケージは、動作していないか、古いです"
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "あなたのDownload Stationバージョンは、この機能をサポートしていません"
+	},
+	"api_error_featureNotSupported": {
+		"message": "あなたのDownload Stationバージョンは、この機能をサポートしていません"
+	},
+	"api_error_permissionDenied": {
+		"message": "このユーザーは、Download Stationを使う権限を持っていません"
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "ユーザー名かパスワードが不正です"
+	},
+	"api_error_accountDisabled": {
+		"message": "このアカウントは、無効になりました"
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "このユーザーは、二段階認証が有効になっています。Download Station extensionは、二段階認証のないアカウントをサポートしています。"
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "このユーザーは、二段階認証が有効になっています。Download Station extensionは、二段階認証のないアカウントをサポートしています。"
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Download Stationへのアップロードに失敗しました"
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Download Stationにおけるタスクの最大数に達しました"
+	},
+	"api_error_destinationDenied": {
+		"message": "このユーザーは、選択した保存先のフォルダにダウンロードする権限がありません"
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "保存先のフォルダが存在しません"
+	},
+	"api_error_invalidTaskAction": {
+		"message": "アクションはこのタスクに対応していません"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Download Stationに設定されたデフォルトの保存先フォルダはありません。あなたのDownload Station設定にデフォルトのフォルダを設定します"
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "マグネットリンクのためのトレントファイルが見つかりませんでした"
+	},
+	"downloadFinished": {
+		"message": "ダウンロードが終わりました"
+	},
+	"downloadsFinished": {
+		"message": "ダウンロードが終わりました"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ 個のタスクが終わりました",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "これは無料の拡張機能ですが、開発には多くの時間がかかります。この拡張機能をサポートするために寄付をご検討ください。寄付をするには、ここをクリックしてください。"
+	},
+	"newVersionAvailable": {
+		"message": "Synology Download Station extensionの新しいバージョンが利用可能です。最新バージョンをダウンロードするには、ここをクリックしてください。"
+	},
+	"dialogAdvancedTitle": {
+		"message": "ダウンロード追加"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "新しい行かスペースで区切ってそれぞれのURLを入力します"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "ユーザー名"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP または FTP ユーザー名（オプション）"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "パスワード"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP または FTP パスワード（オプション）"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "解凍パスワード"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "圧縮ファイルを解凍するためのパスワードを入力します（オプション、自動解凍は、Download Stationの設定で有効にできます）"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "あなたのDSMバージョンは、解凍パスワードをサポートしていません。入力した解凍パスワードを使うには、DSM 4.2またはそれ以降が必要です。"
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "キャンセル"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "ダウンロード追加"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Stationは、$limit$以上のダウンロードが含まれています。古いものを削除すると新しいアイテムが表示されるようになります",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

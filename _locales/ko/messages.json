@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "구글 크롬™용 시놀로지 다운로드 스테이션"
+	},
+	"chromeExtensionDescription": {
+		"message": "여러분의 브라우저에서 시놀로지 디스크스테이션의 다운로드를 관리합니다."
+	},
+	"settingsGroupConnection": {
+		"message": "연결"
+	},
+	"settingsGroupOther": {
+		"message": "그외 설정들"
+	},
+	"settingsGroupHelp": {
+		"message": "도움말"
+	},
+	"lblProtocol": {
+		"message": "프로토콜"
+	},
+	"tooltipProtocol": {
+		"message": "HTTP나 보안HTTPS를 사용할 지 정합니다. DSM4.0-2166, 2197과 2198을 제외한 모든 DSM에서 HTTPS를 켤수 있게 지원합니다. 만약 앞의 버전들 중 한가지를 사용중이시라면 디스크스테이션을 업데이트해 주세요."
+	},
+	"lblDomain": {
+		"message": "도메인 또는 IP"
+	},
+	"placeholderDomain": {
+		"message": "예) syno.example.com 또는 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "디스크스테이션의 도메인이나 IP 주소를 입력하십시오. 내부 또는 외부 IP 주소(예를 들어 10.0.0.1)를 지정할 수 있습니다. 도메인을 입력할 때에는 맨 앞의 http:\/\/ 나 https:\/\/ 는 입력하지 마십시오. (예를 들어 syno.example.com)"
+	},
+	"lblPort": {
+		"message": "포트"
+	},
+	"tooltipPort": {
+		"message": "DSM에 접속할때 사용하는 포트를 적는 칸입니다. 기본설정으로 포트는 HTTP사용시 5000, HTTPS사용시 5001입니다. 같은 네트워크상의 디스크스테이션에 접속하는것이 아니라면, 확장기능을 사용하기위해 이 포트들이 포워드되어야 합니다."
+	},
+	"lblUsername": {
+		"message": "사용자명"
+	},
+	"tooltipUsername": {
+		"message": "디스크스테이션 사용자명을 입력하십시오. 이 사용자는 다운로드 스테이션 사용 권한이 있어야 합니다."
+	},
+	"lblPassword": {
+		"message": "암호"
+	},
+	"btnSaveSettings": {
+		"message": "설정 저장"
+	},
+	"btnTestConnection": {
+		"message": "테스트 접속"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "토렌트 시드를 감춥니다."
+	},
+	"lblUpdateInBackground": {
+		"message": "백그라운드로 다운로드 상태를 새로고침합니다. (알림기능이 필요합니다.)"
+	},
+	"lblRefreshInterval": {
+		"message": "새로고침 간격 (단위:초)"
+	},
+	"lblEmail": {
+		"message": "이메일"
+	},
+	"tooltipEmail": {
+		"message": "페이팔로 기부하시기 위해 이메일 주소를 입력할 수 있습니다. 기부로 매 달 뜨는 알림을 끌 수 있습니다."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "다운로드 스테이션으로 열기"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "선택된 타입을 다운로드 스테이션 확장기능을 사용해서 열기."
+	},
+	"settingsSaved": {
+		"message": "설정 저장됨"
+	},
+	"settingsSavedMessage": {
+		"message": "변경 사항이 저장되었습니다."
+	},
+	"testDialogSuccess": {
+		"message": "접속 성공"
+	},
+	"testResultSuccess": {
+		"message": "접속이 작동합니다! 이 설정을 저장해서 확장기능을 시작하는데 사용하세요."
+	},
+	"testDialogFailed": {
+		"message": "테스트 실패"
+	},
+	"clickToConfigure": {
+		"message": "이곳을 클릭해서 접속 세팅을 입력하세요."
+	},
+	"loggingIn": {
+		"message": "로그인 중.."
+	},
+	"noActiveTasks": {
+		"message": "활성화된 다운로드 작업없음"
+	},
+	"btnAddTask": {
+		"message": "작업 추가"
+	},
+	"btnClearQueue": {
+		"message": "완료된 작업 비우기"
+	},
+	"btnPauseAll": {
+		"message": "전체 일시정지"
+	},
+	"btnResumeAll": {
+		"message": "전체 다시 시작"
+	},
+	"btnOpenDownloadStation": {
+		"message": "다운로드 스테이션 웹 인터페이스 열기"
+	},
+	"btnPause": {
+		"message": "일시정지"
+	},
+	"btnResume": {
+		"message": "다시 시작"
+	},
+	"btnStartSeeding": {
+		"message": "시딩 시작"
+	},
+	"btnRemove": {
+		"message": "제거"
+	},
+	"btnCancel": {
+		"message": "취소"
+	},
+	"urlInputPlaceholder": {
+		"message": "다운로드 주소를 입력하세요"
+	},
+	"urlFormAddBtn": {
+		"message": "추가"
+	},
+	"progressOf": {
+		"message": "$totalSize$ 중 $downloadedSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "$deviceName$에서 다운로드",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "고급 다운로드…"
+	},
+	"downloadTaskAdding": {
+		"message": "작업 추가중.."
+	},
+	"downloadTaskAccepted": {
+		"message": "다운로드 작업 추가됨"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "다운로드 작업 추가 실패"
+	},
+	"task_status_waiting": {
+		"message": "기다리는중"
+	},
+	"task_status_downloading": {
+		"message": "다운로드중"
+	},
+	"task_status_paused": {
+		"message": "일시정지됨"
+	},
+	"task_status_finishing": {
+		"message": "마치는중"
+	},
+	"task_status_finished": {
+		"message": "완료됨"
+	},
+	"task_status_hash_checking": {
+		"message": "검사중"
+	},
+	"task_status_seeding": {
+		"message": "시딩"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "다운로드 대기중"
+	},
+	"task_status_extracting": {
+		"message": "압축해제중"
+	},
+	"task_status_error": {
+		"message": "오류"
+	},
+	"task_status_broken_link": {
+		"message": "손상된 링크"
+	},
+	"task_status_destination_not_exist": {
+		"message": "폴더가 존재하지 않습니다"
+	},
+	"task_status_destination_denied": {
+		"message": "폴더에 접근이 허용되지 않습니다"
+	},
+	"task_status_disk_full": {
+		"message": "디스크 꽉참"
+	},
+	"task_status_quota_reached": {
+		"message": "허용 공간 초과"
+	},
+	"task_status_timeout": {
+		"message": "접속 타임아웃"
+	},
+	"task_status_torrent_invalid": {
+		"message": "토렌트 오류"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "토렌트 중복"
+	},
+	"task_status_file_not_exist": {
+		"message": "파일이 없습니다"
+	},
+	"task_status_required_premium_account": {
+		"message": "유료 계정이 필요합니다"
+	},
+	"task_status_extract_failed": {
+		"message": "압축 해제 실패"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "압축 해제 실패: 암호 오류"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "압축 해제 실패: 압축 오류"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "압축 해제 실패: 허용 공간 초과"
+	},
+	"task_status_missing_python": {
+		"message": "파이썬 패키지가 설치되어 있지 않습니다"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "압축 해제 실패: 디스크 빈공간 없음"
+	},
+	"task_status_unknown": {
+		"message": "알 수 없는 상태"
+	},
+	"api_error_couldNotConnect": {
+		"message": "디스크스테이션에 접속할 수 없습니다"
+	},
+	"api_error_unknownError": {
+		"message": "알 수 없는 오류가 발생하였습니다."
+	},
+	"api_error_invalidParameter": {
+		"message": "알 수 없는 오류가 발생하였습니다."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "다운로드 스테이션 패키지가 실행중이 아니거나 오래된 버전입니다."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "다운로드 스테이션 패키지가 실행중이 아니거나 오래된 버전입니다."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "현재의 다운로드 스테이션 버전에서는 이 기능을 지원하지 않습니다."
+	},
+	"api_error_featureNotSupported": {
+		"message": "현재의 다운로드 스테이션 버전에서는 이 기능을 지원하지 않습니다."
+	},
+	"api_error_permissionDenied": {
+		"message": "다운로드 스테이션 사용 권한이 없습니다."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "사용자명이나 암호가 맞지 않습니다."
+	},
+	"api_error_accountDisabled": {
+		"message": "비활성화된 계정입니다."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "2단계 사용자 인증을 사용하고 있습니다. 본 확장기능은 2단계 인증을 지원하지 않습니다."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "2단계 사용자 인증을 사용하고 있습니다. 본 확장기능은 2단계 인증을 지원하지 않습니다."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "다운로드 스테이션에 파일을 업로드 할 수 없습니다."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "디스크 스테이션이 할 수 있는 최대 작업양을 사용중입니다."
+	},
+	"api_error_destinationDenied": {
+		"message": "다운로드 폴더에 다운로드할 수 있는 권한이 사용자에게 없습니다."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "대상 폴더가 존재하지 않습니다."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "이 작업에서 지원되지 않는 작동입니다."
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "기본 폴더가 설정되어 있지 않습니다. 다운로드 스테이션 설정 기능에서 설정하시기 바랍니다."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "마그넷 링크에 대한 토렌트 파일을 찾을 수 없습니다."
+	},
+	"downloadFinished": {
+		"message": "다운로드 완료"
+	},
+	"downloadsFinished": {
+		"message": "다운로드 완료"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$개 작업완료",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "이 확장기능은 무료입니다만 개발에 상당한 시간이 걸립니다. 기부금으로 개발을 지원해 주시기 바랍니다. 여기를 클릭하시면 기부하실 수 있습니다."
+	},
+	"newVersionAvailable": {
+		"message": "시놀로지 다운로드 스테이션 확장의 최신 버전이 있습니다. 여기를 클릭하면 다운로드합니다."
+	},
+	"dialogAdvancedTitle": {
+		"message": "다운로드 추가"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "주소"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "한칸 띄거나 다음줄로 다른 주소를 입력할 수 있습니다."
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "사용자 이름"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP나 FTP 사용자 이름 (선택)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "비밀번호"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP나 FTP 비밀번호 (선택)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "압축해제 비밀번호"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "압축해제할 파일의 암호를 입력( 선택사항, 자동 풀기는 다운로드 스테이션 설정에서 켤 수 있습니다.)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "사용중인 DSM의 버전이 압축해제 비밀번호를 지원하지 않습니다. DSM 4.2 혹은 이후에 나온 버전이 필요합니다."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "취소"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "다운로드 추가"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "다운로드 스테이션이 $limit$개보다 많은 다운로드를 가지고 있습니다. 새로운 항목은 이전 항목중 하나이상을 제거해야 볼 수 있습니다.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

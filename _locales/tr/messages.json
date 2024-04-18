@@ -1,0 +1,372 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Google Chrome™ için Synology İndirme İstasyonu"
+	},
+	"chromeExtensionDescription": {
+		"message": "Synology İndirme İstasyonu'ndaki dosyaları yönetin."
+	},
+	"settingsGroupConnection": {
+		"message": "Bağlantı"
+	},
+	"settingsGroupOther": {
+		"message": "Diğer Ayarlar"
+	},
+	"settingsGroupHelp": {
+		"message": "Yardım"
+	},
+	"lblProtocol": {
+		"message": "Protokol"
+	},
+	"tooltipProtocol": {
+		"message": "HTTP mi HTTPS mi kullandığınızı belirtin. HTTPS için DSM'de bunun aktif hale getirilmiş olması gerekir ve versiyonunuzun DSM4.0-2166, 2197 veya 2198 olmaması gerekir. Eğer bunlardan biri ise DSM'nizi güncelleyiniz."
+	},
+	"lblDomain": {
+		"message": "Alan adı yada IP"
+	},
+	"placeholderDomain": {
+		"message": "Örn. syno.example.com veya 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "DiskStation alan adı veya IP adresi. Bu iç yada dış ip adresi olabilir (Ör. 10.0.0.1). Alan adını http:\/\/ veya https:\/\/ kullanmadan giriniz. (Ör. syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Port"
+	},
+	"tooltipPort": {
+		"message": "DSM'ye web tarayıcı üzerinden erişirken kullandığınız port numarasını giriniz. Bu varsayılan olarak HTTP için 5000 HTTPS için 5001'dir. Eğer bu portları değiştirdiyseniz yeni belirlediğiniz port numarasını giriniz."
+	},
+	"lblUsername": {
+		"message": "Kullanıcı Adı"
+	},
+	"tooltipUsername": {
+		"message": "DiskStation kullanıcı adınızı giriniz. Bu hesabın Download Station kullanma yetkisi olması gerekir."
+	},
+	"lblPassword": {
+		"message": "Şifre"
+	},
+	"btnSaveSettings": {
+		"message": "Ayarları Kaydet"
+	},
+	"btnTestConnection": {
+		"message": "Bağlantıyı Test Et"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Gönderilen torrent dosyalarını gizle"
+	},
+	"lblUpdateInBackground": {
+		"message": "Arka planda indirme durumunu güncelle (Bildirimler için gereklidir)"
+	},
+	"lblRefreshInterval": {
+		"message": "Yenileme aralığı (saniye)"
+	},
+	"lblEmail": {
+		"message": "E-posta"
+	},
+	"tooltipEmail": {
+		"message": "Eğer PayPal üzerinden bağış yaptıysanız e-mail adresinizi giriniz. Bu aylık gelen uyarıları kapatacaktır."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Download Station ile Aç"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Aşağıdaki dosya tiplerini Download Station eklentisini ile aç"
+	},
+	"settingsSaved": {
+		"message": "Ayarlar Kaydedildi"
+	},
+	"settingsSavedMessage": {
+		"message": "Değişiklikler başarıyla kaydedilmiştir."
+	},
+	"testDialogSuccess": {
+		"message": "Bağlantı sağlandı"
+	},
+	"testResultSuccess": {
+		"message": "Bağlantınız çalışıyor. Eklentiyi kullanmaya başlamak için ayarlarınızı kaydedin."
+	},
+	"testDialogFailed": {
+		"message": "Test başarısız"
+	},
+	"clickToConfigure": {
+		"message": "Bağlantı ayarlarını girmek için buraya tıklayınız."
+	},
+	"loggingIn": {
+		"message": "Giriş yapılıyor.."
+	},
+	"noActiveTasks": {
+		"message": "Aktif indirme yok"
+	},
+	"btnAddTask": {
+		"message": "Görev ekle"
+	},
+	"btnClearQueue": {
+		"message": "Tamamlanan görevleri temizle"
+	},
+	"btnPauseAll": {
+		"message": "Tümünü duraklat"
+	},
+	"btnResumeAll": {
+		"message": "Tümünü devam ettir"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Download Station web arayüzünü aç"
+	},
+	"btnPause": {
+		"message": "Duraklat"
+	},
+	"btnResume": {
+		"message": "Devam Et"
+	},
+	"btnStartSeeding": {
+		"message": "Göndermeyi başlat"
+	},
+	"btnRemove": {
+		"message": "Sil"
+	},
+	"btnCancel": {
+		"message": "Vazgeç"
+	},
+	"urlInputPlaceholder": {
+		"message": "İndirme linkini buraya yapıştırın"
+	},
+	"urlFormAddBtn": {
+		"message": "Ekle"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ \/ $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "$deviceName$ 'da indir",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "İndirme seçenekleri…"
+	},
+	"downloadTaskAdding": {
+		"message": "Görev ekleniyor.."
+	},
+	"downloadTaskAccepted": {
+		"message": "İndirme eklendi"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "İndirme ekleme başarısız"
+	},
+	"task_status_waiting": {
+		"message": "Bekleniyor"
+	},
+	"task_status_downloading": {
+		"message": "İndiriliyor"
+	},
+	"task_status_paused": {
+		"message": "Duraklatılmış"
+	},
+	"task_status_finishing": {
+		"message": "Tamamlanıyor"
+	},
+	"task_status_finished": {
+		"message": "Tamamlandı"
+	},
+	"task_status_hash_checking": {
+		"message": "Kontrol ediliyor"
+	},
+	"task_status_seeding": {
+		"message": "Gönderiliyor"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "İndirme için bekleniyor"
+	},
+	"task_status_extracting": {
+		"message": "Çıkartılıyor"
+	},
+	"task_status_error": {
+		"message": "Hata"
+	},
+	"task_status_broken_link": {
+		"message": "Bozuk Link"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Hedef klasör bulunamadı"
+	},
+	"task_status_destination_denied": {
+		"message": "Hedef klasöre erişim engellendi"
+	},
+	"task_status_disk_full": {
+		"message": "Disk dolu"
+	},
+	"task_status_quota_reached": {
+		"message": "Kota aşıldı"
+	},
+	"task_status_timeout": {
+		"message": "Bağlantı zaman aşımına uğradı"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Hatalı torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Enlenmiş torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "Dosya yok"
+	},
+	"task_status_required_premium_account": {
+		"message": "Premium hesap gerekli"
+	},
+	"task_status_extract_failed": {
+		"message": "Çıkartma başarısız"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Çıkartma başarısız : yanlış şifre"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Çıkartma başarısız : bilinmeyen arşiv"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Çıkartma başarısız : kota aşıldı"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Çıkartma başarısız : disk dolu"
+	},
+	"task_status_unknown": {
+		"message": "Bilinmeyen durum"
+	},
+	"api_error_couldNotConnect": {
+		"message": "DiskStation'a bağlanılamıyor."
+	},
+	"api_error_unknownError": {
+		"message": "Bilinmeyen hata oluştu"
+	},
+	"api_error_invalidParameter": {
+		"message": "Bilinmeyen hata oluştu"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Download Station paketiniz yok yada sürümünüz çok eski"
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Download Station paketiniz yok yada sürümünüz çok eski"
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Download Station versiyonunuz bu özelliği desteklemiyor"
+	},
+	"api_error_featureNotSupported": {
+		"message": "Download Station versiyonunuz bu özelliği desteklemiyor"
+	},
+	"api_error_permissionDenied": {
+		"message": "Download Station'ı bu kullanıcının kullanma izni yok"
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Yanlış kullanıcı adı veya şifre."
+	},
+	"api_error_accountDisabled": {
+		"message": "Bu hesap devre dışı bırakılmış."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Bu hesap için iki adımlı doğrulama etkinleştirilmiş. Bu eklenti sadece tek adımlı doğrulamaları destekler."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Bu hesap için iki adımlı doğrulama etkinleştirilmiş. Bu eklenti sadece tek adımlı doğrulamaları destekler."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Download Station'a dosya yüklemesi yapılamadı"
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Download Station'daki maksimum indirme görevi sınırı aşıldı."
+	},
+	"api_error_destinationDenied": {
+		"message": "Bu kullanıcının seçilen hedef klasöre indirme izni yoktur."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Hedef klasörü bulunmadı."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Olay bu görev için desteklenmemektedir."
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Download Station'da ayarlanmış varsayılan klasör yok. Varsayılan klasörü Download Station ayarlarından ayarlayınız."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Magnet link'ten torrent dosyası bulunamıyor."
+	},
+	"downloadFinished": {
+		"message": "İndirme bitti"
+	},
+	"downloadsFinished": {
+		"message": "İndirmeler bitti"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ görev bitti",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Bu eklenti ücretsiz bir eklentidir, fakat yapım aşaması bayağı bir zaman almaktadır. Hizmetlerin devamı için lütfen bize bağış yapınız. Bağış yapmak için tıklayınız."
+	},
+	"newVersionAvailable": {
+		"message": "Synology Download Station eklentisi için yeni sürüm bulundu. Güncellemek için tıklayınız."
+	},
+	"dialogAdvancedTitle": {
+		"message": "İndirme için ekle"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "Linkler"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Linkleri satır satır yada boşluklarla ayırarak girin"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Kullanıcı adı"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP veya FTP kullanıcı adı (opsiyonel)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Şifre"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP veya FTP şifresi (opsiyonel)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Arşiv şifresi"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Arşiv şifresini giriniz (Opsiyonel, Disk Station'da otomatik çıkartma etkinleştirilmişse)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "DSM versiyonunuz şifreli arşiv çıkartmayı desteklemiyor. Bunun için en az DSM 4.2 yi yüklemelisiniz."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "İptal"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "İndirme ekle"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station $limit$ adetten fazla indirme içeriyor. Yeni indirmeler eskilerini kaldırdıktan sonra gözükecek.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

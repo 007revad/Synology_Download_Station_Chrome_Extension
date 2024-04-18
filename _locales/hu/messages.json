@@ -1,0 +1,369 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station Google Chrome™-hoz"
+	},
+	"settingsGroupConnection": {
+		"message": "Kapcsolat"
+	},
+	"settingsGroupOther": {
+		"message": "Egyéb beállítások"
+	},
+	"settingsGroupHelp": {
+		"message": "Súgó"
+	},
+	"lblProtocol": {
+		"message": "Protokoll"
+	},
+	"tooltipProtocol": {
+		"message": "Állítsa be ha HTTP, vagy biztonságos HTTPS protokollt kíván használni. A HTTPS használatát engedélyezni kell a DSM-ben, mely az összes verzióban támogatott, kivéve DSM4.0-2166, 2197 és 2198. Frissítse a DSM verziót ha ilyennel rendelkezik."
+	},
+	"lblDomain": {
+		"message": "honlap vagy IP"
+	},
+	"placeholderDomain": {
+		"message": "pl. syno.example.com vagy 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Az ön DiskStation honlapja vagy IP címe. Ez lehet egy belső vagy külső IP cím (pl: 10.0.0.1). A honlap nevét http:\/\/ vagy https:\/\/ hivatkozás nélkül adja meg  (pl: syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Port"
+	},
+	"tooltipPort": {
+		"message": "Ez ugyanaz a port amelyet a DSM hozzáféréséhez használ. Az alapértelmezett port 5000 HTTP-höz és 5001 HTTPS-hez. A portokat át kell irányítani, ha a bővítményt nem a DiskStation-el azonos hálózatról akarja használni."
+	},
+	"lblUsername": {
+		"message": "Felhasználónév"
+	},
+	"tooltipUsername": {
+		"message": "Adja meg a DiskStation fiókjához tartozó felhasználó nevet! A fióknak megfelelő jogosultsággal kell rendelkeznie a Download Station használatához."
+	},
+	"lblPassword": {
+		"message": "Jelszó"
+	},
+	"btnSaveSettings": {
+		"message": "Beállítások mentése"
+	},
+	"btnTestConnection": {
+		"message": "Kapcsolat ellenőrzése"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Visszaosztott torrentek elrejtése."
+	},
+	"lblUpdateInBackground": {
+		"message": "Letöltési állapot frissítése a háttérben (értesítésekhez szükséges)."
+	},
+	"lblRefreshInterval": {
+		"message": "Frissítési időköz (másodperc)"
+	},
+	"lblEmail": {
+		"message": "E-vél"
+	},
+	"tooltipEmail": {
+		"message": "Adja meg az e-vél címét ha adományozott PayPal-on keresztül. Ez megszünteti a havi figyelmeztetéseket."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Megnyitás Download Station-nel"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Download Station bővítmény használata az alább kiválasztott file típusokhoz."
+	},
+	"settingsSaved": {
+		"message": "Beállítások elmentve"
+	},
+	"settingsSavedMessage": {
+		"message": "Változtatások sikeresen elmentve."
+	},
+	"testDialogSuccess": {
+		"message": "A kapcsolat sikerült"
+	},
+	"testResultSuccess": {
+		"message": "A kapcsolat működik! Mentse a beállításait a bővítmény használatának megkezdéséhez."
+	},
+	"testDialogFailed": {
+		"message": "A teszt nem sikerült"
+	},
+	"clickToConfigure": {
+		"message": "Kattintson ide a kapcsolat beállításához."
+	},
+	"loggingIn": {
+		"message": "Bejelentkezés..."
+	},
+	"noActiveTasks": {
+		"message": "Nincs aktív letöltési feladat"
+	},
+	"btnAddTask": {
+		"message": "Feladat hozzáadása"
+	},
+	"btnClearQueue": {
+		"message": "Befejezett feladatok törlése"
+	},
+	"btnPauseAll": {
+		"message": "Összes szüneteltetése"
+	},
+	"btnResumeAll": {
+		"message": "Összes folytatása"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Download Station világhálós felületének megnyitása"
+	},
+	"btnPause": {
+		"message": "Szünet"
+	},
+	"btnResume": {
+		"message": "Folytatás"
+	},
+	"btnStartSeeding": {
+		"message": "Visszaosztás megkezdése"
+	},
+	"btnRemove": {
+		"message": "Eltávolítás"
+	},
+	"btnCancel": {
+		"message": "Mégse"
+	},
+	"urlInputPlaceholder": {
+		"message": "Letöltési honlapcím megadása"
+	},
+	"urlFormAddBtn": {
+		"message": "Hozzáadás"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ \/ $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Letöltés itt $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Letöltés beállítások…"
+	},
+	"downloadTaskAdding": {
+		"message": "Feladat hozzáadása..."
+	},
+	"downloadTaskAccepted": {
+		"message": "Letöltési feladat elfogadva"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Nem sikerült a letöltési feladat hozzáadása"
+	},
+	"task_status_waiting": {
+		"message": "Várakozás"
+	},
+	"task_status_downloading": {
+		"message": "Letöltés"
+	},
+	"task_status_paused": {
+		"message": "Szünetelteve"
+	},
+	"task_status_finishing": {
+		"message": "Befejezés"
+	},
+	"task_status_finished": {
+		"message": "Befejezve"
+	},
+	"task_status_hash_checking": {
+		"message": "Ellenőrzés"
+	},
+	"task_status_seeding": {
+		"message": "Visszaosztás"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Várakozás letöltésre"
+	},
+	"task_status_extracting": {
+		"message": "Kibontás"
+	},
+	"task_status_error": {
+		"message": "Hiba"
+	},
+	"task_status_broken_link": {
+		"message": "Hibás hivatkozás"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Célmappa nem létezik"
+	},
+	"task_status_destination_denied": {
+		"message": "A célmappához nem lehet hozzáférni"
+	},
+	"task_status_disk_full": {
+		"message": "A lemez megtelt"
+	},
+	"task_status_quota_reached": {
+		"message": "Keret elérve"
+	},
+	"task_status_timeout": {
+		"message": "Kapcsolat időtúllépés"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Hibás torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Dupla torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "A fájl nem létezik"
+	},
+	"task_status_required_premium_account": {
+		"message": "Prémium fiók szükséges"
+	},
+	"task_status_extract_failed": {
+		"message": "Kibontás hiba"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Kibontás hiba: rossz jelszó"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Kibontás hiba: hibás csomagolt fájl"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Kibontás hiba: keret elérve"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Kibontás hiba: lemez megtelt"
+	},
+	"task_status_unknown": {
+		"message": "Ismeretlen állapot"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Nem lehet csatlakozni a DiskStation-höz"
+	},
+	"api_error_unknownError": {
+		"message": "Ismeretlen hiba"
+	},
+	"api_error_invalidParameter": {
+		"message": "Érvénytelenségi hiba"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "A Download Station telepítőcsomag nem futtatható vagy túl régi."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "A Download Station telepítőcsomag nem elérhető vagy túl régi."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Az ön Download Station verziója nem ismeri ezt a funkciót."
+	},
+	"api_error_featureNotSupported": {
+		"message": "A Download Station verziód nem támogatja ezt a funkciót."
+	},
+	"api_error_permissionDenied": {
+		"message": "Ennek a felhasználónak nincs joga a Download Station használatához."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Hibás név vagy jelszó"
+	},
+	"api_error_accountDisabled": {
+		"message": "Ez a fiók le van tiltva."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Ez a felhasználó két lépcsős azonosítással rendelkezik. A bővítmény nem támogatja a két lépcsős azonosítást."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Ez a felhasználó két lépcsős azonosítással rendelkezik. A bővítmény nem tudja olvasni az azonosító kódot."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Nem sikerült a fájl feltöltése a Download Station-re."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "A Download Station-ben elérhető feladatok maximális száma elérve."
+	},
+	"api_error_destinationDenied": {
+		"message": "Ennek a felhasználónak nincs hozzáférési joga a letöltés kiválasztott célmappájához."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "A célmappa nem létezik."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "A feladathoz tartozó művelet nem támogatott."
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Nincs alapértelmezett célmappa beállítva a Download Station-hoz. Állíton be alapértelmezett mappát a Download Station beállításaiban."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Nem található a magnet link-hez tartozó torrent fájl"
+	},
+	"downloadFinished": {
+		"message": "Letöltés kész"
+	},
+	"downloadsFinished": {
+		"message": "Letöltések készek"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ művelet kész",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Ez egy ingyenes bővítmény, de a fejlesztés sok időbe telit. Kérem támogassa a bővítmény fejlesztését. Kattintson ide adományozáshoz."
+	},
+	"newVersionAvailable": {
+		"message": "A Synology Download Station bővítmény új változata elérhető. Kattintson ide a legfrissebb változat letöltéséhez."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Letöltés hozzáadása"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "Honlap cím"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Írja be az összes honlap címet új sorba, vagy egy sorba de szóközzel elválasztva!"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Felhasználónév"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP vagy FTP felhasználónév (nem kötelező)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Jelszó"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP vagy FTP jelszó (nem kötelező)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Kitömörítendő archívum jelszava"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Adjon meg kitömörítési jelszót (nem kötelező, az automatikus kibontás engedélyezhető a beállításokban)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Az ön DSM verziója nem támogatja a kibontási jelszót. DSM 4.2 vagy újabb verzió szükséges a kibontási jelszó alkalmazásához."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Mégsem"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Letöltés hozzáadása"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station összesen $limit$ letöltést kezel. Ha elérte ezt a keretet, az újabb feladatok hozzáadásához töröljön a régiek közül.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

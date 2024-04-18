@@ -1,0 +1,372 @@
+{
+	"textDirection": {
+		"message": "ltrn"
+	},
+	"chromeExtensionName": {
+		"message": "群晖下载中心 for Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "在浏览器里管理Synology DiskStation的下载内容"
+	},
+	"settingsGroupConnection": {
+		"message": "连接"
+	},
+	"settingsGroupOther": {
+		"message": "其他设置"
+	},
+	"settingsGroupHelp": {
+		"message": "帮助"
+	},
+	"lblProtocol": {
+		"message": "协议"
+	},
+	"tooltipProtocol": {
+		"message": "指定连接协议，HTTP或HTTPS。 在DSM设置中必须开启HTTPS，除了DSM4.0-2166, 2197 和 2198以外的版本均支持HTTPS。如有必要请更新DSM的版本。"
+	},
+	"lblDomain": {
+		"message": "域名或IP地址"
+	},
+	"placeholderDomain": {
+		"message": "例如：syno.example.com 或 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "你DiskStation的域名或者IP地址。这可以是局域网或者公网的IP地址（例如 10.0.0.1）。输入域名时不要带有http:\/\/或https:\/\/（例如 syno.example.com）"
+	},
+	"lblPort": {
+		"message": "端口"
+	},
+	"tooltipPort": {
+		"message": "此端口应与你登录DSM界面的端口设置一致。默认为HTTP:5000和HTTPS:5001。如果你未与你的你可能需要端口转接"
+	},
+	"lblUsername": {
+		"message": "用户名"
+	},
+	"tooltipUsername": {
+		"message": "输入你DiskStation 的账户。此账户必须有使用下载中心的权限。"
+	},
+	"lblPassword": {
+		"message": "密码"
+	},
+	"btnSaveSettings": {
+		"message": "保存设置"
+	},
+	"btnTestConnection": {
+		"message": "测试连接"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "隐藏做种的进程"
+	},
+	"lblUpdateInBackground": {
+		"message": "在后台刷新下载状态（需要通知）"
+	},
+	"lblRefreshInterval": {
+		"message": "刷新频率（秒）"
+	},
+	"lblEmail": {
+		"message": "E-mail"
+	},
+	"tooltipEmail": {
+		"message": "如果你已在PayPal赞助了我们，请留下你的E-Mail地址以便关闭赞助提醒。"
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "用下载中心打开"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "用下载中心扩展打开下列文件类型"
+	},
+	"settingsSaved": {
+		"message": "已保存设置"
+	},
+	"settingsSavedMessage": {
+		"message": "你的设置已成功保存"
+	},
+	"testDialogSuccess": {
+		"message": "连接成功"
+	},
+	"testResultSuccess": {
+		"message": "你的连接有效！保存设置以使用本扩展。"
+	},
+	"testDialogFailed": {
+		"message": "测试失败"
+	},
+	"clickToConfigure": {
+		"message": "点此输入你的连接设置"
+	},
+	"loggingIn": {
+		"message": "登录中..."
+	},
+	"noActiveTasks": {
+		"message": "没有进行中的下载任务"
+	},
+	"btnAddTask": {
+		"message": "添加任务"
+	},
+	"btnClearQueue": {
+		"message": "清除已完成任务"
+	},
+	"btnPauseAll": {
+		"message": "全部停止"
+	},
+	"btnResumeAll": {
+		"message": "全部恢复"
+	},
+	"btnOpenDownloadStation": {
+		"message": "打开网页版下载中心"
+	},
+	"btnPause": {
+		"message": "暂停"
+	},
+	"btnResume": {
+		"message": "恢复"
+	},
+	"btnStartSeeding": {
+		"message": "开始做种"
+	},
+	"btnRemove": {
+		"message": "移除"
+	},
+	"btnCancel": {
+		"message": "取消"
+	},
+	"urlInputPlaceholder": {
+		"message": "输入下载链接"
+	},
+	"urlFormAddBtn": {
+		"message": "添加"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ 于 $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "下载于 $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "高级设置"
+	},
+	"downloadTaskAdding": {
+		"message": "新建任务中..."
+	},
+	"downloadTaskAccepted": {
+		"message": "新增下载任务成功"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "新增下载任务失败"
+	},
+	"task_status_waiting": {
+		"message": "等待中"
+	},
+	"task_status_downloading": {
+		"message": "下载中"
+	},
+	"task_status_paused": {
+		"message": "已停止"
+	},
+	"task_status_finishing": {
+		"message": "正在完成"
+	},
+	"task_status_finished": {
+		"message": "已完成"
+	},
+	"task_status_hash_checking": {
+		"message": "校验中"
+	},
+	"task_status_seeding": {
+		"message": "正在做种"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "等待下载"
+	},
+	"task_status_extracting": {
+		"message": "解压中"
+	},
+	"task_status_error": {
+		"message": "错误"
+	},
+	"task_status_broken_link": {
+		"message": "无效链接"
+	},
+	"task_status_destination_not_exist": {
+		"message": "目标文件夹不存在"
+	},
+	"task_status_destination_denied": {
+		"message": "目标文件夹无法访问"
+	},
+	"task_status_disk_full": {
+		"message": "磁盘已满"
+	},
+	"task_status_quota_reached": {
+		"message": "配额已满"
+	},
+	"task_status_timeout": {
+		"message": "连接超时"
+	},
+	"task_status_torrent_invalid": {
+		"message": "无效的种子文件"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "重复的种子文件"
+	},
+	"task_status_file_not_exist": {
+		"message": "文件不存在"
+	},
+	"task_status_required_premium_account": {
+		"message": "需要高级账号"
+	},
+	"task_status_extract_failed": {
+		"message": "解压失败"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "解压失败：密码错误"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "解压失败：无效的压缩包"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "解压失败：配额已满"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "解压失败：磁盘已满"
+	},
+	"task_status_unknown": {
+		"message": "未知"
+	},
+	"api_error_couldNotConnect": {
+		"message": "无法连接到DiskStation"
+	},
+	"api_error_unknownError": {
+		"message": "发生未知错误"
+	},
+	"api_error_invalidParameter": {
+		"message": "发生未知错误"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "下载中心组件未启用或版本老旧"
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "下载中心组件未启用或版本老旧"
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "下载中心组件不支持此应用"
+	},
+	"api_error_featureNotSupported": {
+		"message": "下载中心组件不支持此应用"
+	},
+	"api_error_permissionDenied": {
+		"message": "该用户无权使用下载中心"
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "用户名或密码错误"
+	},
+	"api_error_accountDisabled": {
+		"message": "用户被禁止"
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "该用户启用了双重验证（ two-step authentication）。此应用不支持双重验证（ two-step authentication）。"
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "该用户启用了双重验证（ two-step authentication）。此应用不支持双重验证（ two-step authentication）。"
+	},
+	"api_error_fileUploadFailed": {
+		"message": "上传文件失败"
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "已到达任务上限"
+	},
+	"api_error_destinationDenied": {
+		"message": "该用户无权下载文件到目标文件夹"
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "目标文件夹不存在"
+	},
+	"api_error_invalidTaskAction": {
+		"message": "操作对该任务无效"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "下载中心未设置默认目标文件夹"
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "找不到种子文件或磁力链接"
+	},
+	"downloadFinished": {
+		"message": "下载完成"
+	},
+	"downloadsFinished": {
+		"message": "全部下载完成"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ 任务完成",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "电脑虽不会饿，但程序员却要糊口。 如喜欢本扩展，请点击赞助（Donation）按钮，给我们一些支持。谢谢！"
+	},
+	"newVersionAvailable": {
+		"message": "新版本的群晖下载中心扩展已上线，点此下载最新版本。"
+	},
+	"dialogAdvancedTitle": {
+		"message": "添加新下载"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "下载地址(可填写多个)"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "每行输入一个URL地址 或 多个地址之间用空格隔开"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "用户名"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP \/ FTP 用户名(可选)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "密码"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP \/ FTP 密码(可选)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "解压密码"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "输入用来解压压缩文件的密码（可选，可在Download Station的设置里开启自动解压功能）"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "你当前使用的DSM版本不支持解压密码，请升级到4.2以上版本。"
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "取消"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "添加下载"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station 包含 $limit$ 条以上的任务，请移除一些旧的下载以便新任务能够正常显示",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

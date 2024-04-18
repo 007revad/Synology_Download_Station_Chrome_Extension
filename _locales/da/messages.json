@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station til Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "Administrer downloads på din Synology DiskStation i din browser."
+	},
+	"settingsGroupConnection": {
+		"message": "Forbindelse"
+	},
+	"settingsGroupOther": {
+		"message": "Andre indstillinger"
+	},
+	"settingsGroupHelp": {
+		"message": "Hjælp"
+	},
+	"lblProtocol": {
+		"message": "Protokol"
+	},
+	"tooltipProtocol": {
+		"message": "Specificer om du ønsker at anvende HTTP eller sikret HTTPS. HTTPS skal være aktiveret i DSM og er understøttet på alle versioner af DSM med undtagelse af DSM 4.0-2166, 2197 og 2198. Opdater din DiskStation, hvis du anvender en af disse versioner."
+	},
+	"lblDomain": {
+		"message": "Domæne eller IP"
+	},
+	"placeholderDomain": {
+		"message": "F.eks. syno.eksempel.dk eller 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Domænet eller IP-adressen til din DiskStation. Dette kan være en intern eller ekstern IP-adresse (f.eks. 10.0.0.1). Indtast Domænet uden http:\/\/ eller https:\/\/ (f.eks. syno.eksempel.dk)"
+	},
+	"lblPort": {
+		"message": "Port"
+	},
+	"tooltipPort": {
+		"message": "Dette er den samme port, som du bruger for at tilgå DSM. Standardporten er 5000 for HTTP og 5001 for HTTPS. Du skal omdirigere denne port, hvis du ønsker at bruge udvidelsen, når du anvender et andet netværk end det din DiskStation er tilkoblet."
+	},
+	"lblUsername": {
+		"message": "Brugernavn"
+	},
+	"tooltipUsername": {
+		"message": "Indtast brugernavnet til din DiskStation konto. Denne bruger skal have tilladelse til at bruge Download Station."
+	},
+	"lblPassword": {
+		"message": "Adgangskode"
+	},
+	"btnSaveSettings": {
+		"message": "Gem indstillinger"
+	},
+	"btnTestConnection": {
+		"message": "Test forbindelse"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Skjul seeding torrents."
+	},
+	"lblUpdateInBackground": {
+		"message": "Opdater download status i baggrunden (krævet for at modtage notifikationer)"
+	},
+	"lblRefreshInterval": {
+		"message": "Genindlæsnings interval (sekunder)"
+	},
+	"lblEmail": {
+		"message": "E-mail"
+	},
+	"tooltipEmail": {
+		"message": "Du kan indtaste din e-mailadresse hvis du har doneret med PayPal. Dette vil deaktivere den månedlige notifikation."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Åben med Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Brug Download Station udvidelsen til at åbne de valgte typer nedenfor."
+	},
+	"settingsSaved": {
+		"message": "Indstillinger gemt"
+	},
+	"settingsSavedMessage": {
+		"message": "Dine ændringer blev gemt"
+	},
+	"testDialogSuccess": {
+		"message": "Forbindelse virker!"
+	},
+	"testResultSuccess": {
+		"message": "Din forbindelse virker! Gem dine indstillinger for at starte anvendelse af udvidelsen."
+	},
+	"testDialogFailed": {
+		"message": "Test mislykkedes"
+	},
+	"clickToConfigure": {
+		"message": "Klik her for at indtaste dine forbindelse indstillinger."
+	},
+	"loggingIn": {
+		"message": "Logger ind..."
+	},
+	"noActiveTasks": {
+		"message": "Ingen aktive download opgaver"
+	},
+	"btnAddTask": {
+		"message": "Tilføj opgave"
+	},
+	"btnClearQueue": {
+		"message": "Slet fuldførte opgaver"
+	},
+	"btnPauseAll": {
+		"message": "Sæt alle på pause"
+	},
+	"btnResumeAll": {
+		"message": "Genoptag alle"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Åben web brugerfladen til Download Station"
+	},
+	"btnPause": {
+		"message": "Sæt på pause"
+	},
+	"btnResume": {
+		"message": "Genoptag"
+	},
+	"btnStartSeeding": {
+		"message": "Start seeding"
+	},
+	"btnRemove": {
+		"message": "Fjern"
+	},
+	"btnCancel": {
+		"message": "Annullere"
+	},
+	"urlInputPlaceholder": {
+		"message": "Indtast en download URL"
+	},
+	"urlFormAddBtn": {
+		"message": "Tilføj"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ af $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Downloads på $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Advanceret download…"
+	},
+	"downloadTaskAdding": {
+		"message": "Tilføjer opgave..."
+	},
+	"downloadTaskAccepted": {
+		"message": "Download-opgave accepteret"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Tilføjelsen af download-opgaven mislykkedes"
+	},
+	"task_status_waiting": {
+		"message": "Venter"
+	},
+	"task_status_downloading": {
+		"message": "Downloader"
+	},
+	"task_status_paused": {
+		"message": "Sat på pause"
+	},
+	"task_status_finishing": {
+		"message": "Afslutter"
+	},
+	"task_status_finished": {
+		"message": "Færdig"
+	},
+	"task_status_hash_checking": {
+		"message": "Kontrollerer"
+	},
+	"task_status_seeding": {
+		"message": "Seeding"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Venter på downloads"
+	},
+	"task_status_extracting": {
+		"message": "Udpakker"
+	},
+	"task_status_error": {
+		"message": "Fejl"
+	},
+	"task_status_broken_link": {
+		"message": "Beskadiget link"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Destinationsmappe findes ikke"
+	},
+	"task_status_destination_denied": {
+		"message": "Adgang til destinationsmappe nægtet"
+	},
+	"task_status_disk_full": {
+		"message": "Disken er fuld"
+	},
+	"task_status_quota_reached": {
+		"message": "Kvote opbrugt"
+	},
+	"task_status_timeout": {
+		"message": "Forbindelse timede ud"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Ugyldig torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Torrent dublant"
+	},
+	"task_status_file_not_exist": {
+		"message": "Filen eksistere ikke"
+	},
+	"task_status_required_premium_account": {
+		"message": "Premium konto krævet"
+	},
+	"task_status_extract_failed": {
+		"message": "Udpakning mislykkedes"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Udpakning mislykkedes: forkert adgangskode"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Udpakning mislykkedes: ugyldig arkiv"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Udpakning mislykkedes: kvote opbrugt"
+	},
+	"task_status_missing_python": {
+		"message": "Python pakken ikke er installeret"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Udpakning mislykkedes: disken er fuld"
+	},
+	"task_status_unknown": {
+		"message": "Ukendt status"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Kunne ikke oprette forbindelse til DiskStation"
+	},
+	"api_error_unknownError": {
+		"message": "En ukendt fejl opstod."
+	},
+	"api_error_invalidParameter": {
+		"message": "En ukendt fejl opstod."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Din Download Station pakke kører ikke, eller er for gammel."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Din Download Station pakke kører ikke, eller er for gammel."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Din Download Station pakke understøtter ikke denne funktion."
+	},
+	"api_error_featureNotSupported": {
+		"message": "Din Download Station pakke understøtter ikke denne funktion."
+	},
+	"api_error_permissionDenied": {
+		"message": "Denne bruger har ikke tilladelse til at bruge Download Station."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Ugyldigt brugernavn eller password."
+	},
+	"api_error_accountDisabled": {
+		"message": "Denne konto er deaktiveret."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Denne bruger har tovejs-godkendelse aktiveret. Denne udvidelse understøtter kun konti uden tovejs-godkendelse."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Denne bruger har tovejs-godkendelse aktiveret. Denne udvidelse understøtter kun konti uden tovejs-godkendelse."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Upload af filen til Download Station mislykkedes."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Det maksimal tilladte antal opgaver i Download Station er nået."
+	},
+	"api_error_destinationDenied": {
+		"message": "Denne bruger har ikke tilladelse til at downloade til den valgte destinationsmappe."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Denne destinationsmappe eksistere ikke."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Handlingen er ikke understøttet for denne opgave."
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Der er ikke angivet nogen standard destinationsmappe for Download Station. Indstil standardmappen i Download Station konfigurationsindstillingerne."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Kunne ikke finde en torrent-fil til magnet linket"
+	},
+	"downloadFinished": {
+		"message": "Download færdiggjort"
+	},
+	"downloadsFinished": {
+		"message": "Downloads færdiggjort"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ opgaver færdiggjort",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Dette er en gratis udvidelse, men udviklingen tager en masse tid. Overvej venligst at donere for at støtte denne udvidelse.\nKlik her for at donere."
+	},
+	"newVersionAvailable": {
+		"message": "En ny version af Synology Download Station udvidelsen er tilgængelig. Klik her for at downloade den seneste version."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Tilføj download"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL('er)"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Indsæt hver enkel URL på en ny linje eller adskilt af et mellerum"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Brugernavn"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP eller FTP brugernavn (valgfrit)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Adgangskode"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP eller FTP adgangskode (valgfrit)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Unzip adgangskode"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Intast adgangskode for at udpakke komprimerede filer (valgfrit, automatisk udpakning kan aktiveres i Download Stations indstillinger)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Din DSM version understøtter ikke unzip-adgangskoder. Du skal have DSM 4.2 eller en senere version for at indtaste en unzip-adgangskode"
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Fortryd"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Tilføj download"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station indeholde mere end $limit$ downloadopgaver. Nye emner vises først efter du fjerner nogle tidligere emner.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

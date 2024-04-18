@@ -1,0 +1,528 @@
+{
+	"textDirection": {
+		"message": "ltr",
+		"description": "'ltr' for left-to-right languages, 'rtl' for right-to-left languages (without quotes). This value is used to determine how to display text in the extension."
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station for Google Chrome™",
+		"description": "Name of the chrome version of the extension, must have ™ (TM) after 'Chrome' to comply with Googles rules"
+	},
+	"chromeExtensionDescription": {
+		"message": "Manage downloads on your Synology DiskStation in your browser.",
+		"description": "Short description, shown in the list of installed extensions. Should not mention the browser name because it is used in both the Chrome and Opera version."
+	},
+	"settingsGroupConnection": {
+		"message": "Connection"
+	},
+	"settingsGroupOther": {
+		"message": "Other settings"
+	},
+	"settingsGroupHelp": {
+		"message": "Help",
+		"description": "Title for tab with info about the extension and support links. Use the same title as the help\/info section in Chrome's settings."
+	},
+	"lblProtocol": {
+		"message": "Protocol"
+	},
+	"tooltipProtocol": {
+		"message": "Specify if you want to use HTTP or secured HTTPS. HTTPS must be enabled in DSM and you need to have a valid SSL certificate on your DiskStation. Self-signed certificates will only work if you configure your browser and OS to completely accept the certificate."
+	},
+	"lblDomain": {
+		"message": "Domain or IP"
+	},
+	"placeholderDomain": {
+		"message": "e.g. syno.example.com or 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "The domain or IP address of your DiskStation. This can be an internal or external IP address (e.g. 10.0.0.1). Enter domains without http:\/\/ or https:\/\/ (e.g. syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Port"
+	},
+	"tooltipPort": {
+		"message": "This is the same port you use to access DSM. The default port is 5000 for HTTP and 5001 for HTTPS. You will need to forward this port if you want to use this extension when you're not connected to the same network as your DiskStation."
+	},
+	"lblUsername": {
+		"message": "Username"
+	},
+	"tooltipUsername": {
+		"message": "Enter the username for your DiskStation account. This account must have permission to use Download Station."
+	},
+	"lblPassword": {
+		"message": "Password"
+	},
+	"btnSaveSettings": {
+		"message": "Save settings"
+	},
+	"btnTestConnection": {
+		"message": "Test connection"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Hide seeding torrents."
+	},
+	"lblUpdateInBackground": {
+		"message": "Refresh download status in background (required for notifications)."
+	},
+	"lblRefreshInterval": {
+		"message": "Refresh interval (seconds)"
+	},
+	"lblEmail": {
+		"message": "E-mail"
+	},
+	"tooltipEmail": {
+		"message": "You can enter your e-mailaddress if you have made a donation with PayPal. This will disable the monthly notification.",
+		"description": "Tooltip to explain that donators can enter their PayPal e-mailaddress to disable the monthly reminder."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Open with Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Use the Download Station extension to open the selected types below."
+	},
+	"settingsSaved": {
+		"message": "Settings saved",
+		"description": "Title in the dialog when settings have been saved"
+	},
+	"settingsSavedMessage": {
+		"message": "Your changes have been saved successfully.",
+		"description": "Longer message in the dialog when settings have been saved"
+	},
+	"testDialogSuccess": {
+		"message": "Connection successful"
+	},
+	"testResultSuccess": {
+		"message": "Your connection is working! Save your settings to start using the extension."
+	},
+	"testDialogFailed": {
+		"message": "Test failed"
+	},
+	"clickToConfigure": {
+		"message": "Click here to enter your connection settings.",
+		"description": "Text displayed in the popup if not all required options are set"
+	},
+	"loggingIn": {
+		"message": "Logging in..",
+		"description": "Displayed in the popup while the extension is logging in to Download Station"
+	},
+	"noActiveTasks": {
+		"message": "No active download tasks",
+		"description": "Text displayed in the popup if there are no tasks to display"
+	},
+	"btnAddTask": {
+		"message": "Add task",
+		"description": "Tooltip for + button (add task) in the popup"
+	},
+	"btnClearQueue": {
+		"message": "Clear finished tasks",
+		"description": "Tooltip for clear button (trashcan) in the popup"
+	},
+	"btnPauseAll": {
+		"message": "Pause all",
+		"description": "Tooltip for pause-all button in the popup"
+	},
+	"btnResumeAll": {
+		"message": "Resume all",
+		"description": "Tooltip for resume-all button in the popup"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Open the Download Station web interface",
+		"description": "Tooltip for the button in the popup that opens a new browsertab with the Download Station web interface"
+	},
+	"btnPause": {
+		"message": "Pause",
+		"description": "Tooltip for pause button (single task) in the popup"
+	},
+	"btnResume": {
+		"message": "Resume",
+		"description": "Tooltip for resume button (single task) in the popup"
+	},
+	"btnStartSeeding": {
+		"message": "Start seeding",
+		"description": "Tooltip for resume button (single task) in the popup when a task can start seeding (torrent that has reached 100%)"
+	},
+	"btnRemove": {
+		"message": "Remove",
+		"description": "Tooltip for remove button (single task) in the popup and text in the red button to confirm deletion"
+	},
+	"btnCancel": {
+		"message": "Cancel",
+		"description": "Text in button to cancel deletion in the popup"
+	},
+	"urlInputPlaceholder": {
+		"message": "Enter a download URL",
+		"description": "Placeholder for the input field in the popup"
+	},
+	"urlFormAddBtn": {
+		"message": "Add",
+		"description": "Text displayed on the submit button next to the URL field in the popup. There's space for ±10 characters"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ of $totalSize$",
+		"description": "Progress indication, $downloadedSize$ will be replaced with the download progress and $totalSize$ with the total download size, for example: '13.54 of 20 MB'",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Download on $deviceName$",
+		"description": "Text displayed in the contextmenu, $deviceName$ will be replaced with the name of the device ('Download on MyDiskStation')",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Download advanced…",
+		"description": "Text displayed for the contextmenu item that opens a dialog where additional information for the download can be specified (username, password, unzip password)"
+	},
+	"downloadTaskAdding": {
+		"message": "Adding task..",
+		"description": "Message to be shown while the extension is submitting a new task"
+	},
+	"downloadTaskAccepted": {
+		"message": "Download task accepted",
+		"description": "Shown when a task has succesfully been added to Download Station"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Failed to add download task",
+		"description": "Error to be shown when Download Station did not accept the task."
+	},
+	"task_status_waiting": {
+		"message": "Waiting"
+	},
+	"task_status_downloading": {
+		"message": "Downloading"
+	},
+	"task_status_paused": {
+		"message": "Paused"
+	},
+	"task_status_finishing": {
+		"message": "Finishing",
+		"description": "Not 'finished'!"
+	},
+	"task_status_finished": {
+		"message": "Completed"
+	},
+	"task_status_hash_checking": {
+		"message": "Checking"
+	},
+	"task_status_seeding": {
+		"message": "Seeding"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Waiting for download",
+		"description": "Status when a task has to wait for a timer to finish (on filehosting sites)"
+	},
+	"task_status_extracting": {
+		"message": "Extracting"
+	},
+	"task_status_error": {
+		"message": "Error"
+	},
+	"task_status_broken_link": {
+		"message": "Broken link"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Destination folder does not exist"
+	},
+	"task_status_destination_denied": {
+		"message": "Access to destination folder denied"
+	},
+	"task_status_disk_full": {
+		"message": "Disk full"
+	},
+	"task_status_quota_reached": {
+		"message": "Quota reached"
+	},
+	"task_status_timeout": {
+		"message": "Connection time-out",
+		"description": "Download Station could not download the file because the server did not respond"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Invalid torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Duplicate torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "File does not exist"
+	},
+	"task_status_required_premium_account": {
+		"message": "Premium account required"
+	},
+	"task_status_extract_failed": {
+		"message": "Extract failed"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Extract failed: wrong password"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Extract failed: invalid archive"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Extract failed: quota reached"
+	},
+	"task_status_missing_python": {
+		"message": "Python package not installed",
+		"description": "Task status when the Python package is required to download the file, but not installed on the device."
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Extract failed: disk full"
+	},
+	"task_status_unknown": {
+		"message": "Unknown status"
+	},
+	"api_error_notConnected": {
+    	"message": "Not connected",
+    	"description": "Shown in the status popup when the extension is not connected to a Synology device."
+	},
+	"api_error_connecting": {
+		"message": "Connecting to DiskStation…",
+		"description": "Message shown while the extension is connecting."
+	},
+	"api_error_dsmVersionTooOld": {
+		"message": "Your DSM version is not supported by this extension. Only DSM 4.2 and later are supported."
+	},
+	"api_error_quickConnectMainServerUnavailable": {
+		"message": "QuickConnect service unavailable.",
+		"description": "This error is shown when the extension cannot connect to Synology's main QuickConnect server"
+	},
+	"api_error_quickConnectInformationNotFound": {
+		"message": "Could not find connection information for your QuickConnect ID.",
+		"description": "Error message to be shown when the extension cannot find connection details for the users QuickConnect ID (DiskStation may not be connected to the QuickConnect service or the QuickConnect ID is incorrect)"
+	},
+	"api_error_quickConnectTunnelFailed": {
+		"message": "Unable to connect to your DiskStation using a direct connection or QuickConnect tunnel.",
+		"description": "The extension is unable to connect to the DiskStation with it's internal and external IP and is also unable to setup a tunnel using QuickConnect."
+	},
+	"api_error_requestTimeout": {
+		"message": "The connection timed out. The device did not respond.",
+		"description": "Error to be shown when the extension doesn't receive a reply within the set timeout period."
+	},
+	"api_error_couldNotConnect": {
+		"message": "Could not connect to DiskStation.",
+		"description": "Error to be shown when the extension cannot reach the NAS (incorrect URL, protocol or port, powered off, network problems, invalid HTTPS certificate, etc."
+	},
+	"api_error_unknownError": {
+		"message": "An unknown error occurred.",
+		"description": "The DiskStation API returned an unknown error"
+	},
+	"api_error_invalidParameter": {
+		"message": "An unknown error occurred.",
+		"description": "This error should not occur, this error message is just in case it does :)"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Your Download Station package is not running or is too old."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Your DSM or package version does not support this feature."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Your DSM or package version does not support this feature."
+	},
+	"api_error_featureNotSupported": {
+		"message": "Your DSM or package version does not support this feature."
+	},
+	"api_error_permissionDenied": {
+		"message": "This user does not have permission to use this feature."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Invalid username or password."
+	},
+	"api_error_accountDisabled": {
+		"message": "This account is disabled."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "This user has two-step authentication enabled. The extension only supports accounts without two-step authentication."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "This user has two-step authentication enabled. The extension only supports accounts without two-step authentication."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Failed to upload the file to Download Station."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "The maximum number of tasks in Download Station has been reached."
+	},
+	"api_error_destinationDenied": {
+		"message": "This user does not have permission to download to the selected destination folder."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "The destination folder does not exist."
+	},
+	"api_error_setDestinationFailed": {
+		"message": "Unable to set the destination folder."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Action not supported for this task"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "There is no default destination folder set for Download Station. Set your default folder in your Download Station configuration."
+	},
+	"api_error_fileDoesNotExist": {
+		"message": "File does not exist"
+	},
+	"api_error_fileOperationNotAllowedForUser": {
+		"message": "This file operation is not allowed for the current user."
+	},
+	"api_error_fileOperationNotAllowedForGroup": {
+		"message": "This file operation is not allowed for the current user group."
+	},
+	"api_error_systemIsTooBusy": {
+		"message": "The DiskStation is too busy to handle your operation."
+	},
+	"api_error_couldNotGetPermissionInformationFromAccountServer": {
+		"message": "The DiskStation could not get the permission information from the account server.",
+		"description": "File Station error message that can occur in the destination folder picker when the user is using an account server for DSM user accounts (for example LDAP)."
+	},
+	"api_error_fileStationOperationNotAllowed": {
+		"message": "Operation not allowed."
+	},
+	"api_error_noSuchFileOrDirectory": {
+		"message": "No such file or directory."
+	},
+	"api_error_failedToConnectToNetworkFileSystem": {
+		"message": "Failed to connect to network file system.",
+		"description": "File Station error message that can occur in the destination folder picker when the user tries to browse to a network folder that has been mounted in FileStation."
+	},
+	"api_error_readOnlyFileSystem": {
+		"message": "The file system is read-only."
+	},
+	"api_error_fileOrFolderNameTooLongNonEncrypted": {
+		"message": "The filename or foldername is to long for the file system."
+	},
+	"api_error_fileOrFolderNameTooLongEncrypted": {
+		"message": "The filename or foldername is to long for the encrypted file system."
+	},
+	"api_error_fileOrFolderAlreadyExists": {
+		"message": "A file or folder with the same name already exists."
+	},
+	"api_error_diskQuotaExceeded": {
+		"message": "Disk quota exceeded."
+	},
+	"api_error_noSpaceOnDevice": {
+		"message": "No space left on device."
+	},
+	"api_error_fileStationIOError": {
+		"message": "An IO error occured on the DiskStation."
+	},
+	"api_error_fileStationIllegalNameOrPath": {
+		"message": "Illegal name or path."
+	},
+	"api_error_fileStationIllegalFileName": {
+		"message": "Illegal file name."
+	},
+	"api_error_fileStationIllegalFileNameFAT": {
+		"message": "Illegal file name on FAT file system."
+	},
+	"api_error_fileStationFailedToCreateFolder": {
+		"message": "Failed to create folder."
+	},
+	"api_error_fileStationNumberOfFolderExceedsSystemLimitation": {
+		"message": "The number of folders exceeds the system limitation."
+	},
+	"api_error_fileStationFailedToRename": {
+		"message": "Failed to rename the file or folder."
+	},
+	"downloadFinished": {
+		"message": "Download finished",
+		"description": "Notification title for a finished task"
+	},
+	"downloadsFinished": {
+		"message": "Downloads finished",
+		"description": "Notification title if multiple tasks have finished downloading"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ tasks finished",
+		"description": "Notification content if multiple tasks have finished downloading, will be preceded with a number: '4 tasks finished'",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "This is a free extension, but the development costs a lot of time. Please consider a donation to support this extension. Click here to make a donation.",
+		"description": "This is a message that is shown about once every 4-6 weeks to users that haven't donated."
+	},
+	"newVersionAvailable": {
+		"message": "A new version of the Synology Download Station extension is available. Click here to download the latest version.",
+		"description": "Only used for the Safari version of the extension. Will be shown when a new version is available."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Add a download",
+		"description": "Title of the dialog that can be used to enter additional information for a download task (choose 'Download advanced' from the context menu)."
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL's",
+		"description": "Label for the URL's input field in the advanced downloading dialog (multiple urls can be added, so use a plural word)."
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Enter each URL on a new line or separated by a space",
+		"description": "Tooltip with an explanation for entering multiple url's in the advanced downloading dialog."
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Username",
+		"description": "Label for the username input field in the advanced downloading dialog."
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP or FTP username",
+		"description": "Tooltip for the username field explaning that HTTP and FTP usernames can be entered and that the field is optional."
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Password",
+		"description": "Label for the password input field in the advanced downloading dialog."
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP or FTP password",
+		"description": "Tooltip for the password field explaning that HTTP and FTP usernames can be entered and that the field is optional."
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Unzip password",
+		"description": "Label for the unzip password input field in the advanced downloading dialog."
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Enter a password for extracting compressed files (optional, auto-extracting can be enabled in Download Station's settings)",
+		"description": "Tooltip for the unzip password field explaning that the unzip password will be used by Download Station to extract the downloaded file if this is enabled in Download Station."
+	},
+	"dialogAdvancedLblDestinationFolder": {
+		"message": "Destination folder",
+		"description": "Label for destination folder selection in the advanced downloading dialog"
+	},
+	"dialogAdvancedCheckboxDestinationFolder": {
+		"message": "Download to the folder selected below",
+		"description": "Text shown next to the checkbox that the user can check to enable the folder selection widget"
+	},
+	"dialogAdvancedFolderSelectionLoadingFolders": {
+		"message": "Loading folders",
+		"description": "Shown in the folder selection widget while the extension is loading subfolders"
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Cancel",
+		"description": "Button to close the dialog without sending the task to Download Station."
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Add download",
+		"description": "Button to submit the task to Download Station."
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station contains more than $limit$ downloads. New items will only be show when you remove older ones.",
+		"description": "This message is show in the status popup if the users has reached the maximum number of download tasks that the extension can show. The limit-placeholder is replaced with a number that indicates the maximum.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

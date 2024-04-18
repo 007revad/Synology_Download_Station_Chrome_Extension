@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "rtl"
+	},
+	"chromeExtensionName": {
+		"message": "محطة التنزيل Synology Download Station  للمتصفح جوجل كروم Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "تحكم في تنزيل الملفات على وحدة الخزن Synology Disk Station من خلال متصفح جوجل كروم Google Chrome™."
+	},
+	"settingsGroupConnection": {
+		"message": "الاتصال"
+	},
+	"settingsGroupOther": {
+		"message": "تظبيطات اخرى"
+	},
+	"settingsGroupHelp": {
+		"message": "مساعدة"
+	},
+	"lblProtocol": {
+		"message": "بروتوكول"
+	},
+	"tooltipProtocol": {
+		"message": "حدد ما اذا كنت تريد استخدام HTTP او HTTPs المؤمن. يجب تفعيل الـ HTTPS في وحدة الخزن DSM وهي متوفره في جميع الاصدارات عدى  DSM 4.0-2166، 2197، و 2198. حدث وحدة الخزن اذا كان تأريخ الاصدار مطابق لاحد هذه الاصدارات"
+	},
+	"lblDomain": {
+		"message": "المجال او الـ IP"
+	},
+	"placeholderDomain": {
+		"message": "مثلا syno.example.com او 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "المجال او عنوان الـ IP لوحدة الخزن DiskStation. ممكن استخدام عنوان داخلي او خارجي (مثلا 10.0.0.1). ادخل المجال بدون \/\/:http او \/\/:https (مثلا syno.example.com)"
+	},
+	"lblPort": {
+		"message": "منفذ"
+	},
+	"tooltipPort": {
+		"message": "هذا المنفذ هو نفس المنفذ الذي تستخدمه للوصول الى وحدة الخزن DSM. المنفذ الاعتيادي هو 5000 للـ HTTP و5001 للـ HTTPS. سوف تحتاج الى ان تفتح هذا المنفذ اذا اردت ان تستخدم هذا البرنامج المضاف من خلال شبكة خارجيه."
+	},
+	"lblUsername": {
+		"message": "اسم المستخدم"
+	},
+	"tooltipUsername": {
+		"message": "ادخل اسم المستخدم لحساب وحدة الخزن DiskStation. يجب ان يكون الحساب مرخص لاستخدام محطة التنزيل Download Station."
+	},
+	"lblPassword": {
+		"message": "كلمة الدخول"
+	},
+	"btnSaveSettings": {
+		"message": "حفظ"
+	},
+	"btnTestConnection": {
+		"message": "اختبر الاتصال"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "اخفي التورنتات المصدر"
+	},
+	"lblUpdateInBackground": {
+		"message": "حدث حالة التنزيل في الخلفية (مطلوب من قبل الاشعارات)"
+	},
+	"lblRefreshInterval": {
+		"message": "فترات التحديث (ثواني)"
+	},
+	"lblEmail": {
+		"message": "البريد الالكتروني"
+	},
+	"tooltipEmail": {
+		"message": "يمكنك ان تدخل عنوانك البريدي اذا تبرعت من خلال PayPal. هذا سوف يوقف الاشعار الشهري."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "افتح مع محطة التنزيل Download Station."
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "استخدم محطة التنزيل Download Station لفتح انواع الملفات المختارة ادناه."
+	},
+	"settingsSaved": {
+		"message": "حفظت الإعدادات"
+	},
+	"settingsSavedMessage": {
+		"message": "تم حفظ التغييرات بنجاح."
+	},
+	"testDialogSuccess": {
+		"message": "نجح الاتصال"
+	},
+	"testResultSuccess": {
+		"message": "اتصالك يعمل! احفظ الإعدادات لكي تبدأ باستخدام البرنامج المضاف."
+	},
+	"testDialogFailed": {
+		"message": "فشل الإختبار"
+	},
+	"clickToConfigure": {
+		"message": "اضغط هنا لادخال إعدادات الاتصال."
+	},
+	"loggingIn": {
+		"message": "جاري الدخول"
+	},
+	"noActiveTasks": {
+		"message": "ليس هناك اي تنزيلات نشطة"
+	},
+	"btnAddTask": {
+		"message": "اضف مهمة تنزيل"
+	},
+	"btnClearQueue": {
+		"message": "امسح التنزيلات المنتهيه"
+	},
+	"btnPauseAll": {
+		"message": "أوقف الجميع"
+	},
+	"btnResumeAll": {
+		"message": "اكمل الجميع"
+	},
+	"btnOpenDownloadStation": {
+		"message": "افتح واجهة ادارة لمحطة التنزيل Download Station."
+	},
+	"btnPause": {
+		"message": "أيقاف مؤقت"
+	},
+	"btnResume": {
+		"message": "استكمال"
+	},
+	"btnStartSeeding": {
+		"message": "ابدأ التصعيد"
+	},
+	"btnRemove": {
+		"message": "احذف"
+	},
+	"btnCancel": {
+		"message": "ألغي"
+	},
+	"urlInputPlaceholder": {
+		"message": "أدخل رابط الويب (url) للملف المراد تنزيله"
+	},
+	"urlFormAddBtn": {
+		"message": "أضف"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ من $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "تنزيل على $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "تنزيل متقدم…"
+	},
+	"downloadTaskAdding": {
+		"message": "جاري اضافة المهمة.."
+	},
+	"downloadTaskAccepted": {
+		"message": "تمت إضافة مهمة التنزيل بنجاح"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "فشل اضافة مهمة التنزيل"
+	},
+	"task_status_waiting": {
+		"message": "بالانتظار"
+	},
+	"task_status_downloading": {
+		"message": "جاري التنزيل"
+	},
+	"task_status_paused": {
+		"message": "متوقف"
+	},
+	"task_status_finishing": {
+		"message": "منتهي"
+	},
+	"task_status_finished": {
+		"message": "مكتمل"
+	},
+	"task_status_hash_checking": {
+		"message": "جاري الفحص"
+	},
+	"task_status_seeding": {
+		"message": "جاري التصعيد"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "بانتظار التنزيل"
+	},
+	"task_status_extracting": {
+		"message": "جاري فتح الضغط"
+	},
+	"task_status_error": {
+		"message": "خطأ"
+	},
+	"task_status_broken_link": {
+		"message": "رابط معطوب"
+	},
+	"task_status_destination_not_exist": {
+		"message": "مجلد التزيلات غير موجود"
+	},
+	"task_status_destination_denied": {
+		"message": "غير مسموح بالوصول الى مجلد التنزيلات"
+	},
+	"task_status_disk_full": {
+		"message": "القرص ممتلئ"
+	},
+	"task_status_quota_reached": {
+		"message": "الحصة المسموحة انتهت"
+	},
+	"task_status_timeout": {
+		"message": "مهلة الاتصال انتهت"
+	},
+	"task_status_torrent_invalid": {
+		"message": "التورنت غير صحيح"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "تورنت مزدوج"
+	},
+	"task_status_file_not_exist": {
+		"message": "الملف غير موجود"
+	},
+	"task_status_required_premium_account": {
+		"message": "يتطلب حساب مدفوع Premium account"
+	},
+	"task_status_extract_failed": {
+		"message": "فشل فك الضغط"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "فشل فك الضغط: كلمة السر خاطئه"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "فشل فك الضغط: ارشيف غير صالح"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "فشل فك الضغط: حصة البيانات المخصصة انتهت"
+	},
+	"task_status_missing_python": {
+		"message": "حزمة python  غير مثبته"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "فشل فك الضغط: القرص ممتليء"
+	},
+	"task_status_unknown": {
+		"message": "الحالة غير معروفه"
+	},
+	"api_error_couldNotConnect": {
+		"message": "فشل الاتصال بوحدة الخزن DiskStation."
+	},
+	"api_error_unknownError": {
+		"message": "حدث خلل مجهول."
+	},
+	"api_error_invalidParameter": {
+		"message": "حدث خلل مجهول."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "حزمة محطة التنزيل Download Station لاتعمل او قديمة جدا."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "حزمة محطة التنزيل Download Station لاتعمل او قديمة جدا."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "نسخة اصدار محطة التنزيل Download Station لاتوفر هذه الوظيفة."
+	},
+	"api_error_featureNotSupported": {
+		"message": "نسخة اصدار محطة التنزيل Download Station لاتوفر هذه الوظيفة."
+	},
+	"api_error_permissionDenied": {
+		"message": "هذا المستخدم لا يملك التصريح باستخدام محطة التنزيل Download Station."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "اسم المستخدم او كلمة الدخول خطأ."
+	},
+	"api_error_accountDisabled": {
+		"message": "هذا الحساب موقف."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "المستخدم لديه خطوتان للمصادقة. البرنامج المضاف لا يعمل مع الحسابات ذات المصادقة بخطوتين."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "المستخدم لديه خطوتان للمصادقة. البرنامج المضاف لا يعمل مع الحسابات ذات المصادقة بخطوتين."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "فشلت عملية رفع الملف لمحطة التنزيل Download Station."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "تم الوصول الى العدد الاقصى من مهمات في محطة التنزيل Download Station."
+	},
+	"api_error_destinationDenied": {
+		"message": "المستخدم لا يملك السماحية بالتنزيل الى مجلد الحفظ"
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "مجلد التنزيلات غير موجود غير موجوده."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "العملية غير مدعومه لهذه المهمة"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "ليس هناك مجلد حفظ مختار مسبقا لمحطة التنزيل Download Station. اختار  مجلد حفظ للاستخدام بشكل اعتيادي في اعدادات محطة التنزيل Download Station."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "لم نستطيع ايجاد ملف التورنت في الرابط المغناطيس magnet link."
+	},
+	"downloadFinished": {
+		"message": "انتهى التنزيل"
+	},
+	"downloadsFinished": {
+		"message": "انتهى التنزيل"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ مهمات انجزت",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "هذا البرنامج المضاف مجاني، لكن التطوير يكلف وقت كبير. نرجوكم ان تتبرعوا لمساندة هذا البرنامج المضاف. اضغط هنا للتبرع."
+	},
+	"newVersionAvailable": {
+		"message": "اصدار جديد من محطة التنزيل Download Station متوفر. اضغط هنا لتنزيل الاصدار الاخير."
+	},
+	"dialogAdvancedTitle": {
+		"message": "اضف مهمة تنزيل"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "عناوين المورد (url's)"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "أدخل كل عنوان مورد (url) في خط جديد أو مفصولة بمسافة"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "اسم المستخدم"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "اسم المستخدم لـ HTTP أو FTP (اختياري)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "كلمة المرور"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "كلمة مرور لـ HTTP او FTP"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "كلمة مرور لفتح الضغط unzip"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "ادخل كلمة المرور لفتح الملفات المضغوطة (اختياري، فتح الضغط التلقائي يفعل عن طريق تظبيطات محطة التنزيل Download Station)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "نسخة الDSM لا تدعم ميزة فتح الضغط unzip. تحتاج الى DSM 4.2 او احدث لاتخال كلمة مرور للـ unzip."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "الغي"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "اضف مهمة تنزيل"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "محطة التنزيل Download Station تحوي على اكثر من $limit$ مهمة تنزيل. المهمات الجديدة سوف لن تظهر الا بعد ان تلغي بعض المهمات القديمة.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}
