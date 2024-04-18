@@ -1,0 +1,156 @@
+body {
+	background-color: transparent;
+}
+
+#add-download textarea {
+	resize: none;
+}
+
+.popover {
+	z-index: 10000;
+}
+
+.folder-selection {
+	position: relative;
+}
+
+.folder-selection.disabled {
+	opacity: 0.4;
+}
+
+.folder-selection-overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.folder-selection.disabled .folder-selection-overlay {
+	display: block;
+}
+
+.folderpath {
+	border: 1px solid #ddd;
+	margin-bottom: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.folderpath li {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 35%;
+}
+
+.folderpath.breadcrumb>li+li:before {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.file-list {
+	max-height: 195px;
+	overflow-y: auto;
+	border-style: solid;
+	border-color: #ddd;
+	border-width: 0 1px 1px 1px;
+	border-radius: 0 0 4px 4px;
+	margin-bottom: 20px;
+}
+
+
+.file-list .list-group {
+	margin-bottom: 0;
+}
+
+.file-list .list-group-item {
+	white-space: nowrap;
+	border-left: none;
+	border-right: none;
+}
+
+.file-list .list-group-item.editing {
+	cursor: default;
+}
+
+.file-list .list-group-item:first-child {
+	border-top: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.file-list .list-group-item:last-child {
+	border-bottom: none;
+}
+
+.file-list .list-group-item .fa-folder-open-o {
+	display: none;;
+}
+
+.file-list .list-group-item:not(.disabled):not(.editing):hover .fa-folder-o {
+	display: none;
+}
+
+.file-list .list-group-item:not(.disabled):not(.editing):hover .fa-folder-open-o {
+	display: inline-block;
+}
+
+.file-list .list-group-item .text-label {
+	display: inline-block;
+	max-width: 75%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+.file-list .list-group-item button {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.file-list .list-group-item .hover-button {
+	display: none;
+}
+
+.file-list .list-group-item:hover .hover-button {
+	display: inline-block;
+}
+
+.file-list .list-group-item input[type=text] {
+	width: 75%;
+	height: 22px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #fff;
+	color: #555;
+}
+
+.file-list .error-message {
+	overflow: visible;
+	text-overflow: ellipsis;
+	white-space: normal;
+}
+
+.tooltip .tooltip-inner {
+	background-color: #d9534f;
+	white-space: normal;
+	max-width: 250px;
+}
+
+.tooltip.top.tooltip-danger .tooltip-arrow {
+	border-top-color: #d9534f;
+}
+
+.tooltip.right.tooltip-danger .tooltip-arrow {
+	border-right-color: #d9534f;
+}
+
+.tooltip.bottom.tooltip-danger .tooltip-arrow {
+	border-bottom-color: #d9534f;
+}
+
+.tooltip.left.tooltip-danger .tooltip-arrow {
+	border-left-color: #d9534f;
+}

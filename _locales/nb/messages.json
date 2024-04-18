@@ -1,0 +1,369 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station for Google Chrome™"
+	},
+	"settingsGroupConnection": {
+		"message": "Tilkobling"
+	},
+	"settingsGroupOther": {
+		"message": "Andre innstillinger"
+	},
+	"settingsGroupHelp": {
+		"message": "Hjelp"
+	},
+	"lblProtocol": {
+		"message": "Protokoll"
+	},
+	"tooltipProtocol": {
+		"message": "Spesifiser om du ønsker å bruke HTTP eller sikker HTTPS. HTTPS må være aktiv på DSM for at dette skal virke. Merk hvis du har følgende versjon av DSM4.0-2166, 2197 og 2198 må du oppdatere DiskStation din."
+	},
+	"lblDomain": {
+		"message": "Domene eller IP"
+	},
+	"placeholderDomain": {
+		"message": "f.eks. syno.eksempel.no eller 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Domene eller IP-adresse for din DiskStation. Dette kan være intern eller ekstern IP-adresse (f.eks. 10.0.0.1). Skriv inn domenenavn uten http:\/\/ eller https:\/\/ (f.eks. syno.eksempel.no)"
+	},
+	"lblPort": {
+		"message": "Port"
+	},
+	"tooltipPort": {
+		"message": "Dette er samme portnummer som du bruker for å logge inn på DSM. Standard portnummer er 5000 for HTTP og 5001 for HTTPS. Du trenger å videresende denne porten hvis du ønsker å benytte denne utvidelsen utenfor ditt lokale nettverk som DiskStation befinner seg på."
+	},
+	"lblUsername": {
+		"message": "Brukernavn"
+	},
+	"tooltipUsername": {
+		"message": "Skriv inn samme brukernavn som du bruker på DiskStation kontoen. Denne kontoen må ha rettigheter til å bruke Download Station."
+	},
+	"lblPassword": {
+		"message": "Passord"
+	},
+	"btnSaveSettings": {
+		"message": "Lagre innstillinger"
+	},
+	"btnTestConnection": {
+		"message": "Test tilkobling"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Skjul seede torrents."
+	},
+	"lblUpdateInBackground": {
+		"message": "Oppdater nedlastingstatus i bakgrunnen (kreves for varsler)."
+	},
+	"lblRefreshInterval": {
+		"message": "Oppdaterings intervall (sekunder)"
+	},
+	"lblEmail": {
+		"message": "E-post"
+	},
+	"tooltipEmail": {
+		"message": "Du kan skrive inn din e-postadresse hvis du har gjort en donasjon via PayPal. Dette vil deaktivere det månedlige varselet."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Åpne med Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Bruk Download Station til å åpne følgende filtyper"
+	},
+	"settingsSaved": {
+		"message": "Innstillinger lagret"
+	},
+	"settingsSavedMessage": {
+		"message": "Dine endringene er lagret."
+	},
+	"testDialogSuccess": {
+		"message": "Tilkobling vellykket"
+	},
+	"testResultSuccess": {
+		"message": "Din tilkobling virker! Lagre dine innstillinger for å ta i bruk utvidelsen"
+	},
+	"testDialogFailed": {
+		"message": "Test feilet"
+	},
+	"clickToConfigure": {
+		"message": "Klikk her for å skrive inn dine tilkoblingsinnstillinger"
+	},
+	"loggingIn": {
+		"message": "Logger inn.."
+	},
+	"noActiveTasks": {
+		"message": "Ingen aktive nedlastingsoppgaver"
+	},
+	"btnAddTask": {
+		"message": "Legg til oppgave"
+	},
+	"btnClearQueue": {
+		"message": "Fjern ferdige oppgaver"
+	},
+	"btnPauseAll": {
+		"message": "Pause alle"
+	},
+	"btnResumeAll": {
+		"message": "Gjenoppta alle"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Åpne Download Station web-grensesnitt"
+	},
+	"btnPause": {
+		"message": "Pause"
+	},
+	"btnResume": {
+		"message": "Gjenoppta"
+	},
+	"btnStartSeeding": {
+		"message": "Start seeding"
+	},
+	"btnRemove": {
+		"message": "Fjern"
+	},
+	"btnCancel": {
+		"message": "Avbryt"
+	},
+	"urlInputPlaceholder": {
+		"message": "Skriv inn nedlastnings-URL"
+	},
+	"urlFormAddBtn": {
+		"message": "Legg til"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ av $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Last ned på $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Avansert nedlasting…"
+	},
+	"downloadTaskAdding": {
+		"message": "Legg til oppgave.."
+	},
+	"downloadTaskAccepted": {
+		"message": "Nedlastingsoppgave godkjent"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Nedlastingsoppgaven kunne ikke legges til"
+	},
+	"task_status_waiting": {
+		"message": "Venter"
+	},
+	"task_status_downloading": {
+		"message": "Nedlastning"
+	},
+	"task_status_paused": {
+		"message": "Pause"
+	},
+	"task_status_finishing": {
+		"message": "Fullfører"
+	},
+	"task_status_finished": {
+		"message": "Fullført"
+	},
+	"task_status_hash_checking": {
+		"message": "Kontrollere"
+	},
+	"task_status_seeding": {
+		"message": "Seeding"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Venter på nedlasting"
+	},
+	"task_status_extracting": {
+		"message": "Utpakking"
+	},
+	"task_status_error": {
+		"message": "Feil"
+	},
+	"task_status_broken_link": {
+		"message": "Ødelagt lenke"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Målmappen finnes ikke"
+	},
+	"task_status_destination_denied": {
+		"message": "Ingen tilgang til målmappen"
+	},
+	"task_status_disk_full": {
+		"message": "Disk full"
+	},
+	"task_status_quota_reached": {
+		"message": "Kvote er nådd"
+	},
+	"task_status_timeout": {
+		"message": "Tilkobling tidsavbrutt"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Ugyldig torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Duplikat torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "Filen eksisterer ikke"
+	},
+	"task_status_required_premium_account": {
+		"message": "Premium-konto påkrevd"
+	},
+	"task_status_extract_failed": {
+		"message": "Utpakking feilet"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Utpakking feilet: feil passord"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Utpakking feilet: ugyldig arkiv"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Utpakking feilet: kvote er nådd"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Utpakking feilet: disk full"
+	},
+	"task_status_unknown": {
+		"message": "Ukjent status"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Kunne ikke koble til DiskStation"
+	},
+	"api_error_unknownError": {
+		"message": "En ukjent feil oppsto."
+	},
+	"api_error_invalidParameter": {
+		"message": "En ukjent feil oppsto."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Din Download Station kjører ikke eller er for gammel."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Din Download Station kjører ikke eller er for gammel."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Din Download Station-versjon støtter ikke denne funskjonen."
+	},
+	"api_error_featureNotSupported": {
+		"message": "Din Download Station-versjon støtter ikke denne funskjonen."
+	},
+	"api_error_permissionDenied": {
+		"message": "Denne brukeren har ikke tilgang til Download Station."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Ugyldig brukernavn eller passord."
+	},
+	"api_error_accountDisabled": {
+		"message": "Denne kontoen er ikke aktiv"
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Denne brukeren har aktivert totrinnsgodkjenning. Utvidelsen støtter bare kontoer uten totrinnsgodkjenning."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Denne brukeren har aktivert totrinnsgodkjenning. Utvidelsen støtter bare kontoer uten to trinns godkjenning."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Kunne ikke laste opp fil til Download Station."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Maksimum antall oppgaver i Download Station er nådd."
+	},
+	"api_error_destinationDenied": {
+		"message": "Denne brukeren har ikke tillatelse til å laste ned til den valgte målmappen."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Målmappen eksisterer ikke."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Handlingen støttes ikke for denne oppgaven"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Det er ikke satt en standard målmappe for Download Station. Velg standard målmappe i Download Station-innstillinger."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Finner ikke en torrent-fil for magnet-lenken"
+	},
+	"downloadFinished": {
+		"message": "Nedlasting fullført"
+	},
+	"downloadsFinished": {
+		"message": "Nedlasting fullført"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ fullførte oppgaver",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Dette er en gratis utvidelse, men utvikling krever mye tid. Vennligst vurder en donasjon for å støtte denne utvidelsen.\nKlikk her for å gjøre en donasjon."
+	},
+	"newVersionAvailable": {
+		"message": "En ny versjon av Synology Download Station-utvidelsen er tilgjengelig. Klikk her for å laste ned siste versjon."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Legg til en nedlasting"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "Lenke"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Hver lenke er separert med linjeskift eller mellomrom"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Brukernavn"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP eller FTP brukernavn (valgfritt)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Passord"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP eller FTP passord (valgfritt)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "ZIP passord"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Sett inn passord for å pakke ut filene (valgfritt; auto-utpakking kan velges under innstillinger i Download Station)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Din DSM versjon støtter ikke passord beskyttet ZIP filer. Du trenger DSM 4.2 eller nyere for å pakke ut passord beskyttet ZIP filer)"
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Avbryt"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Legg til nedlasting"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station inneholder mer enn $limit$ nedlastinger. Nye nedlastinger vil kun vises dersom du fjerner gamle nedlastinger.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

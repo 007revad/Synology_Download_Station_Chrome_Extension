@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station для Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "Управляйте загрузками на вашем Synology DiskStation через Ваш браузер."
+	},
+	"settingsGroupConnection": {
+		"message": "Подключение"
+	},
+	"settingsGroupOther": {
+		"message": "Прочие настройки"
+	},
+	"settingsGroupHelp": {
+		"message": "Справка"
+	},
+	"lblProtocol": {
+		"message": "Протокол"
+	},
+	"tooltipProtocol": {
+		"message": "Выберите протокол подключения, HTTP или HTTPS. HTTPS должен быть включен в DSM и поддерживается на всех версиях, кроме DSM4.0 DSM-2166, 2197 и 2198. Обновите DiskStation если у вас одна из этих версий."
+	},
+	"lblDomain": {
+		"message": "Доменное имя или IP-адрес"
+	},
+	"placeholderDomain": {
+		"message": "пример syno.example.com или 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Доменное имя или IP-адрес вашего DiskStation. IP-адрес может быть внешним или внутренним (например 10.0.0.1). Вводите доменные имена без http:\/\/ или https:\/\/ (например syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Порт"
+	},
+	"tooltipPort": {
+		"message": "Порт который вы используете для доступа к DSM. По умолчанию 5000 для HTTP и 5001 для HTTPS. Вы должны открыть этот порт если хотите использовать это расширение, но находитесь не в одной сети с вашим DiskStation."
+	},
+	"lblUsername": {
+		"message": "Пользователь"
+	},
+	"tooltipUsername": {
+		"message": "Введите имя пользователя для доступа к DiskStation. Учетная запись должна иметь права на использование Download Station."
+	},
+	"lblPassword": {
+		"message": "Пароль"
+	},
+	"btnSaveSettings": {
+		"message": "Сохранить настройки"
+	},
+	"btnTestConnection": {
+		"message": "Тест подключения"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Скрыть раздачи"
+	},
+	"lblUpdateInBackground": {
+		"message": "Обновлять статус загрузки в фоне (необходимо для уведомлений)."
+	},
+	"lblRefreshInterval": {
+		"message": "Частота обновления (сек)"
+	},
+	"lblEmail": {
+		"message": "E-mail"
+	},
+	"tooltipEmail": {
+		"message": "Введите ваш e-mail если вы сделали денежный перевод через PayPal. Это отключит ежемесячные напоминания."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Загружать при помощи"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Использовать это расширение чтобы открывать следующие типы ссылок."
+	},
+	"settingsSaved": {
+		"message": "Настройки сохранены"
+	},
+	"settingsSavedMessage": {
+		"message": "Ваши настройки успешно сохранены."
+	},
+	"testDialogSuccess": {
+		"message": "Подключение установлено"
+	},
+	"testResultSuccess": {
+		"message": "Ваше подключение работает! Не забудьте сохранить настройки."
+	},
+	"testDialogFailed": {
+		"message": "Не удалось соединиться"
+	},
+	"clickToConfigure": {
+		"message": "Нажмите здесь чтобы ввести настройки подключения."
+	},
+	"loggingIn": {
+		"message": "Вход..."
+	},
+	"noActiveTasks": {
+		"message": "Нет активных загрузок"
+	},
+	"btnAddTask": {
+		"message": "Добавить задание"
+	},
+	"btnClearQueue": {
+		"message": "Удалить завершенные задания"
+	},
+	"btnPauseAll": {
+		"message": "Приостановить все"
+	},
+	"btnResumeAll": {
+		"message": "Возобновить все"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Открыть веб-интерфейс Download Station"
+	},
+	"btnPause": {
+		"message": "Пауза"
+	},
+	"btnResume": {
+		"message": "Возобновить"
+	},
+	"btnStartSeeding": {
+		"message": "Начать раздачу"
+	},
+	"btnRemove": {
+		"message": "Удалить"
+	},
+	"btnCancel": {
+		"message": "Отменить"
+	},
+	"urlInputPlaceholder": {
+		"message": "Вставьте URL задания здесь"
+	},
+	"urlFormAddBtn": {
+		"message": "Добавить"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ из $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Загрузить на $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Настроить задание…"
+	},
+	"downloadTaskAdding": {
+		"message": "Добавление задания..."
+	},
+	"downloadTaskAccepted": {
+		"message": "Задание добавлено"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Не удалось добавить задание"
+	},
+	"task_status_waiting": {
+		"message": "Ожидание"
+	},
+	"task_status_downloading": {
+		"message": "Загрузка"
+	},
+	"task_status_paused": {
+		"message": "Пауза"
+	},
+	"task_status_finishing": {
+		"message": "Завершение"
+	},
+	"task_status_finished": {
+		"message": "Готово"
+	},
+	"task_status_hash_checking": {
+		"message": "Проверка"
+	},
+	"task_status_seeding": {
+		"message": "Раздача"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Ожидание загрузки"
+	},
+	"task_status_extracting": {
+		"message": "Извлечение"
+	},
+	"task_status_error": {
+		"message": "Ошибка"
+	},
+	"task_status_broken_link": {
+		"message": "Битая ссылка"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Папка для сохранения файлов не существует"
+	},
+	"task_status_destination_denied": {
+		"message": "Нет доступа к папке для сохранения файлов"
+	},
+	"task_status_disk_full": {
+		"message": "Недостаточно места на диске"
+	},
+	"task_status_quota_reached": {
+		"message": "Достигнута квота"
+	},
+	"task_status_timeout": {
+		"message": "Тайм-аут соединения"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Недопустимый торрент"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Такой торрент уже существует"
+	},
+	"task_status_file_not_exist": {
+		"message": "Файл не существует"
+	},
+	"task_status_required_premium_account": {
+		"message": "Требуется премиум аккаунт"
+	},
+	"task_status_extract_failed": {
+		"message": "Ошибка при извлечении"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Ошибка при извлечении: неверный пароль"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Ошибка при извлечении: недопустимый архив"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Ошибка при извлечении: достигнута квота"
+	},
+	"task_status_missing_python": {
+		"message": "Python-набор не установлен"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Ошибка при извлечении: недостаточно места на диске"
+	},
+	"task_status_unknown": {
+		"message": "Неизвестная ошибка"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Невозможно соединиться с DiskStation."
+	},
+	"api_error_unknownError": {
+		"message": "Неизвестная ошибка."
+	},
+	"api_error_invalidParameter": {
+		"message": "Неизвестная ошибка."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Download Station не запущен или устарел."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Download Station не запущен или устарел."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Ваша версия Download Station не поддерживает эту функцию."
+	},
+	"api_error_featureNotSupported": {
+		"message": "Ваша версия Download Station не поддерживает эту функцию."
+	},
+	"api_error_permissionDenied": {
+		"message": "Этот пользователь не имеет разрешения на использование Download Station."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Неверное имя пользователя или пароль."
+	},
+	"api_error_accountDisabled": {
+		"message": "Эта учетная запись отключена."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Этот пользователь использует двухступенчатую авторизацию. Данное расширение не поддерживает учетные записи с двухступенчатой авторизацией."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Этот пользователь использует двухступенчатую авторизацию. Данное расширение не поддерживает учетные записи с двухступенчатой авторизацией."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Не удалось загрузить файл на Download Station."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Достигнуто максимальное количество одновременных задач в Download Station."
+	},
+	"api_error_destinationDenied": {
+		"message": "Этот пользователь не имеет разрешения на загрузку в выбранную папку."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Папка для сохранения файлов не существует."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Действие недоступно для этой задачи"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Не выбрана папка для загрузки по умолчанию для Download Station. Выберите папку по умолчанию в настройках Download Station."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Не найден torrent-файл для magnet-ссылки"
+	},
+	"downloadFinished": {
+		"message": "Загрузка завершена"
+	},
+	"downloadsFinished": {
+		"message": "Загрузки завершены"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ задания завершены",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Это бесплатное расширение, но его разработка отнимает много времени. Нажмите здесь, чтобы поддержать разработку расширения и сделать пожертвование."
+	},
+	"newVersionAvailable": {
+		"message": "Доступна новая версия расширения"
+	},
+	"dialogAdvancedTitle": {
+		"message": "Добавление задания"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "Ссылки"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Укажите каждую ссылку на отдельной строке или разделите их пробелом"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Пользователь"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "Имя HTTP или FTP пользователя (необязательно)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Пароль"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "Пароль HTTP или FTP пользователя (необязательно)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Пароль для распаковки"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Укажите пароль для извлечения запакованных файлов (необязательно). Автоматическое извлечение можно включить в настройках Dowload Station."
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Ваша версия DSM не поддерживает ввод пароля для распаковки файлов. Необходимо обновить DSM до версии 4.2 или выше."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Отмена"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Добавить задание"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station содержит более чем $limit$ заданий. Новые задания будут показаны как только вы удалите старые.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

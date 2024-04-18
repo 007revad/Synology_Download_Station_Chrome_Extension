@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Завантажувальна станція Synology для гугла хром™"
+	},
+	"chromeExtensionDescription": {
+		"message": "Керуйте завантаження на своєму Synology DiskStation у своєму браузері"
+	},
+	"settingsGroupConnection": {
+		"message": "З'єднання"
+	},
+	"settingsGroupOther": {
+		"message": "Інші налаштування"
+	},
+	"settingsGroupHelp": {
+		"message": "Допомога"
+	},
+	"lblProtocol": {
+		"message": "Протокол"
+	},
+	"tooltipProtocol": {
+		"message": "Вкажіть якащо ви хочете використовувати HTTP або захищений HTTPS. HTTPS повинен бути ввімкнутим у DSM та підтримується усіма версіями DSM окрім DSM4.0-2166, 2197 та 2198. Обновіть ваш DiskStation якцо у вас встановлена одна з цих версій."
+	},
+	"lblDomain": {
+		"message": "Домен чи АйПі"
+	},
+	"placeholderDomain": {
+		"message": "наприклад y no.example.com або 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Доменне ім'я, або IP адреса вашого DiskStation. Може бути як внутрішнім так і зовнішнім IP (наприклад 10.0.0.1). Будь ласка, введіть без http:\/\/ або https:\/\/ (наприклад syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Порт"
+	},
+	"tooltipPort": {
+		"message": "Порт доступу до вашого DSM. Порт за замовчанням 5000 для HTTP, та 5001 для HTTPS. Вам буде необхідно прокинути цей порт на роутері, якщо ві хочете використовувати нашу програму поза зоною прямого підключення до вашого DiskStation."
+	},
+	"lblUsername": {
+		"message": "Ім'я користувача"
+	},
+	"tooltipUsername": {
+		"message": "Введіть ваше ім'я користувача налаштованного у DiskStation. Користувач мусить мати дозвіл на користування Download Station."
+	},
+	"lblPassword": {
+		"message": "Пароль"
+	},
+	"btnSaveSettings": {
+		"message": "Зберегти налаштування"
+	},
+	"btnTestConnection": {
+		"message": "Перевірка з'єднання"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Сховати сидємі торренти"
+	},
+	"lblUpdateInBackground": {
+		"message": "Обновити статус завантаження у фоні (необхідно для повідомленнь)"
+	},
+	"lblRefreshInterval": {
+		"message": "Обновити інтервал (секунди)"
+	},
+	"lblEmail": {
+		"message": "Поштова адреса"
+	},
+	"tooltipEmail": {
+		"message": "Ви можете залишити свою електронну адресу якщо ви зробили внесок через PayPal. Таким чином ви можете вимкнути щомісячні нагадування"
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Відкрити у Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Використовувати Download Station для всіх файлів обраного типу"
+	},
+	"settingsSaved": {
+		"message": "Налаштування збережені"
+	},
+	"settingsSavedMessage": {
+		"message": "Ваші налаштування були успішно збережені"
+	},
+	"testDialogSuccess": {
+		"message": "Успішне з'єднання"
+	},
+	"testResultSuccess": {
+		"message": "Ваше з'єднання працює! Збережіть налаштування для того щоб розпочати використовувати цю програму"
+	},
+	"testDialogFailed": {
+		"message": "Тест неуспішний"
+	},
+	"clickToConfigure": {
+		"message": "Натисніть сюді щоб ввести налаштування вашого з'єднання"
+	},
+	"loggingIn": {
+		"message": "Спроба підключення"
+	},
+	"noActiveTasks": {
+		"message": "Немає жодного завдання на завантаження"
+	},
+	"btnAddTask": {
+		"message": "Додати завдання"
+	},
+	"btnClearQueue": {
+		"message": "Очистити завершені завдання"
+	},
+	"btnPauseAll": {
+		"message": "Призупинити усі"
+	},
+	"btnResumeAll": {
+		"message": "Почати усі"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Відкрити Download Station веб-інтерфейс"
+	},
+	"btnPause": {
+		"message": "Пауза"
+	},
+	"btnResume": {
+		"message": "Почати"
+	},
+	"btnStartSeeding": {
+		"message": "Почати сидирування"
+	},
+	"btnRemove": {
+		"message": "Вилучити"
+	},
+	"btnCancel": {
+		"message": "Відмінити"
+	},
+	"urlInputPlaceholder": {
+		"message": "Введіть URL завантаження"
+	},
+	"urlFormAddBtn": {
+		"message": "Додати"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ із $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Завантажено до $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Розширені налаштування завантаження..."
+	},
+	"downloadTaskAdding": {
+		"message": "Додається завдання..."
+	},
+	"downloadTaskAccepted": {
+		"message": "Завдання для завантаження прийняте"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Помилка додавання завдання на завантаження"
+	},
+	"task_status_waiting": {
+		"message": "Очікування"
+	},
+	"task_status_downloading": {
+		"message": "Завантаження"
+	},
+	"task_status_paused": {
+		"message": "Призупинено"
+	},
+	"task_status_finishing": {
+		"message": "Завершення"
+	},
+	"task_status_finished": {
+		"message": "Завершено"
+	},
+	"task_status_hash_checking": {
+		"message": "Перевірка"
+	},
+	"task_status_seeding": {
+		"message": "Сидирування"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Очікування завантаження"
+	},
+	"task_status_extracting": {
+		"message": "Виведення"
+	},
+	"task_status_error": {
+		"message": "Помилка"
+	},
+	"task_status_broken_link": {
+		"message": "Посилання помилкове"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Папка призначення не існує"
+	},
+	"task_status_destination_denied": {
+		"message": "Доступ до папки призначення заборонено"
+	},
+	"task_status_disk_full": {
+		"message": "Брак вільного місця на диску"
+	},
+	"task_status_quota_reached": {
+		"message": "Квота досягнута"
+	},
+	"task_status_timeout": {
+		"message": "Тайм-аут підключення"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Торрент з помилками"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Аналогічний торрент вже існує"
+	},
+	"task_status_file_not_exist": {
+		"message": "Файл не існує"
+	},
+	"task_status_required_premium_account": {
+		"message": "Необхідно мати преміум-акаунт"
+	},
+	"task_status_extract_failed": {
+		"message": "Витягнення файлів"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Витягнення неуспішне: пароль невірний"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Витягнення неуспішне: помилка архіву"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Витягнення неуспішне: квота досягнута"
+	},
+	"task_status_missing_python": {
+		"message": "Пакет Python не встановлено"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Витягнення неуспішне: немає вільного місця на диску"
+	},
+	"task_status_unknown": {
+		"message": "Статус невідомий"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Не можливо підключитись до DiskStation"
+	},
+	"api_error_unknownError": {
+		"message": "Невідома помилка"
+	},
+	"api_error_invalidParameter": {
+		"message": "Невідома помилка"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Ваш Download Station пакет не запущено або стара версія"
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Ваш Download Station пакет не запущено або стара версія"
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Ваш версія Download Station не підтримує цю функцію"
+	},
+	"api_error_featureNotSupported": {
+		"message": "Ваш версія Download Station не підтримує цю функцію"
+	},
+	"api_error_permissionDenied": {
+		"message": "Користувач не має права доступу до Download Station"
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Невірне ім'я користувача або пароль"
+	},
+	"api_error_accountDisabled": {
+		"message": "Цей користувач відключений"
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Цей користувач має дво-ступінчату авторизацію. Розширення не підтримуе дво-ступінчату авторизацію."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Цей користувач має дво-ступінчату авторизацію. Розширення не підтримуе дво-ступінчату авторизацію."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Виникла помилка завантаження файлу до Download Station"
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Максимальна килькість завдань для Download Station була досягнута."
+	},
+	"api_error_destinationDenied": {
+		"message": "Цей користувач не має дозволу завантажувати у обрану папку."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Папка призначення не існує"
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Ця дія не підтримується у цьому завданні"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Папка завантаження за замовченням не призначена. Призначте папку за замовченням у вашому Download Station"
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Не існує файл прив'язаний до magnet  посилання"
+	},
+	"downloadFinished": {
+		"message": "Завантаження завершено"
+	},
+	"downloadsFinished": {
+		"message": "Завантаження завершено"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ завдань завершено",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Це розширення є безкоштовним. Але розробка займає багато часу. Будь ласка, допоможіть проекту. Натисніть сюди щоб зробити пожертвування"
+	},
+	"newVersionAvailable": {
+		"message": "Доступна нова версія Synology Download Station розширення. Натисніть сюди для завантаження нової версії."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Додати завантаження"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Введіть кожну URL на новій лінії розділяючи пробілом"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Ім'я користувача"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "Ім'я користувача HTTP або FTP (не обов'язково)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Пароль"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "Пароль HTTP або FTP (не обов'язково)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Розпакувати пароль"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Введіть пароль для розпакування стиснутих файлів (не обов'язково, авто-розпакування може бути налаштовано у Download Station)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Версія вашого DSM не підтримує розпакування паролю. Вам необхідно мати версію DSM 4.2 або вище для розпакування паролю"
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Відмінити"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Додати завантаження"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station має більш ніж $limit$ задач. Нові задачі з'являться після вилучення старих",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

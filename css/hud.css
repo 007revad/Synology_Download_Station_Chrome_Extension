@@ -1,0 +1,59 @@
+#dse-hud {
+    width: 250px!important;
+    height: 250px!important;
+    background: rgba(100,100,100,0.7)!important;
+    border-radius: 20px!important;
+    position: fixed!important;
+    bottom: -350px!important;
+    left: 50%!important;
+    margin: auto auto auto -125px!important;
+    padding: 0!important;
+    opacity: 0!important;
+    visibility: hidden!important;
+    transition: 0.2s!important;
+    -webkit-transition: 0.2s!important;
+    z-index: 10000!important;
+    text-shadow: #000 0px 0px 2px!important;
+    text-align: center!important;
+    line-height: normal!important;
+    font-size: auto!important;
+    font-family: Helvetica, arial, sans-serif!important;
+    color: #fff!important;
+}
+
+#dse-hud.visible {
+	bottom: 100px!important;
+	opacity: 1!important;
+	visibility: visible!important;
+}
+
+#dse-message {
+    position: absolute!important;
+    box-sizing: border-box!important;
+    bottom: 0px!important;
+    width: 100%!important;
+    padding: 10px!important;
+    
+    text-align: center!important;
+    font-size: 15px!important;
+    font-weight: normal!important;
+    opacity: 0!important;
+    visibility: hidden!important;
+    transition: 0.1s!important;
+    -webkit-transition: 0.1s!important;
+}
+
+#dse-message.visible {
+	opacity: 1!important;
+	visibility: visible!important;
+}
+
+#dse-icon {
+	display: inline-block!important;
+	width: 150px!important;
+	height: 150px!important;
+	background-size: 140px 140px!important;
+	background-position: center center!important;
+	background-repeat: no-repeat!important;
+	margin-top: 20px!important;
+}

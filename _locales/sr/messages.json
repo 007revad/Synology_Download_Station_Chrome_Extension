@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station за Google Chrome"
+	},
+	"chromeExtensionDescription": {
+		"message": "Управљајте вашим скидањима на Synology DiskStation из вашег интернет бровсера"
+	},
+	"settingsGroupConnection": {
+		"message": "Конекције"
+	},
+	"settingsGroupOther": {
+		"message": "Остала подешавања"
+	},
+	"settingsGroupHelp": {
+		"message": "Помоћ"
+	},
+	"lblProtocol": {
+		"message": "Протокол"
+	},
+	"tooltipProtocol": {
+		"message": "Изаберите да ли желите да користите HTTP или HTTPS. HTTPS мора бити омогућен у DSM а подржан је у свим верзијама DSM осим DSM 4.0-2166, 2197 i 2198. Урадите надоградњу на новију верзију уколико имате неку од наведених које нису подржане."
+	},
+	"lblDomain": {
+		"message": "Домен или ИП адреса"
+	},
+	"placeholderDomain": {
+		"message": "нпр syno.example.com или 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Домен или ИП адреса вашег DiskStation. Ово може бити интерна или екстерна ИП адреса (нпр 10.0.0.1). Унесите назив домена без http:\/\/ или https:\/\/ (нпр. syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Порт"
+	},
+	"tooltipPort": {
+		"message": "Ово је порт који користите за приступ DSM. Подразумевани порт је 5000 за HTTPи 5001 за HTTPS. Потребно је да проследите овај порт на рутеру уколико желите да имате приступ када се налазите ван мреже у којој је DiskStation."
+	},
+	"lblUsername": {
+		"message": "Корисничко име"
+	},
+	"tooltipUsername": {
+		"message": "Унесите корисничко име вашег DiskStation налога. Овај налог мора имати омогућену дозволу за коришћење апликације Download Station."
+	},
+	"lblPassword": {
+		"message": "Шифра"
+	},
+	"btnSaveSettings": {
+		"message": "Сними подешавања"
+	},
+	"btnTestConnection": {
+		"message": "Тестирај конекцију"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Сакри торенте који имају слања"
+	},
+	"lblUpdateInBackground": {
+		"message": "Освежавај статус скидања у позадини (потребно за нотификације)."
+	},
+	"lblRefreshInterval": {
+		"message": "Интервал освежавања (секунде)"
+	},
+	"lblEmail": {
+		"message": "Адреса електронске поште"
+	},
+	"tooltipEmail": {
+		"message": "Можете унети вашу емаил адресу уколико сте донирали средства путем PayPal. Ово ће исклјучити приказивање месечних обавештења."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Отвори са Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Изабери екстензије фајлова које ће бити отворене као подразумеване од стране Download Station апликације."
+	},
+	"settingsSaved": {
+		"message": "Подешавања су снимљена"
+	},
+	"settingsSavedMessage": {
+		"message": "Ваше измене су успешно сачуване."
+	},
+	"testDialogSuccess": {
+		"message": "Конекција успешна"
+	},
+	"testResultSuccess": {
+		"message": "Ваша конекција ради! Снимите подешавања како би почели са коришћењем екстензије."
+	},
+	"testDialogFailed": {
+		"message": "Тест неуспешан"
+	},
+	"clickToConfigure": {
+		"message": "Кликните овде да унесете подешавања за конекцију."
+	},
+	"loggingIn": {
+		"message": "Пријављујем се..."
+	},
+	"noActiveTasks": {
+		"message": "Нема активних задатака"
+	},
+	"btnAddTask": {
+		"message": "Додај задатак"
+	},
+	"btnClearQueue": {
+		"message": "Избриши завршене задатке"
+	},
+	"btnPauseAll": {
+		"message": "Паузирај све"
+	},
+	"btnResumeAll": {
+		"message": "Настави све"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Otvori Download Station web interfejs"
+	},
+	"btnPause": {
+		"message": "Пауза"
+	},
+	"btnResume": {
+		"message": "Настави"
+	},
+	"btnStartSeeding": {
+		"message": "Почни да шаљеш"
+	},
+	"btnRemove": {
+		"message": "Уклони"
+	},
+	"btnCancel": {
+		"message": "Обустави"
+	},
+	"urlInputPlaceholder": {
+		"message": "Унесите линк за скидање"
+	},
+	"urlFormAddBtn": {
+		"message": "Додај"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ од $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Скинуто на $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Напредне опције за скидање"
+	},
+	"downloadTaskAdding": {
+		"message": "Додавање задатка..."
+	},
+	"downloadTaskAccepted": {
+		"message": "Додавање задатка прихваћено"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Неуспешно додавање задатака"
+	},
+	"task_status_waiting": {
+		"message": "Чекам"
+	},
+	"task_status_downloading": {
+		"message": "Скидам"
+	},
+	"task_status_paused": {
+		"message": "Паузирано"
+	},
+	"task_status_finishing": {
+		"message": "Завршавам"
+	},
+	"task_status_finished": {
+		"message": "Готово"
+	},
+	"task_status_hash_checking": {
+		"message": "Проверавам"
+	},
+	"task_status_seeding": {
+		"message": "Шаљем"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Чекам на скидање"
+	},
+	"task_status_extracting": {
+		"message": "Распакујем"
+	},
+	"task_status_error": {
+		"message": "Грешка"
+	},
+	"task_status_broken_link": {
+		"message": "Неисправан линк"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Одредишна фасцикла не постоји"
+	},
+	"task_status_destination_denied": {
+		"message": "Приступ одредишној фасцикли је одбијен"
+	},
+	"task_status_disk_full": {
+		"message": "Диск је пун"
+	},
+	"task_status_quota_reached": {
+		"message": "Достигнуто ограничење"
+	},
+	"task_status_timeout": {
+		"message": "Конекција је истекла"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Неисправан торент"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Дуплиран торент"
+	},
+	"task_status_file_not_exist": {
+		"message": "Фајл не постоји"
+	},
+	"task_status_required_premium_account": {
+		"message": "Потребан премијум налог"
+	},
+	"task_status_extract_failed": {
+		"message": "Грешка при распакивању"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Грешка при распакивању: погрешна шифра"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Грешка при распакивању: неисправна архива"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Грешка при распакивању: лимит достигнут"
+	},
+	"task_status_missing_python": {
+		"message": "Python није инсталиран"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Грешка при распакивању: диск је пун"
+	},
+	"task_status_unknown": {
+		"message": "Непознат статус"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Не могу да се конектујме на DiskStation апликацију"
+	},
+	"api_error_unknownError": {
+		"message": "Непозната грешка"
+	},
+	"api_error_invalidParameter": {
+		"message": "Непозната грешка"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Апликација Download Station није инсталирана или је инсталирана верзија сувише стара"
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Апликација Download Station није инсталирана или је инсталирана верзија сувише стара"
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Апликација Download Station не подржава ову функцију"
+	},
+	"api_error_featureNotSupported": {
+		"message": "Апликација Download Station не подржава ову функцију"
+	},
+	"api_error_permissionDenied": {
+		"message": "Корисник нема дозволе за коришћење Download Station апликације"
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Погрешно корисничко име или шифра"
+	},
+	"api_error_accountDisabled": {
+		"message": "Налог је онемогућен"
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Провера идентитета у два корака је активирана за овог корисника. Екстензије подржавају само налоге код којих ова опција није укључена."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Провера идентитета у два корака је активирана за овог корисника. Екстензије подржавају само налоге код којих ова опција није укључена."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Неуспешно слање фајла на DiskStation."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Максималан број задатака за Download Station апликацију је достигнут."
+	},
+	"api_error_destinationDenied": {
+		"message": "Корисник нема дозволу да сними фајл у одредишну фасциклу."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Одредишна фасцикла не постоји."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Акција није подржана за овај задатак."
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Није унета подразумевана одредишна фасцикла у Download Station апликацији. Дефинишите одредишну фасциклу у подешавањима Download Station апликације."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Не могу да пронађем торент фајл за дати мегнетни линк."
+	},
+	"downloadFinished": {
+		"message": "Скидање је завршено"
+	},
+	"downloadsFinished": {
+		"message": "Скидања су завршена"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ задатака завршено",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Ово је бесплатна екстензија али њено развијање одузима много времена. Молим вас да размислите о донацији како би подржали ову екстензију. Кликните овде како би донирали."
+	},
+	"newVersionAvailable": {
+		"message": "Нова верзија Synology Download Station екстензије је доступна. Кликните овде како би сте је скинули."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Додај задатак"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "Веб адреса"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Unesite svaku veb adresu u novi red ili razdvojte sa razmakom (space)\nУнесите сваку веб адресу у нови ред или раздвојте размаком (space)"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Корисничко име"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP или FTP корисничко име (опционо)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Шифра"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP или FTP шифра (опционо)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Шифра за распакивање"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Унесите шифру за распакивање (опционо, аутоматско распакивање се може укључити у подешавањима Disk Station апликације)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Ваша верзија DSM не подржава шифре за распакивање. Морате имате DSM 4.2 или новији како би могли да унесте шифру за распакивање."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Одустани"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Додај задатак"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station садржи више од $limit$ zadataka. Нови задаци ће бити приказани кад обришете неке од старих.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

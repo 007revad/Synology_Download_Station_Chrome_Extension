@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station for Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "透過網頁管理您的Synology DiskStation 下載內容"
+	},
+	"settingsGroupConnection": {
+		"message": "連線"
+	},
+	"settingsGroupOther": {
+		"message": "其它設定"
+	},
+	"settingsGroupHelp": {
+		"message": "幫助"
+	},
+	"lblProtocol": {
+		"message": "協定"
+	},
+	"tooltipProtocol": {
+		"message": "指定您要使用 HTTP 或安全的 HTTPS。 HTTPS 必須在 DSM 中啟用並支援所有的 DSM 版本，除了 DSM4.0-2166, 2197 and 2198。 如果您是這些版本之一，請更新您的 DiskStation。"
+	},
+	"lblDomain": {
+		"message": "網域或 IP"
+	},
+	"placeholderDomain": {
+		"message": "例如: syno.example.com 或 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "DiskStation 的網域或 IP。 這可以是內部或外部 IP 位址 (例如 10.0.0.1)。 輸入網域不含 http:\/\/ 或 https:\/\/ (例如 syno.example.com)"
+	},
+	"lblPort": {
+		"message": "連接埠"
+	},
+	"tooltipPort": {
+		"message": "這是用來存取 DSM 的相同連接埠。 預設連接埠 HTTP 是 5000 和 HTTPS 是 5001。 如果您要使用此擴充套件連接到不同網路上的 DiskStation，您將需要轉送此連接埠。"
+	},
+	"lblUsername": {
+		"message": "使用者名稱"
+	},
+	"tooltipUsername": {
+		"message": "輸入 DiskStation 帳戶的使用者名稱。 此帳戶必須有權限使用 Download Station。"
+	},
+	"lblPassword": {
+		"message": "密碼"
+	},
+	"btnSaveSettings": {
+		"message": "儲存設定"
+	},
+	"btnTestConnection": {
+		"message": "測試連線"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "隱藏種子 trackers。"
+	},
+	"lblUpdateInBackground": {
+		"message": "背景重新整理下載狀態 (需要通知)。"
+	},
+	"lblRefreshInterval": {
+		"message": "重置間隔(sec)"
+	},
+	"lblEmail": {
+		"message": "電子郵件"
+	},
+	"tooltipEmail": {
+		"message": "如果您有使用 PayPal 進行捐贈，您可以輸入電子郵件。 這將停用每月通知."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "使用Download Station開啟"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "使用Download Station 擴充套件打開以下類型"
+	},
+	"settingsSaved": {
+		"message": "設定儲存成功."
+	},
+	"settingsSavedMessage": {
+		"message": "您的設定已成功儲存."
+	},
+	"testDialogSuccess": {
+		"message": "連線成功"
+	},
+	"testResultSuccess": {
+		"message": "您的連線正常！ 儲存您的設定以開始使用擴充套件。"
+	},
+	"testDialogFailed": {
+		"message": "測試失敗"
+	},
+	"clickToConfigure": {
+		"message": "點選以進行設定網路配置"
+	},
+	"loggingIn": {
+		"message": "正在登入..."
+	},
+	"noActiveTasks": {
+		"message": "沒有正在下載的工作"
+	},
+	"btnAddTask": {
+		"message": "加入工作"
+	},
+	"btnClearQueue": {
+		"message": "清除已完成任務"
+	},
+	"btnPauseAll": {
+		"message": "全部暫停"
+	},
+	"btnResumeAll": {
+		"message": "全部重置"
+	},
+	"btnOpenDownloadStation": {
+		"message": "開啟Download Station瀏覽器頁面"
+	},
+	"btnPause": {
+		"message": "暫停"
+	},
+	"btnResume": {
+		"message": "重新命名"
+	},
+	"btnStartSeeding": {
+		"message": "開始做種"
+	},
+	"btnRemove": {
+		"message": "移除"
+	},
+	"btnCancel": {
+		"message": "取消"
+	},
+	"urlInputPlaceholder": {
+		"message": "填入下載URL"
+	},
+	"urlFormAddBtn": {
+		"message": "加入"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ 總計 $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "下載到 $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "進階下載…"
+	},
+	"downloadTaskAdding": {
+		"message": "正在加入工作..."
+	},
+	"downloadTaskAccepted": {
+		"message": "下載工作已接受"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "加入下載工作失敗"
+	},
+	"task_status_waiting": {
+		"message": "正在等候"
+	},
+	"task_status_downloading": {
+		"message": "正在下載"
+	},
+	"task_status_paused": {
+		"message": "暫停"
+	},
+	"task_status_finishing": {
+		"message": "正在完成"
+	},
+	"task_status_finished": {
+		"message": "已完成"
+	},
+	"task_status_hash_checking": {
+		"message": "正在檢查"
+	},
+	"task_status_seeding": {
+		"message": "正在作種"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "等待下載"
+	},
+	"task_status_extracting": {
+		"message": "解壓縮中"
+	},
+	"task_status_error": {
+		"message": "錯誤"
+	},
+	"task_status_broken_link": {
+		"message": "連結錯誤"
+	},
+	"task_status_destination_not_exist": {
+		"message": "目的地資料夾不存在"
+	},
+	"task_status_destination_denied": {
+		"message": "無法存取目的地資料夾"
+	},
+	"task_status_disk_full": {
+		"message": "磁碟已滿"
+	},
+	"task_status_quota_reached": {
+		"message": "容量已滿"
+	},
+	"task_status_timeout": {
+		"message": "連線逾時"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Torrent 檔案無效"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "重複 Torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "檔案不存在"
+	},
+	"task_status_required_premium_account": {
+		"message": "需要 Premium 帳戶"
+	},
+	"task_status_extract_failed": {
+		"message": "解壓縮失敗"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "解壓縮失敗: 錯誤的密碼"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "解壓縮失敗: 無效的壓縮檔"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "解壓縮失敗: 容量已滿"
+	},
+	"task_status_missing_python": {
+		"message": "Python尚未安裝"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "解壓縮失敗: 磁碟已滿"
+	},
+	"task_status_unknown": {
+		"message": "未知的狀態"
+	},
+	"api_error_couldNotConnect": {
+		"message": "無法連線到 DiskStation。"
+	},
+	"api_error_unknownError": {
+		"message": "發生未知的錯誤"
+	},
+	"api_error_invalidParameter": {
+		"message": "發生未知的錯誤"
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "您的Download Station 尚未運行或版本過舊"
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "您的Download Station 尚未運行或版本過舊"
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "您的Download Station 版本不支持本功能"
+	},
+	"api_error_featureNotSupported": {
+		"message": "您的Download Station 版本不支持本功能"
+	},
+	"api_error_permissionDenied": {
+		"message": "使用者沒有權限使用Download Station"
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "不合法使用者名稱與密碼"
+	},
+	"api_error_accountDisabled": {
+		"message": "該帳戶不可使用"
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "使用者需要使用兩步驟認證，本擴展程序不支持兩步驟認證。"
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "使用者需要使用兩步驟認證，本擴展程序不支持兩步驟認證。"
+	},
+	"api_error_fileUploadFailed": {
+		"message": "檔案上傳Download Station 失敗"
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "已到達Download Station下載工作上限"
+	},
+	"api_error_destinationDenied": {
+		"message": "使用者沒有權限選擇目的地資料夾"
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "目的地資料夾不存在"
+	},
+	"api_error_invalidTaskAction": {
+		"message": "該操作不支援此工作"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Download Station尚未指定預設下載資料夾，請在Download Station中設定預設下載資料夾位置。"
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "無法從Magnet連結取得種子檔案"
+	},
+	"downloadFinished": {
+		"message": "下載完成"
+	},
+	"downloadsFinished": {
+		"message": "下載完成"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ 工作完成",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "這是免費擴充套件，但需要大量的時間開發。 請考慮捐贈以支持此擴充套件。 按一下此進行捐贈。"
+	},
+	"newVersionAvailable": {
+		"message": "Synology Download Station 擴充套件的新版本可以使用。 按一下此下載最新版本。"
+	},
+	"dialogAdvancedTitle": {
+		"message": "對下載任務附加訊息"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "連結"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "請於每一行輸入一條連結或利用空白鍵來分開每條連結"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "使用者名稱"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP或FTP的使用者名稱 (可選取)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "密碼"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP或FTP的密碼 (可選取)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "解壓縮密碼"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "輸入密碼以解壓縮檔案（可選取，自動解壓縮可於Download Station的設定開啟）"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "您的DSM版本不支援解壓縮密碼。您需要DSM 4.2或以後的版本才可以輸入解壓縮密碼。"
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "取消"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "加入下載"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station 已有超過$limit$個下載任務。請移除舊的下載以顯示新的任務。",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

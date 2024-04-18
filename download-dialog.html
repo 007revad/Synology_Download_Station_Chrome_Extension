@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="css/download-dialog.css" />
+</head>
+<body>
+	<div id="add-download" class="modal fade" data-keyboard="false" autocomplete="off">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title" data-message="dialogAdvancedTitle"></h3>
+				</div>
+				<div class="modal-body row">
+					<form class="col-md-6">
+						<div class="form-group">
+							<label class="control-label" for="urls" data-message="dialogAdvancedLblUrls"></label>
+							<textarea class="form-control"
+								id="urls"
+								data-bind="value: urls, event: { input: setUrlsTextareaHeight, change: extractUrls }"
+								data-attr-message="placeholder|dialogAdvancedTooltipUrls"
+								required></textarea>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label" for="username" data-message="dialogAdvancedLblUsername"></label>
+								<input class="form-control" type="text" id="username"
+									data-bind="value: username"
+									data-attr-message="placeholder|dialogAdvancedTooltipUsername">
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label" for="password" data-message="dialogAdvancedLblPassword"></label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="password"
+									data-bind="value: password"
+									data-attr-message="placeholder|dialogAdvancedTooltipPassword">
+								<span class="input-group-btn">
+									<button class="btn btn-default" data-toggle-show-password="password" tabindex="-1">
+										<i class="fa fa-eye"></i>
+									</button>
+								</span>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="control-label" for="unzip-password" data-message="dialogAdvancedLblUnzipPassword"></label>
+							<div class="input-group">
+								<input class="form-control" type="password" id="unzip-password"
+									data-bind="value: unzipPassword"
+									data-attr-message="placeholder|dialogAdvancedLblUnzipPassword,data-content|dialogAdvancedTooltipUnzipPassword">
+								<span class="input-group-btn">
+									<button class="btn btn-default" data-toggle-show-password="unzip-password" tabindex="-1">
+										<i class="fa fa-eye"></i>
+									</button>
+								</span>
+							</div>
+						</div>
+					</form>
+					
+					<!-- Folder selection -->
+					<div class="col-md-6">
+						<label class="control-label" data-message="dialogAdvancedLblDestinationFolder"></label>
+						<div class="alert alert-warning" 
+                             data-bind="visible: customDestinationFolderSupported() === false">
+                                 Your Download Station package version does not support destination folder selection.
+                        </div>
+						
+						<!-- ko if: customDestinationFolderSupported() !== false -->
+    						<div class="checkbox">
+    							<label>
+    								<input type="checkbox" data-bind="checked: useCustomDestinationFolder, disabled: customDestinationFolderSupported() == null" checked>
+    								<span data-message="dialogAdvancedCheckboxDestinationFolder"></span>
+    							</label>
+    						</div>
+    						<div class="folder-selection" data-bind="click: enableCustomDestinationFolder, css: { disabled: !useCustomDestinationFolder() }">
+    							<div class="folder-selection-overlay"></div>
+    							
+    							<ul class="breadcrumb folderpath" data-bind="foreach: folderPath">
+    								<li data-bind="click: $root.setCurrentFolder, attr: { title: path }">
+    									
+    									<!-- ko if: $data.path() == $root.currentFolder().path() -->
+    										<span>
+    											<i class="fa fa-home fa-fw" data-bind="visible: !parentFolder"></i>
+    											<span data-bind="visible: parentFolder, text: name"></span>
+    										</span>
+    									<!-- /ko -->
+    									
+    									<!-- ko if: $data.path() != $root.currentFolder().path() -->
+    										<a href="#" data-bind="visible: $data.path() != $root.currentFolder().path()">
+    											<i class="fa fa-home fa-fw" data-bind="visible: !parentFolder"></i>
+    											<span data-bind="visible: parentFolder, text: name"></span>
+    										</a>
+    									<!-- /ko -->
+    								</li>
+    							</ul>
+    							
+    							<!-- Current folder contents -->
+    							<div class="file-list" data-bind="with: currentFolder">
+    								<div class="list-group">
+    									<!-- ko with: parentFolder -->
+    										<!--a href="#" class="list-group-item list-group-item-info" data-bind="click: $root.setCurrentFolder, attr: { title: path }">
+    											<i class="fa fa-fw fa-level-up fa-flip-horizontal"></i>
+    											<span data-bind="text: name"></span>
+    										</a-->
+    									<!-- /ko -->
+    									
+    									<!-- ko if: loadingFolders -->
+    										<span class="list-group-item list-group-item-warning">
+    											<i class="fa fa-fw fa-spinner fa-spin"></i>
+    											<span data-message="dialogAdvancedFolderSelectionLoadingFolders"></span>
+    										</span>
+    									<!-- /ko -->
+    								
+    									<!-- ko if: !loadingFolders() && !errorMessage() && folders().length == 0 -->
+    										<span class="list-group-item list-group-item-warning">This folder does not contain any subfolders</span>
+    									<!-- /ko -->
+    									
+    									<!-- ko if: !loadingFolders() && errorMessage -->
+    										<span class="list-group-item list-group-item-danger error-message">
+    											<i class="fa fa-fw fa-exclamation-triangle"></i>
+    											<span data-bind="text: errorMessage"></span>
+    										</span>
+    									<!-- /ko -->
+    									
+    									<!-- ko foreach: folders -->
+    										<a href="#" class="list-group-item" data-bind="click: $root.setCurrentFolder, attr: { title: path }, css: { 'list-group-item-danger': remove.confirm(), editing: name.editing }">
+    											<i class="fa fa-fw fa-folder-o"></i>
+    											<i class="fa fa-fw fa-folder-open-o"></i>
+    											
+    											<!-- ko if: !name.editing() -->
+    												<span class="text-label" data-bind="text: name"></span>
+    												
+    												<!-- ko if: !remove.confirm() -->
+    													<!--button data-bind="visible: !$parent.readOnly(), click: remove, clickBubble: false"
+    															class="btn btn-xs btn-link pull-right hover-button">
+    																<i class="fa fa-fw fa-trash-o"></i>
+    													</button-->
+    													
+    													<button data-bind="visible: !$parent.readOnly(), click: rename, clickBubble: false"
+    															class="btn btn-xs btn-link pull-right hover-button">
+    																<i class="fa fa-fw fa-pencil"></i>
+    													</button>
+    												<!-- /ko -->
+    												
+    												<!-- ko if: remove.confirm() -->
+    													<button data-bind="click: removeCancel, clickBubble: false, disable: remove.removing"
+    															class="btn btn-xs btn-link pull-right">
+    																<i class="fa fa-fw fa-times"></i>
+    													</button>
+    													
+    													<button data-bind="click: removeConfirm, clickBubble: false, disable: remove.removing, bsTooltip: { visible: remove.error, title: remove.error, viewport: '#folder-list' }"
+    															class="btn btn-xs btn-link pull-right">
+    																<i class="fa fa-fw fa-check"></i>
+    													</button>
+    												<!-- /ko -->
+    											<!-- /ko -->
+    											
+    											<!-- ko if: name.editing() -->
+    												<input data-bind="value: name.unsaved, valueUpdate: 'input', hasFocus: name.focus, disable: name.saving, bsTooltip: { visible: name.error, title: name.error, viewport: '#folder-list' }, event: {keyup: renameKeyUp }" type="text" />
+    												
+    												<button data-bind="click: renameCancel, clickBubble: false, disable: name.saving,"
+    														class="btn btn-xs btn-link pull-right">
+    															<i class="fa fa-fw fa-times"></i>
+    												</button>
+    												
+    												<button data-bind="click: renameSave, clickBubble: false, disable: name.saving,"
+    														class="btn btn-xs btn-link pull-right">
+    															<i class="fa fa-fw fa-check"></i>
+    												</button>
+    											<!-- /ko -->
+    										</a>
+    									<!-- /ko -->
+    								</div>
+    							</div>
+    							
+    							<div class="row" data-bind="visible: !currentFolder().readOnly() && !currentFolder().errorMessage()">
+    								<div class="col-xs-12">
+    									<form class="input-group" data-bind="submit: createNewFolder, css: { 'has-error': newFolderName() && !newFolderNameValid() }">
+    										<input data-bind="value: newFolderName, valueUpdate: 'input', attr: { disabled: newFolderSubmitting() }" type="text" class="form-control" placeholder="New folder name" maxlength="255" />
+    										<span class="input-group-btn">
+    											<button class="btn btn-primary" type="submit" data-bind="click: createNewFolder, attr: { disabled: !newFolderNameValid() || newFolderSubmitting() }">
+    												<i class="fa fa-fw fa-plus" data-bind="visible: !newFolderSubmitting()"></i>
+    												<i class="fa fa-fw fa-spinner fa-spin" data-bind="visible: newFolderSubmitting()"></i>
+    												<span>Create folder</span>
+    											</button>
+    										</span>
+    									</form>
+    									<div class="alert alert-danger" data-bind="visible: newFolderErrorMessage, text: newFolderErrorMessage"></div>
+    								</div>
+    							</div>
+    							
+    							<div class="alert alert-danger" data-bind="visible: useCustomDestinationFolder() && !currentFolder().loadingFolders() && !currentFolder().errorMessage() && currentFolder().readOnly">The current folder is read-only. It can't be used as a destination folder.</div>
+    						</div>
+                        <!-- /ko -->
+					</div>
+				</div>
+				<div class="modal-footer">
+					<span data-bind="visible: submitDownloadError(), text: submitDownloadError" class="text-danger"></span>
+					
+					<!-- <button type="button" class="btn btn-danger" data-dismiss="modal" data-message="dialogAdvancedBtnCancel"></button> -->
+					<button data-bind="click: submitDownload, attr: { disabled: !formValid() || submittingDownload() }" 
+							type="button"
+							class="btn btn-primary">
+						<i data-bind="visible: !submittingDownload()" class="fa fa-fw fa-plus"></i>
+						<i data-bind="visible: submittingDownload()" class="fa fa-fw fa-spinner fa-spin"></i>
+						<span data-message="dialogAdvancedBtnAddDownload"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/variables.js"></script>
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/jquery.deparam.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<script src="js/lib/knockout.js"></script>
+	<script src="js/browser-functions.js"></script>
+	<script src="js/download-dialog.js"></script>
+</body>
+</html>

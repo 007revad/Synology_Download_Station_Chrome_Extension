@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station pro Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "Spravujte stahování na svém Synology DiskStation ve svém prohlížeči."
+	},
+	"settingsGroupConnection": {
+		"message": "Spojení"
+	},
+	"settingsGroupOther": {
+		"message": "Další nastavení"
+	},
+	"settingsGroupHelp": {
+		"message": "Nápověda"
+	},
+	"lblProtocol": {
+		"message": "Protokol"
+	},
+	"tooltipProtocol": {
+		"message": "Určete, zda chcete použít HTTP nebo zabezpečené HTTPS. Podpora HTTPS musí být povolena v DSM a je podporována ve všech verzích systému DSM s výjimkou DSM4.0-2166, 2197 a 2198. Pokud máte jedenu z těchto verzí, aktualizujte váš DiskStation."
+	},
+	"lblDomain": {
+		"message": "Doména nebo IP"
+	},
+	"placeholderDomain": {
+		"message": "např. syno.example.com nebo 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Doména nebo IP adresa DiskStation. To může být interní nebo externí adresa IP (např. 10.0.0.1). Doménu zadejte bez http:\/\/ či https:\/\/ (např. syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Port"
+	},
+	"tooltipPort": {
+		"message": "Toto je stejný port, který používáte pro přístup DSM. Výchozí port je 5000 pro HTTP a 5001 pro HTTPS. Budete potřebovat, aby router přeposlal tento port, pokud chcete používat toto rozšíření i když nejste připojeni ke stejné síti jako DiskStation."
+	},
+	"lblUsername": {
+		"message": "Uživatelské jméno"
+	},
+	"tooltipUsername": {
+		"message": "Zadejte uživatelské jméno pro váš účet DiskStation. Tento účet musí mít oprávnění k použití Download Station."
+	},
+	"lblPassword": {
+		"message": "Heslo"
+	},
+	"btnSaveSettings": {
+		"message": "Uložit nastavení"
+	},
+	"btnTestConnection": {
+		"message": "Otestuj připojení"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Skrýt seedované torrenty"
+	},
+	"lblUpdateInBackground": {
+		"message": "Obnovovat stav stahování na pozadí (vyžadováno pro oznamování)."
+	},
+	"lblRefreshInterval": {
+		"message": "Interval obnovení (v sekundách)"
+	},
+	"lblEmail": {
+		"message": "E-mail"
+	},
+	"tooltipEmail": {
+		"message": "Zde můžete zadat svojí e-mail adresu, pokud jste přispěli přes PayPal. Tímto zakážete měsíční oznámení."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Otevřít pomocí Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Použijte Download Station rozšíření pro otevírání níže vybraných typů souborů."
+	},
+	"settingsSaved": {
+		"message": "Nastavení uloženo"
+	},
+	"settingsSavedMessage": {
+		"message": "Vaše změny byly úspěšně uloženy."
+	},
+	"testDialogSuccess": {
+		"message": "Spojení úspěšné"
+	},
+	"testResultSuccess": {
+		"message": "Vaše nastavení funguje! Pro pokračování uložte nastavení."
+	},
+	"testDialogFailed": {
+		"message": "Test selhal"
+	},
+	"clickToConfigure": {
+		"message": "Pro zadání přihlašovacích údajů klikněte zde."
+	},
+	"loggingIn": {
+		"message": "Přihlašuji..."
+	},
+	"noActiveTasks": {
+		"message": "Žádné úlohy ke stahování"
+	},
+	"btnAddTask": {
+		"message": "Přidej úlohu"
+	},
+	"btnClearQueue": {
+		"message": "Smazat dokončené úlohy"
+	},
+	"btnPauseAll": {
+		"message": "Pozastavit vše"
+	},
+	"btnResumeAll": {
+		"message": "Obnovit vše"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Otevřít webové rozhraní Download Station"
+	},
+	"btnPause": {
+		"message": "Pozastavit"
+	},
+	"btnResume": {
+		"message": "Obnovit"
+	},
+	"btnStartSeeding": {
+		"message": "Začít sdílet"
+	},
+	"btnRemove": {
+		"message": "Odstranit"
+	},
+	"btnCancel": {
+		"message": "Zrušit"
+	},
+	"urlInputPlaceholder": {
+		"message": "Zadej URL stahování"
+	},
+	"urlFormAddBtn": {
+		"message": "Přidat"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ z $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Stahovat pomocí $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Pokročilé stahování…"
+	},
+	"downloadTaskAdding": {
+		"message": "Přidávám úlohu..."
+	},
+	"downloadTaskAccepted": {
+		"message": "Úloha stahování byla přijata"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Chyba přidávání úlohy stahování"
+	},
+	"task_status_waiting": {
+		"message": "Čekám"
+	},
+	"task_status_downloading": {
+		"message": "Stahuji"
+	},
+	"task_status_paused": {
+		"message": "Pozastaveno"
+	},
+	"task_status_finishing": {
+		"message": "Dokončuji"
+	},
+	"task_status_finished": {
+		"message": "Hotovo"
+	},
+	"task_status_hash_checking": {
+		"message": "Kontroluji"
+	},
+	"task_status_seeding": {
+		"message": "Sdílim"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Čekám na stažení"
+	},
+	"task_status_extracting": {
+		"message": "Rozbaluji"
+	},
+	"task_status_error": {
+		"message": "Chyba"
+	},
+	"task_status_broken_link": {
+		"message": "Špatná adresa"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Cílová složka neexistuje"
+	},
+	"task_status_destination_denied": {
+		"message": "Přístup do cílové složky zakázán"
+	},
+	"task_status_disk_full": {
+		"message": "Disk je plný"
+	},
+	"task_status_quota_reached": {
+		"message": "Překročena kvóta"
+	},
+	"task_status_timeout": {
+		"message": "Vypršel časový limit připojení"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Špatný torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Duplicitní torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "Soubor neexistuje"
+	},
+	"task_status_required_premium_account": {
+		"message": "Je potřeba prémiový přístup"
+	},
+	"task_status_extract_failed": {
+		"message": "Rozbalování selhalo"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Rozbalování selhalo: špatné heslo"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Rozbalování selhalo: poškozený archiv"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Rozbalování selhalo: překročena kvóta"
+	},
+	"task_status_missing_python": {
+		"message": "Python balíček není instalován"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Rozbalování selhalo: disk je plný"
+	},
+	"task_status_unknown": {
+		"message": "Neznámý stav"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Nemůžu se připojit k DiskStation."
+	},
+	"api_error_unknownError": {
+		"message": "Došlo k neznámé chybě."
+	},
+	"api_error_invalidParameter": {
+		"message": "Došlo k neznámé chybě."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Váše aplikace Download Station není spuštěna nebo je příliš staré verze."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Váše aplikace Download Station není spuštěna nebo je příliš staré verze."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Vaše verze Download Station nepodporuje tuto funkci."
+	},
+	"api_error_featureNotSupported": {
+		"message": "Vaše verze Download Station nepodporuje tuto funkci."
+	},
+	"api_error_permissionDenied": {
+		"message": "Tento uživatel nemá oprávnění používat Download Station."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Špatné uživatelské jméno nebo heslo."
+	},
+	"api_error_accountDisabled": {
+		"message": "Tento účet je zakázán."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Tento uživatel má povolenou autorizaci ve dvou krocích. Toto rozšíření takovéto účty nepodporuje."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Tento uživatel má povolenou autorizaci ve dvou krocích. Toto rozšíření takovéto účty nepodporuje."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Chyba při uploadování souboru na Download Station-."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Bylo dosaženo maximálního počtu úloh Download Station."
+	},
+	"api_error_destinationDenied": {
+		"message": "Tento uživatel nemá práva stahovat do cílové složky."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Cílová složka neexistuje."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Akce pro tuto úlohu není podporována."
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Není nastavena cílová složka pro Download Station. Prosím nastavte cílovou složku v nastavní Download Station."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Nelze najít torrent soubor nebo magnet link"
+	},
+	"downloadFinished": {
+		"message": "Stahování dokončeno"
+	},
+	"downloadsFinished": {
+		"message": "Stahování dokončeno"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ úloh dokončeno",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Toto rozšíření je zdarma, ale jeho vývoj stojí spoustu času. Prosím přispějte na podporu tohoto rozšíření. Klikněte zde pro přispění."
+	},
+	"newVersionAvailable": {
+		"message": "Je dostupná nová verze rozšíření Synology Download Station. Pro stažení nejnovější verze klikněte zde."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Přidat stahování"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL adresy"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Vložte každou URL adresu na nový řádek nebo oddělte mezerníkem"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Uživatelské jméno"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "Uživatelské jméno pro HTTP nebo FTP (volitelné)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Heslo"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "Heslo pro HTTP nebo FTP (volitelné)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Heslo pro rozbalení"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Zadejte heslo pro  rozbalování kompresovaných souboru (volitelné, automatické rozbalování může být povoleno v nastavení Download Station)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "Vaše verze DSM nepodporuje heslo pro rozbalení. Potřebujete DSM 4.2 a novější pro zadání heslo pro rozbalení."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Zrušit"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Přidat stahování"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station obsahuje více než $limit$ stahování.  Nové úkoly mohou být zobrazeny pouze pokud odstraníte ty staré.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

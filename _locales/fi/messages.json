@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Synology Download Station Google Chrome™:lle"
+	},
+	"chromeExtensionDescription": {
+		"message": "Hallitse Synology DiskStation latauksiasi selaimella."
+	},
+	"settingsGroupConnection": {
+		"message": "Yhteys"
+	},
+	"settingsGroupOther": {
+		"message": "Muut asetukset"
+	},
+	"settingsGroupHelp": {
+		"message": "Ohje"
+	},
+	"lblProtocol": {
+		"message": "Protokolla"
+	},
+	"tooltipProtocol": {
+		"message": "Valitse HTTP tai suojattu HTTPS. HTTPS on oltava aktivoitu DSM:ssa ja se on tuettu muissa versioissa paitsi DSM4.0-2166, 2197 ja 2198. Päivitä DiskStation jos käytössäsi on jokin näistä versioista."
+	},
+	"lblDomain": {
+		"message": "Domain tai IP"
+	},
+	"placeholderDomain": {
+		"message": "esim. syno.example.com tai 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "DiskStation domain tai IP-osoite. Voi olla yksityinen tai julkinen IP-osoite (esim. 10.0.0.1) tai domain ilman etuliitteitä http:\/\/ tai https:\/\/ (esim. syno.example.com)"
+	},
+	"lblPort": {
+		"message": "Portti"
+	},
+	"tooltipPort": {
+		"message": "Tämä on sama portti jota DSM web-käyttöliittymä käyttää. Oletukset ovat 5000 HTTP ja 5001 HTTPS. Tämä portti pitää olla ohjattuna, jos käytät tätä laajennusta eri verkosta kuin missä DiskStation on."
+	},
+	"lblUsername": {
+		"message": "Käyttäjätunnus"
+	},
+	"tooltipUsername": {
+		"message": "Syötä DiskStation käyttäjätunnus. Download Station on oltava valittuna käyttöoikeuksista."
+	},
+	"lblPassword": {
+		"message": "Salasana"
+	},
+	"btnSaveSettings": {
+		"message": "Tallenna asetukset"
+	},
+	"btnTestConnection": {
+		"message": "Testaa yhteys"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Piilota jaettavat torrentit."
+	},
+	"lblUpdateInBackground": {
+		"message": "Päivitä latausten tila taustalla (vaaditaan ilmoituksia varten)."
+	},
+	"lblRefreshInterval": {
+		"message": "Päivitysväli (sekuntia)"
+	},
+	"lblEmail": {
+		"message": "Sähköposti"
+	},
+	"tooltipEmail": {
+		"message": "Voit syöttää sähköpostiosoitteesi, jos olet tehnyt PayPal lahjoituksen. Tämä poistaa kuukausittaisen muistutuksen käytöstä."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Lataustyyppit"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Valitut lataustyyppit avataan Download Station laajennuksella."
+	},
+	"settingsSaved": {
+		"message": "Asetukset tallennettu"
+	},
+	"settingsSavedMessage": {
+		"message": "Muutokset tallennettu onnistuneesti."
+	},
+	"testDialogSuccess": {
+		"message": "Yhteys toimii"
+	},
+	"testResultSuccess": {
+		"message": "Yhteys toimii! Tallenna asetukset aloittaaksesi laajennuksen käytön."
+	},
+	"testDialogFailed": {
+		"message": "Testaus epäonnistui"
+	},
+	"clickToConfigure": {
+		"message": "Klikkaa tästä syöttääksesi yhteysasetukset."
+	},
+	"loggingIn": {
+		"message": "Kirjaudutaan sisään.."
+	},
+	"noActiveTasks": {
+		"message": "Ei aktiivisia lataustehtäviä"
+	},
+	"btnAddTask": {
+		"message": "Lisää lataustehtävä"
+	},
+	"btnClearQueue": {
+		"message": "Tyhjennä valmistuneet lataustehtävät"
+	},
+	"btnPauseAll": {
+		"message": "Pysäytä kaikki"
+	},
+	"btnResumeAll": {
+		"message": "Jatka kaikkia"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Avaa Download Station www-käyttöliittymä"
+	},
+	"btnPause": {
+		"message": "Pysäytä"
+	},
+	"btnResume": {
+		"message": "Jatka"
+	},
+	"btnStartSeeding": {
+		"message": "Aloita jakaminen"
+	},
+	"btnRemove": {
+		"message": "Poista"
+	},
+	"btnCancel": {
+		"message": "Peruuta"
+	},
+	"urlInputPlaceholder": {
+		"message": "Syötä latauksen URL"
+	},
+	"urlFormAddBtn": {
+		"message": "Lisää"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ \/ $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Lataa kohteella $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Lataa lisäasetuksilla..."
+	},
+	"downloadTaskAdding": {
+		"message": "Lisätään lataustehtävä.."
+	},
+	"downloadTaskAccepted": {
+		"message": "Lataustehtävä hyväksytty"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Lataustehtävän lisääminen epäonnistui"
+	},
+	"task_status_waiting": {
+		"message": "Odotetaan"
+	},
+	"task_status_downloading": {
+		"message": "Ladataan"
+	},
+	"task_status_paused": {
+		"message": "Pysäytetty"
+	},
+	"task_status_finishing": {
+		"message": "Viimeistellään"
+	},
+	"task_status_finished": {
+		"message": "Valmis"
+	},
+	"task_status_hash_checking": {
+		"message": "Tarkistetaan"
+	},
+	"task_status_seeding": {
+		"message": "Jaetaan"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "Odotetaan latausta"
+	},
+	"task_status_extracting": {
+		"message": "Puretaan"
+	},
+	"task_status_error": {
+		"message": "Virhe"
+	},
+	"task_status_broken_link": {
+		"message": "Virheellinen linkki"
+	},
+	"task_status_destination_not_exist": {
+		"message": "Kohdekansiota ei ole olemassa"
+	},
+	"task_status_destination_denied": {
+		"message": "Ei käyttöoikeutta kohdekansioon"
+	},
+	"task_status_disk_full": {
+		"message": "Levy täynnä"
+	},
+	"task_status_quota_reached": {
+		"message": "Kiintiö täynnä"
+	},
+	"task_status_timeout": {
+		"message": "Yhteyden aikakatkaisu"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Virheellinen torrent"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Duplikaatti torrent"
+	},
+	"task_status_file_not_exist": {
+		"message": "Tiedostoa ei löydy"
+	},
+	"task_status_required_premium_account": {
+		"message": "Premium tili vaaditaan"
+	},
+	"task_status_extract_failed": {
+		"message": "Purkaminen epäonnistui"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Purkaminen epäonnistui: virheellinen salasana"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Purkaminen epäonnistui: virheellinen paketti"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Purkaminen epäonnistui: kiintiö täynnä"
+	},
+	"task_status_missing_python": {
+		"message": "Python ei ole asennettu"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Purkaminen epäonnistui: levy täynnä"
+	},
+	"task_status_unknown": {
+		"message": "Tuntematon"
+	},
+	"api_error_couldNotConnect": {
+		"message": "DiskStation:iin ei voida yhdistää."
+	},
+	"api_error_unknownError": {
+		"message": "Tuntematon virhe."
+	},
+	"api_error_invalidParameter": {
+		"message": "Tuntematon virhe."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "Download Station ei ole käynnissä tai se on liian vanha versio."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "Download Station ei ole käynnissä tai se on liian vanha versio."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "Download Station versiosi ei tue tätä ominaisuutta."
+	},
+	"api_error_featureNotSupported": {
+		"message": "Download Station versiosi ei tue tätä ominaisuutta."
+	},
+	"api_error_permissionDenied": {
+		"message": "Download Station käyttöoikeus puuttuu."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Virheellinen käyttäjätunnus tai salasana."
+	},
+	"api_error_accountDisabled": {
+		"message": "Käyttäjätili on poistettu käytöstä."
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Käyttäjän tunnistus on kaksivaiheinen. Tämä laajennus ei tue kaksivaiheista tunnistautumista."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Käyttäjän tunnistus on kaksivaiheinen. Tämä laajennus ei tue kaksivaiheista tunnistautumista."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Tiedoston lähetys Download Station:iin epäonnistui."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "Download Station yhtäaikaisten tehtävien määrä on täyttynyt."
+	},
+	"api_error_destinationDenied": {
+		"message": "Käyttäjällä ei ole oikeutta ladata kohdekansioon."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "Kohdekansiota ei ole olemassa."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Toiminto ei ole sallittu tässä tehtävässä"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Latauskansiota ei ole määritetty. Määritä kansio Download Station asetuksissa."
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Magnet linkin osoittamaa torrent tiedostoa ei löydy"
+	},
+	"downloadFinished": {
+		"message": "Lataus valmistunut"
+	},
+	"downloadsFinished": {
+		"message": "Lataukset valmistuneet"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ latausta valmistunut",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Tämä on ilmainen laajennus, mutta kehitys vie paljon aikaa. Voit tukea laajennuksen kehitystä tekemällä lahjoituksen klikkaamalla tästä."
+	},
+	"newVersionAvailable": {
+		"message": "Synology Download Station laajennuksesta on saatavilla uusi versio. Klikkaa tästä ladataksesi uusimman version."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Lisää lataus"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Syötä jokainen URL omalle rivilleen tai välilyönnillä erotettuna"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Käyttäjätunnus"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "HTTP tai FTP käyttäjätunnus (vapaaehtoinen)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Salasana"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "HTTP tai FTP salasana (vapaaehtoinen)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Purkamisen salasana"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Syötä salasana pakattujen tiedostojen purkua varten (vapaaehtoinen, automaattinen purku voidaan ottaa käyttöön Download Station:n asetuksista)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "DSM versio ei tue purkamisen salanaa. Päivitä DSM versioon 4.2 tai uudempaan käyttääksesi purkamisen salasanaa."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Peruuta"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Lisää lataus"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "Download Station:ssa enemmän kuin $limit$ latausta. Uudet lataukset näytetään vasta kun poistat vanhempia.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}

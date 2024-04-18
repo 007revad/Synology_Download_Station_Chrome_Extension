@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Synology Download Station extension settings</title>
+	<meta charset="utf-8" />
+	<meta name="twitter:widgets:csp" content="on">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+	<link rel="stylesheet" type="text/css" href="css/options.css" />
+	
+	<script src="js/variables.js"></script>
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<script src="js/lib/showdown.min.js"></script>
+	<script src="js/browser-functions.js"></script>
+	<script src="js/options.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1><img src="Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station</h1>
+		
+		<a id="donate-button" href="#" target="_blank"><img src="css/img/btn_donate.gif" alt="Donate" /></a>
+		
+		<hr />
+		
+		<div class="alert alert-warning">
+    		<strong>Important:</strong> This extension only supports DSM 4.2 and later. Is your device running an older DSM version? Please check <a href="https://www.synology.com/support/download" target="_blank">Synology.com</a> to see if you can update your DSM version or download an old version of this extension from <a href="https://www.download-station-extension.com/" target="_blank">download-station-extension.com</a>.
+		</div>
+		
+		<div class="tabbable tabs-left">
+			<ul id="menu" class="nav nav-tabs" style="margin-top: 40px; height: 450px;">
+				<li class="active"><a href="#connection" data-toggle="tab" data-message="settingsGroupConnection"></a></li>
+				<li><a href="#other-settings" data-toggle="tab" data-message="settingsGroupOther"></a></li>
+				<li><a href="https://www.download-station-extension.com/faq" target="_blank">FAQ <i class="fa fa-external-link"></i></a></li>
+				<li><a href="#about" data-toggle="tab" data-message="settingsGroupHelp"></a></li>
+				<li><a href="#changelog" data-toggle="tab">Changelog</a></li>
+			</ul>
+			<div class="tab-content">
+				<form id="connection" class="tab-pane fade in active form-horizontal" autocomplete="off">
+					<fieldset>
+						<legend data-message="settingsGroupConnection"></legend>
+						
+						<div class="form-group row hidden">
+							<div class="col-sm-offset-3 col-sm-9 btn-group">
+								<button id="disableQuickConnect" type="button" class="btn btn-default">Manual connection</button>
+								<button id="enableQuickConnect" type="button" class="btn btn-default">
+									<span>QuickConnect</span>
+									<span class="label label-warning">Experimental</span>
+								</button>
+							</div>
+						</div>
+						
+						<!--div id="quickconnect-settings" style="display: none;">
+							<div class="form-group row">
+								<label class="control-label col-sm-3" for="quickConnectId">QuickConnect ID</label>
+								<div class="col-sm-6">
+									<input class="form-control" type="text" id="quickConnectId" name="quickConnectId" placeholder="QuickConnect ID" required />
+								</div>
+							</div>
+						</div-->
+						
+						<div id="manual-settings">
+							<div class="form-group row">
+								<label class="control-label col-sm-3" data-message="lblProtocol"></label>
+								<div class="col-sm-2" data-attr-message="title|lblProtocol,data-content|tooltipProtocol">
+									<div class="radio">
+										<label><input type="radio" name="protocol" value="http://" required> HTTP</label>
+									</div>
+									<div class="radio">
+										<label><input type="radio" name="protocol" value="https://" required> HTTPS</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label class="control-label col-sm-3" for="url" data-message="lblDomain"></label>
+								<div class="col-sm-6">
+									<input class="form-control" type="text" id="url" name="url" data-attr-message="placeholder|placeholderDomain,title|lblDomain,data-content|tooltipDomain" />
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label class="control-label col-sm-3" for="port" data-message="lblPort"></label>
+								<div class="col-sm-2">
+									<input class="form-control" type="text" id="port" name="port" value="5000" data-attr-message="title|lblPort,data-content|tooltipPort"  />
+								</div>
+							</div>
+						</div>
+						
+						<hr>
+						
+						<div class="form-group row">
+							<label class="control-label col-sm-3" for="username" data-message="lblUsername"></label>
+							<div class="col-sm-6">
+								<input class="form-control" type="text" id="username" name="username" required data-attr-message="title|lblUsername,data-content|tooltipUsername" />
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label class="control-label col-sm-3" for="password" data-message="lblPassword"></label>
+							<div class="col-sm-6">
+								<input class="form-control" type="password" id="password" name="password" autocomplete="off" />
+							</div>
+						</div>
+						
+						<hr>
+						
+						<div class="form-group row">
+							<div class="col-sm-offset-3 col-sm-9">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="updateInBackground" name="updateInBackground" checked />
+										<span data-message="lblUpdateInBackground"></span>
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label class="control-label col-sm-3" for="backgroundUpdateInterval" data-message="lblRefreshInterval"></label>
+							<div class="col-sm-2">
+								<input class="form-control" type="number" id="backgroundUpdateInterval" name="backgroundUpdateInterval" value="20" min="5" max="10000" step="5" required />
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button class="btn btn-default" id="test-connection" type="button">
+									<i class="fa fa-flask"></i><i class="fa fa-spinner fa-spin" style="display: none;"></i> <span data-message="btnTestConnection"></span>
+								</button>
+								
+								<button class="btn btn-primary" type="submit">
+									<i class="fa fa-save"></i><i class="fa fa-spinner fa-spin" style="display: none;"></i> <span data-message="btnSaveSettings"></span>
+								</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<form class="tab-pane fade in form-horizontal" id="other-settings">
+					<fieldset>
+						<legend data-message="settingsGroupOther"></legend>
+						
+						<div class="form-group row">
+							<div class="col-sm-offset-3 col-sm-9">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" id="hideSeedingTorrents" name="hideSeedingTorrents" />
+										<span data-message="lblHideSeedingTorrents"></span>
+									</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label class="control-label col-sm-3" for="email" data-message="lblEmail"></label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<span class="input-group-addon">
+										<i id="email-addon" class="fa fa-envelope-o fa-fw"></i>
+										<i id="email-addon-checking" class="hidden fa fa-spinner fa-spin fa-fw"></i>
+										<i id="email-addon-success" class="hidden fa fa-check fa-fw"></i>
+									</span>
+									<input class="form-control" type="email" id="email" name="email" data-attr-message="title|lblEmail,data-content|tooltipEmail" placeholder="Email address used for donation" />
+								</div>
+								<span id="email-check-failed" class="hidden help-block text-warning">A donation with your email address could not be found. You can find the correct address in your confirmation email. Haven't received the confirmation yet? It can sometimes take a while for PayPal or Bitcoin to process the payment. You can check the status in your PayPal account.</span>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label class="control-label col-sm-3" data-message="lblOpenWithDownloadStation"></label>
+							
+							<div class="col-sm-6">
+								<span class="help-block" data-message="tooltipOpenWithDownloadStation"></span>
+								<div class="checkbox">
+									<label><input type="checkbox" name="openProtocols" value="magnet:?" /> Magnet torrents (magnet:?)</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" name="openProtocols" value="ed2k://" /> Emule (ed2k://)</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" name="openProtocols" value="thunder://" /> Thunder (thunder://)</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" name="openProtocols" value="flashget://" /> Flashget (flashget://)</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" name="openProtocols" value="qqdl://" /> QQDL (qqdl://)</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<div class="col-sm-offset-3 col-sm-9">
+								<button class="btn btn-primary">
+									<i class="fa fa-save"></i> <span data-message="btnSaveSettings"></span>
+								</button>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<div class="tab-pane fade in" id="about">
+					<fieldset>
+						<legend data-message="settingsGroupHelp"></legend>
+						
+						<p>If you've got questions, bugs to report or requests for new features, please contact me via the Synology forum.  You can use <a href="http://forum.synology.com/enu/viewtopic.php?f=10&amp;t=39713" target="_blank">this topic</a> for the Safari version and <a href="http://forum.synology.com/enu/viewtopic.php?f=10&amp;t=44074" target="_blank">this topic</a> for the Google Chrome version of the extension. Please check the <a href="https://www.download-station-extension.com/faq" target="_blank">FAQ-section</a> before posting your question!</p>
+						
+						<h4>Translation</h4>
+						
+						<p>Special thanks to the following people for translating this extension:</p>
+						
+						<div class="row">
+							<ul class="col-sm-6 list-unstyled">
+								<li><strong>Arabic:</strong> <a href="https://www.linkedin.com/in/laithsaid" target="_blank">Laith Said</a></li>
+								<li><strong>Brazilian Portuguese:</strong> Iury Russowsky</li>
+								<li><strong>Chinese:</strong> Redtank</li>
+								<li><strong>Finnish:</strong> Seppo M&auml;ki-Torkko</li>
+								<li><strong>French:</strong> <a href="https://www.linkedin.com/in/romainarquilliere" target="_blank">Romain Arquillière</a></li>
+								<li><strong>German:</strong> Jonah</li>
+								<li><strong>Hungarian:</strong> Fabon Imre</li>
+								<li><strong>Italian:</strong> <a href="http://www.turbino.net" target="_blank">Walter</a></li>
+							</ul>
+							<ul class="col-sm-6 list-unstyled">
+								<li><strong>Japanese:</strong> Takagi Yasuyuki</li>
+								<li><strong>Polish:</strong> Mikhnal</li>
+								<li><strong>Portuguese:</strong> Luis Faria</li>
+								<li><strong>Serbian:</strong> Djura Topalov</li>
+								<li><strong>Spanish:</strong> <a href="https://unamenos.wordpress.com" target="_blank">Unamenos</a></li>
+								<li><strong>Swedish:</strong> Henrik Malinowski</li>
+								<li><strong>Taiwanese:</strong> Noah.Lu</li>
+							</ul>
+						</div>
+						
+						<p>Have you found a mistake in the translation or do you want to help translating the extension into your language? Check <a href="http://www.download-station-extension.com/translate" target="_blank">this website</a> for more information.</p>
+						
+						<h4>License info</h4>
+						
+						<p>This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nd/3.0/">Creative Commons Attribution-NoDerivs 3.0 Unported License</a> (<a data-toggle="modal" href="license.html" data-target="#license-modal">full license text</a>).</p>
+						
+						<p>This extension uses the following open-source projects:</p>
+						
+						<ul>
+							<li><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+							<li><a href="http://knockoutjs.com/" target="_blank">Knockout</a></li>
+							<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+							<li><a href="http://fontawesome.io/" target="_blank">Font Awesome</a></li>
+							<li><a href="https://github.com/showdownjs/showdown" target="_blank">Showdown</a></li>
+							<li><a href="http://www.typescriptlang.org/" target="_blank">TypeScript</a></li>
+						</ul>
+						
+					</fieldset>
+				</div>
+				<div class="tab-pane fade in" id="changelog">
+					<fieldset id="changelog-content"></fieldset>
+				</div>
+			</div>
+		</div>
+		
+		<div class="text-center muted"><small>Version <span id="about-extension-version"></span></small></div>
+	</div>
+	
+	<div id="license-modal" class="modal fade out" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content"></div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+{
+	"textDirection": {
+		"message": "ltr"
+	},
+	"chromeExtensionName": {
+		"message": "Estação de Transferências Synology para Google Chrome™"
+	},
+	"chromeExtensionDescription": {
+		"message": "Gerir as transferências da Synology DiskStation no navegador."
+	},
+	"settingsGroupConnection": {
+		"message": "Ligação"
+	},
+	"settingsGroupOther": {
+		"message": "Outras configurações"
+	},
+	"settingsGroupHelp": {
+		"message": "Ajuda"
+	},
+	"lblProtocol": {
+		"message": "Protocolo"
+	},
+	"tooltipProtocol": {
+		"message": "Especifique se pretende utilizar uma ligação HTTP ou HTTPS. A ligação HTTPS deve estar ativa na DSM, é suportada em todas as versões excepto DSM4.0-2166, 2197 e 2198. Por favor atualize a DSM se possuir uma destas versões."
+	},
+	"lblDomain": {
+		"message": "Domínio ou IP"
+	},
+	"placeholderDomain": {
+		"message": "Exemplo: syno.exemplo.com ou 10.0.0.1"
+	},
+	"tooltipDomain": {
+		"message": "Domínio ou endereço IP da sua DiskStation. Pode ser um endereço IP interno ou externo (Ex: 10.0.0.1). Introduzir os domínios sem http:\/\/ ou https:\/\/ (Ex: syno.exemplo.com)"
+	},
+	"lblPort": {
+		"message": "Porto"
+	},
+	"tooltipPort": {
+		"message": "Esta é o mesmo porto utilizado para aceder à DSM. O porto por omissão é o 5000 para HTTP e o 5001 para HTTPS. Deverá necessitar de realizar um redirecionamento do porto utilizado para utilizar esta extensão quando não se encontrar ligado à mesma rede da DiskStation."
+	},
+	"lblUsername": {
+		"message": "Nome do utilizador"
+	},
+	"tooltipUsername": {
+		"message": "Introduza o nome de utilizador da sua conta da Diskstation. Esta conta tem que possuir permissão para usar a Download Station."
+	},
+	"lblPassword": {
+		"message": "Senha"
+	},
+	"btnSaveSettings": {
+		"message": "Guardar configurações"
+	},
+	"btnTestConnection": {
+		"message": "Teste de ligação"
+	},
+	"lblHideSeedingTorrents": {
+		"message": "Esconder torrents a semear."
+	},
+	"lblUpdateInBackground": {
+		"message": "Atualizar estado das transferências em plano de fundo (necessário para notificações)."
+	},
+	"lblRefreshInterval": {
+		"message": "Intervalo de atualização (segundos)"
+	},
+	"lblEmail": {
+		"message": "E-mail"
+	},
+	"tooltipEmail": {
+		"message": "Pode introduzir o seu e-mail se realizou uma doação através do PayPal. A notificação mensal será desativada."
+	},
+	"lblOpenWithDownloadStation": {
+		"message": "Abrir com o Download Station"
+	},
+	"tooltipOpenWithDownloadStation": {
+		"message": "Utilizar a extensão Download Station para abrir os tipos de ficheiros selecionados em baixo."
+	},
+	"settingsSaved": {
+		"message": "As configurações foram guardadas"
+	},
+	"settingsSavedMessage": {
+		"message": "As modificações foram guardadas com sucesso."
+	},
+	"testDialogSuccess": {
+		"message": "Ligação bem sucedida"
+	},
+	"testResultSuccess": {
+		"message": "A ligação está a funcionar corretamente! Guarde as configurações para começar a utilizar a extensão."
+	},
+	"testDialogFailed": {
+		"message": "Erro no teste"
+	},
+	"clickToConfigure": {
+		"message": "Clique aqui para inserir as configurações da ligação."
+	},
+	"loggingIn": {
+		"message": "A autenticar..."
+	},
+	"noActiveTasks": {
+		"message": "Nenhuma tarefa activa"
+	},
+	"btnAddTask": {
+		"message": "Adicionar tarefa"
+	},
+	"btnClearQueue": {
+		"message": "Eliminar tarefas terminadas"
+	},
+	"btnPauseAll": {
+		"message": "Pausar todas"
+	},
+	"btnResumeAll": {
+		"message": "Recomeçar todas"
+	},
+	"btnOpenDownloadStation": {
+		"message": "Abrir a interface web do Download Station"
+	},
+	"btnPause": {
+		"message": "Pausa"
+	},
+	"btnResume": {
+		"message": "Recomeçar"
+	},
+	"btnStartSeeding": {
+		"message": "Começar a semear."
+	},
+	"btnRemove": {
+		"message": "Remover"
+	},
+	"btnCancel": {
+		"message": "Cancelar"
+	},
+	"urlInputPlaceholder": {
+		"message": "Adicionar URL"
+	},
+	"urlFormAddBtn": {
+		"message": "Adicionar"
+	},
+	"progressOf": {
+		"message": "$downloadedSize$ de $totalSize$",
+		"placeholders": {
+			"downloadedSize": {
+				"content": "$1",
+				"example": "13.54MB"
+			},
+			"totalSize": {
+				"content": "$2",
+				"example": "20MB"
+			}
+		}
+	},
+	"contextMenuDownloadOn": {
+		"message": "Descarregar em $deviceName$",
+		"placeholders": {
+			"deviceName": {
+				"content": "$1",
+				"example": "MyDiskStation"
+			}
+		}
+	},
+	"contextMenuDownloadAdvanced": {
+		"message": "Transferência avançada…"
+	},
+	"downloadTaskAdding": {
+		"message": "A adicionar tarefa.."
+	},
+	"downloadTaskAccepted": {
+		"message": "Transferência iniciada"
+	},
+	"downloadTaskNotAccepted": {
+		"message": "Falha ao adicionar a tarefa"
+	},
+	"task_status_waiting": {
+		"message": "A aguardar"
+	},
+	"task_status_downloading": {
+		"message": "A transferir"
+	},
+	"task_status_paused": {
+		"message": "Parado"
+	},
+	"task_status_finishing": {
+		"message": "A terminar"
+	},
+	"task_status_finished": {
+		"message": "Terminado"
+	},
+	"task_status_hash_checking": {
+		"message": "A verificar"
+	},
+	"task_status_seeding": {
+		"message": "A semear"
+	},
+	"task_status_filehosting_waiting": {
+		"message": "A aguardar pela descarga"
+	},
+	"task_status_extracting": {
+		"message": "A extrair"
+	},
+	"task_status_error": {
+		"message": "Erro"
+	},
+	"task_status_broken_link": {
+		"message": "Ligação danificada"
+	},
+	"task_status_destination_not_exist": {
+		"message": "A pasta de destino não existe"
+	},
+	"task_status_destination_denied": {
+		"message": "Acesso negado à pasta de destino"
+	},
+	"task_status_disk_full": {
+		"message": "Disco cheio"
+	},
+	"task_status_quota_reached": {
+		"message": "Quota alcançada"
+	},
+	"task_status_timeout": {
+		"message": "Tempo máximo de ligação atingido"
+	},
+	"task_status_torrent_invalid": {
+		"message": "Torrent inválido"
+	},
+	"task_status_torrent_duplicate": {
+		"message": "Torrent duplicado"
+	},
+	"task_status_file_not_exist": {
+		"message": "O ficheiro não existe"
+	},
+	"task_status_required_premium_account": {
+		"message": "Conta Premium requerida"
+	},
+	"task_status_extract_failed": {
+		"message": "Falha na extração"
+	},
+	"task_status_extract_failed_wrong_password": {
+		"message": "Falha na extração:  Senha errada"
+	},
+	"task_status_extract_failed_invalid_archive": {
+		"message": "Falha na extração: Ficheiro inválido"
+	},
+	"task_status_extract_failed_quota_reached": {
+		"message": "Falha na extração : quota alcançada"
+	},
+	"task_status_missing_python": {
+		"message": "Pacote Python não instalado"
+	},
+	"task_status_extract_failed_disk_full": {
+		"message": "Falha na extração: Disco cheio"
+	},
+	"task_status_unknown": {
+		"message": "Estado desconhecido"
+	},
+	"api_error_couldNotConnect": {
+		"message": "Impossível ligar à DiskStation."
+	},
+	"api_error_unknownError": {
+		"message": "Aconteceu um erro desconhecido."
+	},
+	"api_error_invalidParameter": {
+		"message": "Aconteceu um erro desconhecido."
+	},
+	"api_error_requiredApisNotAvailable": {
+		"message": "O Download Station não está a correr ou a versão é demasiado antiga."
+	},
+	"api_error_apiDoesNotExist": {
+		"message": "O Download Station não está a correr ou a versão é demasiado antiga."
+	},
+	"api_error_methodDoesNotExist": {
+		"message": "A versão do Download Station não suporta esta característica."
+	},
+	"api_error_featureNotSupported": {
+		"message": "A versão do Download Station não suporta esta característica."
+	},
+	"api_error_permissionDenied": {
+		"message": "Este utilizador não tem permissão para utilizar o Download Station."
+	},
+	"api_error_invalidUsernameOrPassword": {
+		"message": "Nome do utilizador ou senha inválida."
+	},
+	"api_error_accountDisabled": {
+		"message": "A conta está desativada"
+	},
+	"api_error_twoStepVerificationCodeRequired": {
+		"message": "Este utilizador tem a verificação de dois passos activa. Esta extensão só suporta contas sem verificação de dois passos."
+	},
+	"api_error_failedToAuthenticateVerificationCode": {
+		"message": "Este utilizador tem a verificação de dois passos activa. Esta extensão só suporta contas sem verificação de dois passos."
+	},
+	"api_error_fileUploadFailed": {
+		"message": "Falha ao transferir ficheiro para o Download Station."
+	},
+	"api_error_maxNumberOfTasksReached": {
+		"message": "O número máximo de tarefas ativas no Download Station foi atingido."
+	},
+	"api_error_destinationDenied": {
+		"message": "Este utilizador não possui permissão para transferir ficheiros para a pasta selecionada."
+	},
+	"api_error_destinationDoesNotExist": {
+		"message": "A pasta de destino não existe."
+	},
+	"api_error_invalidTaskAction": {
+		"message": "Ação não suportada para esta tarefa"
+	},
+	"api_error_noDefaultDestinationSet": {
+		"message": "Não existe uma pasta por omissão selecionada para o Download Station. Seleciona a pasta por omissão nas configurações do Download Station"
+	},
+	"api_error_magnetTorrentNotFound": {
+		"message": "Não foi possível encontrar o ficheiro torrent para este magnet link."
+	},
+	"downloadFinished": {
+		"message": "Transferência terminada"
+	},
+	"downloadsFinished": {
+		"message": "Transferências terminadas"
+	},
+	"numberTasksFinished": {
+		"message": "$numberOfTasks$ tarefas terminadas",
+		"placeholders": {
+			"numberOfTasks": {
+				"content": "$1",
+				"example": "4"
+			}
+		}
+	},
+	"donationNotification": {
+		"message": "Esta extensão é gratuita, mas ocupa imenso tempo ao programador. Por favor considere fazer uma doação para apoiar esta extensão. Carregue aqui para realizar uma doação."
+	},
+	"newVersionAvailable": {
+		"message": "Uma nova versão do Synology Download Station está disponível. Carregue aqui para descarregar a ultima versão."
+	},
+	"dialogAdvancedTitle": {
+		"message": "Adicionar uma transferência"
+	},
+	"dialogAdvancedLblUrls": {
+		"message": "URL's"
+	},
+	"dialogAdvancedTooltipUrls": {
+		"message": "Introduza cada URL numa nova linha ou separado por um espaço"
+	},
+	"dialogAdvancedLblUsername": {
+		"message": "Nome de utilizador"
+	},
+	"dialogAdvancedTooltipUsername": {
+		"message": "Nome de utilizador HTTP ou FTP (opcional)"
+	},
+	"dialogAdvancedLblPassword": {
+		"message": "Senha"
+	},
+	"dialogAdvancedTooltipPassword": {
+		"message": "Senha HTTP ou FTP (opcional)"
+	},
+	"dialogAdvancedLblUnzipPassword": {
+		"message": "Extrair senha"
+	},
+	"dialogAdvancedTooltipUnzipPassword": {
+		"message": "Introduza uma senha para extrair os ficheiros comprimidos (opcional, extração automática pode ser ativada nas configurações do Download Station)"
+	},
+	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
+		"message": "A sua versão da DSM não suporta senhas descomprimidas. Deverá possuir a DSM 4.2 ou mais recente para introduzir uma senha descomprimida."
+	},
+	"dialogAdvancedBtnCancel": {
+		"message": "Cancelar"
+	},
+	"dialogAdvancedBtnAddDownload": {
+		"message": "Adicionar transferência"
+	},
+	"maxNumberOfTasksWarning": {
+		"message": "A Download Station possui mais que $limit$ descargas. Novos itens só serão mostrados quando itens antigos forem removidos.",
+		"placeholders": {
+			"limit": {
+				"content": "$1",
+				"example": "100"
+			}
+		}
+	}
+}
