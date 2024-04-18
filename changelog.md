@@ -1,6 +1,6 @@
 # Changelog
 ## 3.0.14
-- Removed Analitics that 15 out 65 virus scanners flagged as a Trojan
+- Removed Analytics that 15 out 65 virus scanners flagged as a Trojan
 
 ## 2.2.13
 - Resolved JavaScript error in SVG documents
