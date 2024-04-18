@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.css" />
+	<link rel="stylesheet" href="css/popover.css" />
+</head>
+
+<body class="load ltr">
+	
+	<div data-bind="visible: downloadStationConfigured()">
+		<h2>
+			<span data-bind="text: deviceName"></span>
+			<div class="buttons device-buttons">
+				<i class="fa fa-fw fa-trash-o" role="button"
+					data-bind="visible: loggedIn && finishedTasks().length > 0, click: clearFinishedTasks, attr: { title: localizedString('btnClearQueue') }, css: { disabled: clearingFinishedTasks() }"></i>
+				<i class="fa fa-fw fa-pause" role="button"
+					data-bind="visible: loggedIn && pausebleTasks().length > 0, click: pauseAll, attr: { title: localizedString('btnPauseAll') }"></i>
+				<i class="fa fa-fw fa-play" role="button"
+					data-bind="visible: loggedIn && resumebleTasks().length > 0, click: resumeAll, attr: { title: localizedString('btnResumeAll') }"></i>
+				<i class="fa fa-fw fa-plus" role="button"
+					data-bind="visible: loggedIn, click: toggleTaskForm, attr: { title: localizedString('btnAddTask') }"></i>
+				<i class="fa fa-fw fa-external-link open-webinterface" role="button"
+					data-bind="visible: downloadStationConfigured() && fullUrl() != null, click: openDownloadStation, attr: { title: localizedString('btnOpenDownloadStation') }"></i>
+			</div>
+		</h2>
+		
+		<form class="new-task" data-bind="submit: addTask, css: { error: newTaskErrorMessage() != null, disabled: formDisabled() }" novalidate>
+			<div class="overlay"></div>
+			<div class="input-group">
+				<input class="form-control url-input" type="url" data-bind="value: urlInput, valueUpdate: 'input', attr: { placeholder: localizedString('urlInputPlaceholder') }" />
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="submit" data-bind="text: localizedString('urlFormAddBtn'), enable: urlInputValue()"></button>
+				</span>
+			</div>
+			<div class="alert alert-danger" data-bind="text: newTaskErrorMessage, visible: newTaskErrorMessage"></div>
+		</form>
+		
+		<ul class="list-unstyled tasks" data-bind="visible: loggedIn, template: {foreach: visibleTasks, beforeRemove: hideTaskElement, afterAdd: showTaskElement}">
+			<li data-bind="visible: visible">
+				<h3>
+					<span data-bind="text: title"></span>
+				</h3>
+				<div class="task-status">
+					<div class="progress" data-bind="css: progressBarStripedClass()">
+						<div class="progress-bar" data-bind="style: { width: progress() }, css: progressBarClass()"></div>
+					</div>
+					
+					<div class="row">
+						<div class="col-xs-10 progress-text">
+							<span data-bind="text: progressText(), attr { title: progressText() }"></span>
+						</div>
+						<div class="col-xs-2">
+							<div class="buttons">
+								<i data-bind="click: toggleConfirmRemove, attr: { title: $root.localizedString('btnRemove') }" class="fa fa-times" role="button"></i>
+								<i data-bind="click: pause, css: { disabled: pausing }, visible: pauseButtonVisible(), attr: { title: $root.localizedString('btnPause') }" class="fa fa-pause" role="button"></i>
+								<i data-bind="click: resume, css: { disabled: resuming } , visible: resumeButtonVisible(), attr: { title: $root.localizedString('btnResume') }" class="fa fa-play" role="button"></i>
+								<i data-bind="click: resume, css: { disabled: resuming } , visible: status() == 'finished' && (type() == 'bt' || type() == null), attr: { title: $root.localizedString('btnStartSeeding') }" class="fa fa-play" role="button"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="confirm-delete">
+					<div class="btn-group">
+						<button data-bind="click: toggleConfirmRemove, text: $root.localizedString('btnCancel')" class="btn btn-xs btn-default"></button>
+						<button data-bind="click: remove, text: $root.localizedString('btnRemove')" class="btn btn-xs btn-danger"></button>
+					</div>
+				</div>
+			</li>
+		</ul>
+		
+		<div class="block-message" style="font-size: 1.2em; border-top: 0.1em solid rgba(0,0,0,0.05);" data-bind="visible: tasks().length > 100">
+			<p data-bind="text: maxNumberOfTasksWarning()"></p>
+			<button class="btn btn-block btn-sm btn-success" data-bind="visible: finishedTasks().length > 0, click: clearFinishedTasks, attr: { disabled: clearingFinishedTasks() }">
+				<i class="fa fa-trash-o" data-bind="visible: !clearingFinishedTasks()"></i>
+				<i class="fa fa-spinner fa-spin" data-bind="visible: clearingFinishedTasks()"></i>&nbsp;
+				<span data-bind="text: localizedString('btnClearQueue')"></span>
+			</button>
+		</div>
+		
+		<div class="block-message" data-bind="visible: statusMessage() == null && loggedIn() && visibleTasks().length == 0, text: localizedString('noActiveTasks')"></div>
+	
+		<div class="block-message" data-bind="visible: statusMessage() != null, html: statusMessageLocalized()"></div>
+	</div>
+	
+	<div class="block-message clickable" data-bind="visible: downloadStationConfigured() == false, text: localizedString('clickToConfigure'), click: openSettings" role="button"></div>
+	
+	<div class="footer" data-bind="visible: statusMessage() == null && loggedIn() && downloadStationConfigured()">
+		<span dir="ltr" class="total-rate" data-bind="visible: visibleTasks().length > 0">
+			<i class="fa fa-arrow-down"></i> <span data-bind="text: totalDownloadSpeedString()"></span>&nbsp;&nbsp;
+			<i class="fa fa-arrow-up"></i> <span data-bind="text: totalUploadSpeedString()"></span>
+		</span>
+	</div>
+	<i id="open-settings" data-bind="click: openSettings" class="icon-btn fa fa-cog" role="button"></i>
+	
+	<script src="js/lib/jquery.js"></script>
+	<script src="js/lib/knockout.js"></script>
+	<script src="js/lib/knockout.mapping.js"></script>
+	<script src="js/variables.js"></script>
+	<script src="js/browser-functions.js"></script>
+	<script src="js/popover-taskmodel.js"></script>
+	<script src="js/popover-popovermodel.js"></script>
+	<script src="js/popover.js"></script>
+</body>
+
+</html>
