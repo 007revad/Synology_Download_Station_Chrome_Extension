@@ -1,5 +1,6 @@
-# Synology Download Station Chrome Extension
-Download Station Extension for Chrome Browser
+<h1><img src="Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station Chrome Extension</h1>
+
+### Download Station Extension for Chrome Browser
 
 Adapted from the original work done by LuukD
 - https://www.download-station-extension.com/
