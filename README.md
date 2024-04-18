@@ -8,3 +8,8 @@ Adapted from the original work done by LuukD
 The Safari and Opera versions are still available. But the Chrome extension is no longer available from the Google App Store.
 
 The only changes Ive made are to remove the analytics that virus scanners saw as a trojan, and updated the version number. 
+
+**Note:** Chrome will show an error in chrome://extensions/ but it still works as of April 19 2024
+- Manifest version 2 is deprecated, and support will be removed in 2023
+
+I'm working on updating the extension to manifest v3...
