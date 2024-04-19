@@ -1,4 +1,4 @@
-<h1><img src="Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station Chrome Extension</h1>
+<h1><img src="images/Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station Chrome Extension</h1>
 
 
 <a href="https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases"><img src="https://img.shields.io/github/release/007revad/Synology_HDD_db.svg"></a>
