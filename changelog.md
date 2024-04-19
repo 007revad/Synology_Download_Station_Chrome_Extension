@@ -1,4 +1,7 @@
 # Changelog
+## 3.0.15
+- Moved Icon-xx.png images to images folder
+
 ## 3.0.14
 - Removed Analytics that 15 out 65 virus scanners flagged as a Trojan
 
