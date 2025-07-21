@@ -22,21 +22,22 @@ The only changes I've made are to remove the analytics that virus scanners saw a
 **Note:** Chrome will show an error in chrome://extensions/ but it still works in April 2024.
 - Manifest version 2 is deprecated, and support will be removed in 2023
 
-I'm working on updating the extension to manifest v3...
+I'm working on updating the extension to manifest v3... **July 2025 Update:** It was too hard to update to manifest v3.
 
 <br>
 
 ### How to install the extension
-
-1. Download the latest [DownloadStation_Chrome_Extension.zip](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases) file.
-2. Unpack the DownloadStation_Chrome_Extension.zip archive. Remember the location of the "Synology_Download_Station" folder.
-3. Open extension page by either:
-    - Type chrome://extensions in chrome's address bar.
-    - Click on the extensions icon > Manage Extensions.
+1. Enter `chrome://flags` in chrome’s address bar and press Enter.
+2. Search for `Allow legacy extension manifest versions`
+3. Enable it and click on the Relaunch button.
+4. Download the latest [DownloadStation_Chrome_Extension.zip](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases) file.
+5. Unpack the DownloadStation_Chrome_Extension.zip archive. Remember the location of the "Synology_Download_Station" folder.
+6. Open the Extensions page by either:
+    - Type `chrome://extensions` in chrome's address bar, or
+    - Click on the extensions icon > Manage Extensions, or
     - Use the menu: ⋮ > Extensions > Manage Extensions.
-    - In older versions of Chrome use the menu: ⋮ > More tools > Extensions
-4. Enable "Developer mode" in the upper-right corner of the page.
-5. Select "Load unpacked" option.
-6. Find the unpacked extension's folder "Synology_Download_Station".
-7. Open the folder.
-8. That's it. You can find the extension on the chrome://extensions page.
+7. Enable "Developer Mode" on the top right.
+8. Select "Load unpacked" option.
+9. Find the unpacked extension's folder "Synology_Download_Station".
+10. Open the folder.
+11. That's it. You can find the extension on the chrome://extensions page.
