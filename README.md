@@ -22,7 +22,7 @@ The only changes I've made are to remove the analytics that virus scanners saw a
 **Note:** Chrome will show an error in chrome://extensions/ but it still works in April 2024.
 - Manifest version 2 is deprecated, and support will be removed in 2023
 
-I'm working on updating the extension to manifest v3... **July 2025 Update:** It was to hard to update to manifest v3.
+I'm working on updating the extension to manifest v3... **July 2025 Update:** It was too hard to update to manifest v3.
 
 <br>
 
