@@ -29,15 +29,16 @@ I'm working on updating the extension to manifest v3... **July 2025 Update:** It
 ### How to install the extension
 1. Enter `chrome://flags` in chrome’s address bar and press Enter.
 2. Search for `Allow legacy extension manifest versions`
-3. Enable it and click on the Relaunch button.
-4. Download the latest [DownloadStation_Chrome_Extension.zip](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases) file.
-5. Unpack the DownloadStation_Chrome_Extension.zip archive. Remember the location of the "Synology_Download_Station" folder.
-6. Open the Extensions page by either:
+    - 2025 update: See https://www.reddit.com/r/synology/comments/1c5tq2r/comment/nf5ofxw/
+4. Enable it and click on the Relaunch button.
+5. Download the latest [DownloadStation_Chrome_Extension.zip](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases) file.
+6. Unpack the DownloadStation_Chrome_Extension.zip archive. Remember the location of the "Synology_Download_Station" folder.
+7. Open the Extensions page by either:
     - Type `chrome://extensions` in chrome's address bar, or
     - Click on the extensions icon > Manage Extensions, or
     - Use the menu: ⋮ > Extensions > Manage Extensions.
-7. Enable "Developer Mode" on the top right.
-8. Select "Load unpacked" option.
-9. Find the unpacked extension's folder "Synology_Download_Station".
-10. Open the folder.
-11. That's it. You can find the extension on the chrome://extensions page.
+8. Enable "Developer Mode" on the top right.
+9. Select "Load unpacked" option.
+10. Find the unpacked extension's folder "Synology_Download_Station".
+11. Open the folder.
+12. That's it. You can find the extension on the chrome://extensions page.
