@@ -327,11 +327,6 @@ var DownloadStationAPI = (function (_super) {
         return message ? message : 'unknownError';
     };
     DownloadStationAPI.prototype._createTaskObjects = function (dsTasks) {
-        dsTasks.sort(function (a, b) {
-            var timeStampA = parseInt(a.additional.detail.create_time);
-            var timeStampB = parseInt(b.additional.detail.create_time);
-            return (timeStampA < timeStampB) ? -1 : (timeStampA > timeStampB) ? 1 : 0;
-        });
         var tasks = new Array();
         for (var i = 0; i < dsTasks.length; i++) {
             var task = dsTasks[i];
@@ -626,11 +621,28 @@ var DownloadStationAPI = (function (_super) {
         var params = {
             additional: 'transfer,detail',
             offset: 0,
-            limit: 101
+            limit: -1
         };
         this._apiCall('SYNO.DownloadStation.Task', 'list', 1, params, function (success, data) {
             if (success) {
+                console.log('[DownloadStation] Tasks received from API:', data.tasks ? data.tasks.length : 0, 'tasks');
+                
+                // Sort by create_time in descending order (newest first)
+                if (data.tasks) {
+                    data.tasks.sort(function (a, b) {
+                        var timeStampA = parseInt(a.additional.detail.create_time);
+                        var timeStampB = parseInt(b.additional.detail.create_time);
+                        return (timeStampA > timeStampB) ? -1 : (timeStampA < timeStampB) ? 1 : 0;
+                    });
+                    console.log('[DownloadStation] After sort by create_time DESC - First task:', data.tasks[0].title, 'Last task:', data.tasks[data.tasks.length-1].title);
+                    
+                    // Keep only the newest 100 tasks
+                    data.tasks = data.tasks.slice(0, 100);
+                    console.log('[DownloadStation] After keeping newest 100 - Count:', data.tasks.length);
+                }
+                
                 _this.tasks = _this._createTaskObjects(data.tasks);
+                console.log('[DownloadStation] After createTaskObjects - First task:', _this.tasks[0] ? _this.tasks[0].title : 'none', 'Last task:', _this.tasks[_this.tasks.length-1] ? _this.tasks[_this.tasks.length-1].title : 'none');
             }
             else {
                 _this.tasks = [];
@@ -725,9 +737,10 @@ var DownloadStationAPI = (function (_super) {
             id: ids.join(",")
         };
         this._apiCall('SYNO.DownloadStation.Task', 'pause', 1, params, function (success, data) {
-            _this.loadTasks();
+            //_this.loadTasks();
             if (typeof callback === "function")
                 callback(success, data);
+            _this.loadTasks();
         }, 'POST');
     };
     DownloadStationAPI.prototype.deleteTask = function (ids, callback) {
@@ -738,6 +751,7 @@ var DownloadStationAPI = (function (_super) {
             id: ids.join(","),
             force_complete: false
         };
+        console.log('[SW] deleteTask params:', params);
         this._apiCall('SYNO.DownloadStation.Task', 'delete', 1, params, function (success, data) {
             _this.loadTasks();
             if (typeof callback === "function")
