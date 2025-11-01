@@ -1,148 +1,587 @@
 /// <reference path="../../typings/index.d.ts"/>
-var _this = this;
-var textDirection = "ltr";
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', ANALYTICS_ID]);
-_gaq.push(['_trackPageview']);
-(function () {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-})();
-window.addEventListener('load', function load() {
-    window.removeEventListener('load', load, false);
-    document.body.classList.remove('load');
-}, false);
-var taskMapping = {
-    create: function (item) {
-        return new TaskModel(item.data);
-    },
-    key: function (item) {
-        return ko.utils.unwrapObservable(item.id);
-    }
-};
-var viewModel = new PopoverModel();
-var popoverVisible = false;
-var safariPopoverObject;
-try {
-    var deviceInfo = getBackgroundPage().getDeviceInfo();
-    updateDeviceInfo(deviceInfo);
-    if (deviceInfo != null) {
-        var tasks = getBackgroundPage().getTasks();
-        updateTasks(tasks);
-    }
-    if (extension.getLocalizedString("textDirection") == "rtl") {
-        textDirection = "rtl";
-        $(document.body).removeClass("ltr").addClass("rtl");
-    }
-    extension.storage.get("hideSeedingTorrents", function (storageItems) {
-        viewModel.hideSeedingTorrents(storageItems["hideSeedingTorrents"] === true);
-    });
-    ko.applyBindings(viewModel);
-    $(document.body).show();
-    extension.onPopoverVisible(function () {
-        popoverVisible = true;
-        getBackgroundPage().setUpdateInterval(3);
-        var tasks = getBackgroundPage().getTasks();
-        updateTasks(tasks);
-    }, "statusPopover");
-    extension.onPopoverHidden(function () {
-        popoverVisible = false;
-        getBackgroundPage().setUpdateInterval();
-        viewModel.toggleTaskForm(false);
-    }, "statusPopover");
-    $(document).on("click", "a[href][target='_blank']", function (event) {
-        event.preventDefault();
-        var url = $(_this).prop("href");
-        extension.createTab(url);
-        extension.hidePopovers();
-        _gaq.push(['_trackEvent', 'Button', 'Popover link', url]);
-    });
-    updatePopoverSize();
-}
-catch (exc) {
-    var bgPage = extension.getBackgroundPage();
-    if (bgPage != null)
-        bgPage.console.log(exc);
-    location.reload(true);
-}
-;
-function getBackgroundPage() {
-    return extension.getBackgroundPage();
-}
-function updateDeviceInfo(info) {
-    if (info !== null) {
-        viewModel.deviceName(info.deviceName);
-        viewModel.dsmVersion(info.dsmVersion);
-        viewModel.dsmVersionString(info.dsmVersionString);
-        viewModel.fullUrl(info.fullUrl);
-        viewModel.loggedIn(info.loggedIn);
-        viewModel.downloadStationConfigured(true);
-        viewModel.statusMessage(info.status);
-    }
-    else {
-        viewModel.downloadStationConfigured(false);
-    }
-}
-function updateTasks(tasks) {
-    if (!popoverVisible)
-        return;
-    // Re-create array to avoid problems with knockout mapping
-    var taskArray = new Array();
-    for (var i = 0; i < tasks.length; i++) {
-        taskArray.push(tasks[i]);
-    }
-    ko.mapping.fromJS(taskArray, taskMapping, viewModel.tasks);
-}
-function updatePopoverSize() {
-    // Only for Safari, Chrome uses the document height
-    if (IS_SAFARI) {
-        var updateSizeFunction = function () {
-            if (!safariPopoverObject) {
-                safariPopoverObject = extension.getSafariPopoverObject("statusPopover");
-            }
-            if (safariPopoverObject) {
-                safariPopoverObject.height = document.body.offsetHeight;
-                safariPopoverObject.width = document.body.offsetWidth;
-            }
-        };
-        var updateSizeInterval;
-        extension.onPopoverVisible(function () {
-            updateSizeInterval = setInterval(updateSizeFunction, 50);
-            updateSizeFunction();
-        }, "statusPopover");
-        extension.onPopoverHidden(function () {
-            clearInterval(updateSizeInterval);
-        }, "statusPopover");
-    }
-}
+
+console.log('[Popover] popover.js loading - STEP 1');
+
+// DEFINE BYTESTOSTRING FIRST - before anything else that might use it
 function bytesToString(bytes) {
-    var bytes = parseInt(bytes);
+    bytes = parseInt(bytes);
     var KILOBYTE = 1024;
     var MEGABYTE = KILOBYTE * 1024;
     var GIGABYTE = MEGABYTE * 1024;
     var TERABYTE = GIGABYTE * 1024;
+
     if (isNaN(bytes)) {
-        return "0";
-    }
+        return "0 B";
+    } 
     if (bytes < KILOBYTE) {
         return Math.round(bytes * 100) / 100 + ' B';
-    }
-    else if (bytes < MEGABYTE) {
+    } else if (bytes < MEGABYTE) {
         return Math.round(bytes / KILOBYTE * 100) / 100 + ' KB';
-    }
-    else if (bytes < GIGABYTE) {
+    } else if (bytes < GIGABYTE) {
         return Math.round(bytes / MEGABYTE * 100) / 100 + ' MB';
-    }
-    else if (bytes < TERABYTE) {
+    } else if (bytes < TERABYTE) {
         return Math.round(bytes / GIGABYTE * 100) / 100 + ' GB';
-    }
-    else {
+    } else {
         return Math.round(bytes / TERABYTE * 100) / 100 + ' TB';
     }
 }
 
-//# sourceMappingURL=data:application/json;base64,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QztJQUNqQyxJQUFJLFFBQVEsR0FBRyxJQUFJLENBQUM7SUFDcEIsSUFBSSxRQUFRLEdBQUcsUUFBUSxHQUFHLElBQUksQ0FBQztJQUMvQixJQUFJLFFBQVEsR0FBRyxRQUFRLEdBQUcsSUFBSSxDQUFDO0lBQy9CLElBQUksUUFBUSxHQUFHLFFBQVEsR0FBRyxJQUFJLENBQUM7SUFFL0IsRUFBRSxDQUFDLENBQUMsS0FBSyxDQUFDLEtBQUssQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUNmLE1BQU0sQ0FBQyxHQUFHLENBQUM7SUFDZixDQUFDO0lBQUMsRUFBRSxDQUFDLENBQUMsS0FBSyxHQUFHLFFBQVEsQ0FBQyxDQUFDLENBQUM7UUFDckIsTUFBTSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsS0FBSyxHQUFHLEdBQUcsQ0FBQyxHQUFHLEdBQUcsR0FBRyxJQUFJLENBQUE7SUFDL0MsQ0FBQztJQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsQ0FBQyxLQUFLLEdBQUcsUUFBUSxDQUFDLENBQUMsQ0FBQztRQUMxQixNQUFNLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxLQUFLLEdBQUcsUUFBUSxHQUFHLEdBQUcsQ0FBQyxHQUFHLEdBQUcsR0FBRyxLQUFLLENBQUM7SUFDNUQsQ0FBQztJQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsQ0FBQyxLQUFLLEdBQUcsUUFBUSxDQUFDLENBQUMsQ0FBQztRQUMxQixNQUFNLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxLQUFLLEdBQUcsUUFBUSxHQUFHLEdBQUcsQ0FBQyxHQUFHLEdBQUcsR0FBRyxLQUFLLENBQUM7SUFDNUQsQ0FBQztJQUFDLElBQUksQ0FBQyxFQUFFLENBQUMsQ0FBQyxLQUFLLEdBQUcsUUFBUSxDQUFDLENBQUMsQ0FBQztRQUMxQixNQUFNLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxLQUFLLEdBQUcsUUFBUSxHQUFHLEdBQUcsQ0FBQyxHQUFHLEdBQUcsR0FBRyxLQUFLLENBQUM7SUFDNUQsQ0FBQztJQUFDLElBQUksQ0FBQyxDQUFDO1FBQ0osTUFBTSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsS0FBSyxHQUFHLFFBQVEsR0FBRyxHQUFHLENBQUMsR0FBRyxHQUFHLEdBQUcsS0FBSyxDQUFDO0lBQzVELENBQUM7QUFDTCxDQUFDIiwiZmlsZSI6ImpzL3BvcG92ZXIuanMiLCJzb3VyY2VzQ29udGVudCI6WyIvLy8gPHJlZmVyZW5jZSBwYXRoPVwiLi4vLi4vdHlwaW5ncy9pbmRleC5kLnRzXCIvPlxuXG52YXIgdGV4dERpcmVjdGlvbiA9IFwibHRyXCI7XG52YXIgX2dhcTogQXJyYXk8YW55PiA9IF9nYXEgfHwgW107XG5fZ2FxLnB1c2goWydfc2V0QWNjb3VudCcsIEFOQUxZVElDU19JRF0pO1xuX2dhcS5wdXNoKFsnX3RyYWNrUGFnZXZpZXcnXSk7XG5cbigoKSA9PiB7XG5cdHZhciBnYSA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpO1xuXHRnYS50eXBlID0gJ3RleHQvamF2YXNjcmlwdCc7XG5cdGdhLmFzeW5jID0gdHJ1ZTtcblx0Z2Euc3JjID0gJ2h0dHBzOi8vc3NsLmdvb2dsZS1hbmFseXRpY3MuY29tL2dhLmpzJztcblx0XG5cdHZhciBzID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeVRhZ05hbWUoJ3NjcmlwdCcpWzBdO1xuXHRzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKGdhLCBzKTtcbn0pKCk7XG5cbndpbmRvdy5hZGRFdmVudExpc3RlbmVyKCdsb2FkJyxmdW5jdGlvbiBsb2FkKCkge1xuICAgIHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKCdsb2FkJywgbG9hZCwgZmFsc2UpO1xuICAgIGRvY3VtZW50LmJvZHkuY2xhc3NMaXN0LnJlbW92ZSgnbG9hZCcpO1xufSxmYWxzZSk7XG5cblxuXG52YXIgdGFza01hcHBpbmc6IEtub2Nrb3V0TWFwcGluZ09wdGlvbnMgPSB7XG5cdGNyZWF0ZTpcdChpdGVtOiBLbm9ja291dE1hcHBpbmdDcmVhdGVPcHRpb25zKSA9PiB7XG5cdFx0cmV0dXJuIG5ldyBUYXNrTW9kZWwoaXRlbS5kYXRhKTtcblx0fSxcblx0a2V5OiAoaXRlbTogVGFza01vZGVsKSA9PiB7XG5cdFx0cmV0dXJuIGtvLnV0aWxzLnVud3JhcE9ic2VydmFibGUoaXRlbS5pZCk7XG5cdH1cbn07XG5cbnZhciB2aWV3TW9kZWwgPSBuZXcgUG9wb3Zlck1vZGVsKCk7XG52YXIgcG9wb3ZlclZpc2libGUgPSBmYWxzZTtcbnZhciBzYWZhcmlQb3BvdmVyT2JqZWN0OiBTYWZhcmlFeHRlbnNpb25Qb3BvdmVyO1xuXG50cnl7XG5cdHZhciBkZXZpY2VJbmZvID0gZ2V0QmFja2dyb3VuZFBhZ2UoKS5nZXREZXZpY2VJbmZvKCk7XG5cdHVwZGF0ZURldmljZUluZm8oZGV2aWNlSW5mbyk7XG5cdGlmKGRldmljZUluZm8gIT0gbnVsbCkge1xuXHRcdHZhciB0YXNrcyA9IGdldEJhY2tncm91bmRQYWdlKCkuZ2V0VGFza3MoKTtcblx0XHR1cGRhdGVUYXNrcyh0YXNrcyk7XG5cdH1cblx0aWYoZXh0ZW5zaW9uLmdldExvY2FsaXplZFN0cmluZyhcInRleHREaXJlY3Rpb25cIikgPT0gXCJydGxcIikge1xuXHRcdHRleHREaXJlY3Rpb24gPSBcInJ0bFwiO1xuXHRcdCQoZG9jdW1lbnQuYm9keSkucmVtb3ZlQ2xhc3MoXCJsdHJcIikuYWRkQ2xhc3MoXCJydGxcIik7XG5cdH1cblx0XG5cdGV4dGVuc2lvbi5zdG9yYWdlLmdldChcImhpZGVTZWVkaW5nVG9ycmVudHNcIiwgKHN0b3JhZ2VJdGVtcykgPT4ge1xuXHRcdHZpZXdNb2RlbC5oaWRlU2VlZGluZ1RvcnJlbnRzKHN0b3JhZ2VJdGVtc1tcImhpZGVTZWVkaW5nVG9ycmVudHNcIl0gPT09IHRydWUpO1xuXHR9KTtcblx0XG5cdGtvLmFwcGx5QmluZGluZ3Modmlld01vZGVsKTtcblx0JChkb2N1bWVudC5ib2R5KS5zaG93KCk7XG5cdFxuXHRleHRlbnNpb24ub25Qb3BvdmVyVmlzaWJsZSgoKSA9PiB7XG5cdFx0cG9wb3ZlclZpc2libGUgPSB0cnVlO1xuXHRcdGdldEJhY2tncm91bmRQYWdlKCkuc2V0VXBkYXRlSW50ZXJ2YWwoMyk7XG5cdFx0dmFyIHRhc2tzID0gZ2V0QmFja2dyb3VuZFBhZ2UoKS5nZXRUYXNrcygpO1xuXHRcdHVwZGF0ZVRhc2tzKHRhc2tzKTtcblx0fSwgXCJzdGF0dXNQb3BvdmVyXCIpO1xuXHRcblx0ZXh0ZW5zaW9uLm9uUG9wb3ZlckhpZGRlbigoKSA9PiB7XG5cdFx0cG9wb3ZlclZpc2libGUgPSBmYWxzZTtcblx0XHRnZXRCYWNrZ3JvdW5kUGFnZSgpLnNldFVwZGF0ZUludGVydmFsKCk7XG5cdFx0dmlld01vZGVsLnRvZ2dsZVRhc2tGb3JtKGZhbHNlKTtcblx0fSwgXCJzdGF0dXNQb3BvdmVyXCIpO1xuXHRcblx0JChkb2N1bWVudCkub24oXCJjbGlja1wiLCBcImFbaHJlZl1bdGFyZ2V0PSdfYmxhbmsnXVwiLCAoZXZlbnQpID0+IHtcbiAgICBcdGV2ZW50LnByZXZlbnREZWZhdWx0KCk7XG4gICAgXHR2YXIgdXJsID0gJCh0aGlzKS5wcm9wKFwiaHJlZlwiKTtcbiAgICBcdFxuXHRcdGV4dGVuc2lvbi5jcmVhdGVUYWIodXJsKTtcblx0XHRleHRlbnNpb24uaGlkZVBvcG92ZXJzKCk7XG5cdFx0XG5cdFx0X2dhcS5wdXNoKFsnX3RyYWNrRXZlbnQnICwgJ0J1dHRvbicgLCAnUG9wb3ZlciBsaW5rJywgdXJsXSk7XG5cdH0pO1xuXHRcblx0dXBkYXRlUG9wb3ZlclNpemUoKTtcbn0gY2F0Y2goZXhjKSB7XG5cdHZhciBiZ1BhZ2UgPSBleHRlbnNpb24uZ2V0QmFja2dyb3VuZFBhZ2UoKTtcblx0aWYoYmdQYWdlICE9IG51bGwpXG5cdFx0YmdQYWdlLmNvbnNvbGUubG9nKGV4Yyk7XG5cdGxvY2F0aW9uLnJlbG9hZCh0cnVlKTtcbn07XG5cbmludGVyZmFjZSBEb3dubG9hZFN0YXRpb25FeHRlbnNpb25CYWNrZ3JvdW5kUGFnZSBleHRlbmRzIFdpbmRvdyB7XG4gICAgc2V0VXBkYXRlSW50ZXJ2YWwoaW50ZXJ2YWw/OiBudW1iZXIpOiB2b2lkO1xuICAgIGdldERldmljZUluZm8oKTogSVN5bm9sb2d5RGV2aWNlSW5mbztcbiAgICBnZXRUYXNrcygpOiBJRG93bmxvYWRTdGF0aW9uVGFza1tdO1xuICAgIGNyZWF0ZVRhc2sodXJsOiBzdHJpbmcsIHVzZXJuYW1lPzogc3RyaW5nLCBwYXNzd29yZD86IHN0cmluZywgdW56aXBQYXNzd29yZD86IHN0cmluZywgY2FsbGJhY2s/OiAoc3VjY2VzczogYm9vbGVhbiwgZGF0YTogYW55KSA9PiB2b2lkKTogdm9pZDtcbiAgICBwYXVzZVRhc2soaWRzOiBzdHJpbmd8c3RyaW5nW10sIGNhbGxiYWNrOiAoc3VjY2VzczogYm9vbGVhbiwgZGF0YTogYW55KSA9PiB2b2lkKTogdm9pZDtcbiAgICByZXN1bWVUYXNrKGlkczogc3RyaW5nfHN0cmluZ1tdLCBjYWxsYmFjazogKHN1Y2Nlc3M6IGJvb2xlYW4sIGRhdGE6IGFueSkgPT4gdm9pZCk6IHZvaWQ7XG4gICAgZGVsZXRlVGFzayhpZHM6IHN0cmluZ3xzdHJpbmdbXSwgY2FsbGJhY2s6IChzdWNjZXNzOiBib29sZWFuLCBkYXRhOiBhbnkpID0+IHZvaWQpOiB2b2lkO1xuICAgIGNsZWFyRmluaXNoZWRUYXNrcyhjYWxsYmFjazogKHN1Y2Nlc3M6IGJvb2xlYW4sIGRhdGE6IGFueSkgPT4gdm9pZCk6IHZvaWQ7XG59XG5cbmZ1bmN0aW9uIGdldEJhY2tncm91bmRQYWdlKCk6IERvd25sb2FkU3RhdGlvbkV4dGVuc2lvbkJhY2tncm91bmRQYWdlIHtcbiAgICByZXR1cm4gPERvd25sb2FkU3RhdGlvbkV4dGVuc2lvbkJhY2tncm91bmRQYWdlPmV4dGVuc2lvbi5nZXRCYWNrZ3JvdW5kUGFnZSgpO1xufVxuXG5mdW5jdGlvbiB1cGRhdGVEZXZpY2VJbmZvKGluZm86IElTeW5vbG9neURldmljZUluZm8pIHtcblx0aWYoaW5mbyAhPT0gbnVsbCkge1xuXHRcdHZpZXdNb2RlbC5kZXZpY2VOYW1lKGluZm8uZGV2aWNlTmFtZSk7XG5cdFx0dmlld01vZGVsLmRzbVZlcnNpb24oaW5mby5kc21WZXJzaW9uKTtcblx0XHR2aWV3TW9kZWwuZHNtVmVyc2lvblN0cmluZyhpbmZvLmRzbVZlcnNpb25TdHJpbmcpO1xuXHRcdHZpZXdNb2RlbC5mdWxsVXJsKGluZm8uZnVsbFVybCk7XG5cdFx0dmlld01vZGVsLmxvZ2dlZEluKGluZm8ubG9nZ2VkSW4pO1xuXHRcdHZpZXdNb2RlbC5kb3dubG9hZFN0YXRpb25Db25maWd1cmVkKHRydWUpO1xuXHRcdHZpZXdNb2RlbC5zdGF0dXNNZXNzYWdlKGluZm8uc3RhdHVzKTtcblx0fSBlbHNlIHtcblx0XHR2aWV3TW9kZWwuZG93bmxvYWRTdGF0aW9uQ29uZmlndXJlZChmYWxzZSk7XG5cdH1cbn1cblxuZnVuY3Rpb24gdXBkYXRlVGFza3ModGFza3M6IEFycmF5PElEb3dubG9hZFN0YXRpb25UYXNrPikge1xuXHRpZighcG9wb3ZlclZpc2libGUpXG5cdFx0cmV0dXJuO1xuXHRcblx0Ly8gUmUtY3JlYXRlIGFycmF5IHRvIGF2b2lkIHByb2JsZW1zIHdpdGgga25vY2tvdXQgbWFwcGluZ1xuXHR2YXIgdGFza0FycmF5ID0gbmV3IEFycmF5PElEb3dubG9hZFN0YXRpb25UYXNrPigpO1xuXHRmb3IodmFyIGkgPSAwOyBpIDwgdGFza3MubGVuZ3RoOyBpKyspIHtcblx0XHR0YXNrQXJyYXkucHVzaCh0YXNrc1tpXSk7XG5cdH1cblx0XG5cdGtvLm1hcHBpbmcuZnJvbUpTKHRhc2tBcnJheSwgdGFza01hcHBpbmcsIHZpZXdNb2RlbC50YXNrcyk7XG59XG5cbmZ1bmN0aW9uIHVwZGF0ZVBvcG92ZXJTaXplKCkge1xuXHQvLyBPbmx5IGZvciBTYWZhcmksIENocm9tZSB1c2VzIHRoZSBkb2N1bWVudCBoZWlnaHRcblx0aWYoSVNfU0FGQVJJKSB7XG5cdFx0dmFyIHVwZGF0ZVNpemVGdW5jdGlvbiA9ICgpID0+IHtcblx0XHRcdGlmKCFzYWZhcmlQb3BvdmVyT2JqZWN0KSB7XG5cdFx0XHRcdHNhZmFyaVBvcG92ZXJPYmplY3QgPSBleHRlbnNpb24uZ2V0U2FmYXJpUG9wb3Zlck9iamVjdChcInN0YXR1c1BvcG92ZXJcIik7XG4gICAgICAgICAgICB9XG5cdFx0XHRcblx0XHRcdGlmKHNhZmFyaVBvcG92ZXJPYmplY3QpIHtcblx0XHRcdFx0c2FmYXJpUG9wb3Zlck9iamVjdC5oZWlnaHQgPSBkb2N1bWVudC5ib2R5Lm9mZnNldEhlaWdodDtcblx0XHRcdFx0c2FmYXJpUG9wb3Zlck9iamVjdC53aWR0aCA9IGRvY3VtZW50LmJvZHkub2Zmc2V0V2lkdGg7XG5cdFx0XHR9XG5cdFx0fTtcblx0XHR2YXIgdXBkYXRlU2l6ZUludGVydmFsOiBudW1iZXI7XG5cdFx0ZXh0ZW5zaW9uLm9uUG9wb3ZlclZpc2libGUoKCkgPT4ge1xuXHRcdFx0dXBkYXRlU2l6ZUludGVydmFsID0gc2V0SW50ZXJ2YWwoPGFueT51cGRhdGVTaXplRnVuY3Rpb24sIDUwKTtcblx0XHRcdHVwZGF0ZVNpemVGdW5jdGlvbigpO1xuXHRcdH0sIFwic3RhdHVzUG9wb3ZlclwiKTtcblx0XHRcblx0XHRleHRlbnNpb24ub25Qb3BvdmVySGlkZGVuKCgpID0+IHtcblx0XHRcdGNsZWFySW50ZXJ2YWwodXBkYXRlU2l6ZUludGVydmFsKTtcblx0XHR9LCBcInN0YXR1c1BvcG92ZXJcIik7XG5cdH1cbn1cblxuZnVuY3Rpb24gYnl0ZXNUb1N0cmluZyhieXRlczogbnVtYmVyKSB7XG4gICAgdmFyIGJ5dGVzID0gcGFyc2VJbnQoPGFueT5ieXRlcyk7XG4gICAgdmFyIEtJTE9CWVRFID0gMTAyNDtcbiAgICB2YXIgTUVHQUJZVEUgPSBLSUxPQllURSAqIDEwMjQ7XG4gICAgdmFyIEdJR0FCWVRFID0gTUVHQUJZVEUgKiAxMDI0O1xuICAgIHZhciBURVJBQllURSA9IEdJR0FCWVRFICogMTAyNDtcblxuICAgIGlmIChpc05hTihieXRlcykpIHtcbiAgICAgICAgcmV0dXJuIFwiMFwiO1xuICAgIH0gaWYgKGJ5dGVzIDwgS0lMT0JZVEUpIHtcbiAgICAgICAgcmV0dXJuIE1hdGgucm91bmQoYnl0ZXMgKiAxMDApIC8gMTAwICsgJyBCJ1xuICAgIH0gZWxzZSBpZiAoYnl0ZXMgPCBNRUdBQllURSkge1xuICAgICAgICByZXR1cm4gTWF0aC5yb3VuZChieXRlcyAvIEtJTE9CWVRFICogMTAwKSAvIDEwMCArICcgS0InO1xuICAgIH0gZWxzZSBpZiAoYnl0ZXMgPCBHSUdBQllURSkge1xuICAgICAgICByZXR1cm4gTWF0aC5yb3VuZChieXRlcyAvIE1FR0FCWVRFICogMTAwKSAvIDEwMCArICcgTUInO1xuICAgIH0gZWxzZSBpZiAoYnl0ZXMgPCBURVJBQllURSkge1xuICAgICAgICByZXR1cm4gTWF0aC5yb3VuZChieXRlcyAvIEdJR0FCWVRFICogMTAwKSAvIDEwMCArICcgR0InO1xuICAgIH0gZWxzZSB7XG4gICAgICAgIHJldHVybiBNYXRoLnJvdW5kKGJ5dGVzIC8gVEVSQUJZVEUgKiAxMDApIC8gMTAwICsgJyBUQic7XG4gICAgfVxufSJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==
+console.log('[Popover] bytesToString defined - STEP 2');
+
+var textDirection = "ltr";
+
+window.addEventListener('load', function load() {
+    window.removeEventListener('load', load, false);
+    document.body.classList.remove('load');
+}, false);
+
+var popoverVisible = false;
+var popoverUpdateInterval = null;
+var currentTasks = [];
+
+console.log('[Popover] Variables initialized - STEP 3');
+
+function updateUIButtons() {
+    console.log('[Popover] updateUIButtons() called');
+    
+    if (typeof viewModel === 'undefined') {
+        console.warn('[Popover] ⚠️ WARNING: viewModel undefined in updateUIButtons!');
+        return;
+    }
+    
+    console.log('[Popover] Updating UI buttons - configured:', viewModel.downloadStationConfigured(), 'loggedIn:', viewModel.loggedIn());
+    
+    // ALWAYS show add-task and open-webui buttons regardless of connection state
+    $('#add-task-btn').show();
+    $('#open-webui').show();
+    
+    // Only show pause/resume/clear based on actual task states
+    var hasPauseable = false;
+    var hasResumeable = false;
+    
+    for (var i = 0; i < currentTasks.length; i++) {
+        var task = currentTasks[i];
+        if (task.status && (task.status === 'downloading' || task.status === 'waiting')) {
+            hasPauseable = true;
+        }
+        if (task.status && (task.status === 'paused' || task.status === 'finished')) {
+            hasResumeable = true;
+        }
+    }
+    
+    hasPauseable ? $('#pause-all').show() : $('#pause-all').hide();
+    hasResumeable ? $('#resume-all').show() : $('#resume-all').hide();
+    
+    var hasFinished = currentTasks.some(function(t) { return t.status === 'finished'; });
+    hasFinished ? $('#clear-finished').show() : $('#clear-finished').hide();
+}
+
+function updateDeviceInfo(info) {
+    console.log('[Popover] updateDeviceInfo() called with:', info);
+    
+    if (info !== null && info !== undefined && info.deviceName) {
+        console.log('[Popover] ✓ Device info VALID - showing main container');
+        console.log('[Popover] Device name:', info.deviceName);
+        
+        $('#device-name').text(info.deviceName);
+        $('#no-connection').hide();
+        $('#main-container').show();
+        $('#footer').show();
+        
+        if (typeof viewModel !== 'undefined') {
+            console.log('[Popover] Setting viewModel properties...');
+            viewModel.deviceName(info.deviceName);
+            viewModel.dsmVersion(info.dsmVersion);
+            viewModel.dsmVersionString(info.dsmVersionString);
+            viewModel.fullUrl(info.fullUrl);
+            viewModel.loggedIn(info.loggedIn);
+            viewModel.downloadStationConfigured(true);
+            viewModel.statusMessage(info.status);
+        }
+        
+        updateUIButtons();
+    }
+    else {
+        console.log('[Popover] ✗ Device info INVALID/NULL - showing no-connection message');
+        $('#no-connection').show();
+        $('#main-container').hide();
+        $('#footer').hide();
+        
+        if (typeof viewModel !== 'undefined') {
+            viewModel.downloadStationConfigured(false);
+        }
+    }
+}
+
+function updateTasks(tasks) {
+    console.log('[Popover] updateTasks() called with:', tasks ? tasks.length + ' tasks' : 'null');
+    
+    currentTasks = tasks || [];
+    
+    if (!popoverVisible || !tasks || tasks.length === 0) {
+        console.log('[Popover] No tasks to display');
+        $('#tasks-list').empty();
+        $('#no-tasks').show();
+        $('#footer').hide();
+        updateUIButtons();
+        return;
+    }
+    
+    console.log('[Popover] Displaying', tasks.length, 'tasks');
+    $('#no-tasks').hide();
+    $('#footer').show();
+    
+    // Manually render tasks to DOM (no Knockout due to CSP)
+    try {
+        var taskListHtml = '';
+        
+        for (var i = 0; i < tasks.length; i++) {
+            var task = tasks[i];
+            
+            // Skip seeding tasks if hideSeedingTorrents is enabled
+            if (typeof viewModel !== 'undefined' && viewModel.hideSeedingTorrents && 
+                viewModel.hideSeedingTorrents() && task.status === 'seeding') {
+                console.log('[Popover] Skipping seeding task:', task.id);
+                continue;
+            }
+            
+            var escapedTitle = $('<div/>').text(task.title).html();
+            
+            // Calculate progress percentage
+            var progress = task.size > 0 ? Math.round((task.sizeDownloaded / task.size) * 100) : 0;
+            
+            // Determine progress bar color based on status
+//            var barColor = '#0275d8'; // default blue for downloading
+//            if (task.status === 'seeding') {
+//                barColor = '#28a745'; // green for seeding
+//            }
+            var barColor = '#0275d8'; // default blue for downloading
+            //var barColor = '';
+            if (task.status === 'seeding') {
+                barColor = '#28a745'; // green for seeding
+            } else if (task.status === 'waiting') {
+                barColor = ''; // null for waiting
+            } else if (task.status === 'finished') {
+                barColor = '#d3d3d3'; // light grey for finished
+            } else if (task.status === 'error') {
+                barColor = '#ff0000'; // red for error
+            }
+            
+            // Determine which buttons to show
+            var showPause = (task.status === 'downloading' || task.status === 'waiting' || task.status === 'seeding');
+            var showResume = (task.status === 'paused' || task.status === 'error');
+            
+            // Determine speed display based on status
+            var speedDisplay = '';
+            if (task.status === 'downloading' || task.status === 'waiting' || task.status === 'finishing') {
+                speedDisplay = 'Downloading ' + task.speedDownloadString;
+            } else if (task.status === 'seeding') {
+                speedDisplay = 'Seeding ' + task.speedUploadString;
+            } else if (task.status === 'finished') {
+                speedDisplay = 'Finished';
+            } else if (task.status === 'paused') {
+                speedDisplay = 'Paused';
+            } else if (task.status === 'error') {
+                speedDisplay = 'Error!';
+            }
+            
+            taskListHtml += '<li data-task-id="' + task.id + '">' +
+                '<span class="task-name">' + escapedTitle + '</span>' +
+                '<div class="task-progress">' +
+                    '<div class="progress">' +
+                        '<div class="progress-bar" style="width: ' + progress + '%; background-color: ' + barColor + ';"></div>' +
+                    '</div>' +
+                '</div>' +
+                '<div style="display: flex; justify-content: space-between; align-items: center;">' +
+                    '<div>' +
+                        '<div class="task-info" style="margin: 4px 0;">' +
+                            '<span class="task-size">' + task.sizeDownloadedString + ' / ' + task.sizeString + '</span>' +
+                            (speedDisplay ? ' - <span>' + speedDisplay + '</span>' : '') +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="task-buttons" style="display: inline-flex; gap: 8px;">' +
+                        (showPause ? '<i class="fa fa-fw fa-pause task-pause-btn" role="button" title="Pause" style="cursor: pointer;"></i>' : '') +
+                        (showResume ? '<i class="fa fa-fw fa-play task-resume-btn" role="button" title="Resume" style="cursor: pointer;"></i>' : '') +
+                        '<i class="fa fa-fw fa-trash task-delete-btn" role="button" title="Delete" style="cursor: pointer;"></i>' +
+                    '</div>' +
+                '</div>' +
+                '</li>';
+            console.log('[Popover] Added task:', task.id, task.title);
+        }
+        
+        // Render to DOM
+        $('#tasks-list').html(taskListHtml);
+        
+        // Attach click handlers to buttons
+        $('#tasks-list').on('click', '.task-pause-btn', function() {
+            var taskId = $(this).closest('li').data('task-id');
+            console.log('[Popover] Pause clicked for task:', taskId);
+            chrome.runtime.sendMessage({action: "pauseTask", data: [taskId]}, function(response) {
+                console.log('[Popover] Pause response:', response);
+                updatePopoverData();
+            });
+        });
+        
+        $('#tasks-list').on('click', '.task-resume-btn', function() {
+            var taskId = $(this).closest('li').data('task-id');
+            console.log('[Popover] Resume clicked for task:', taskId);
+            chrome.runtime.sendMessage({action: "resumeTask", data: [taskId]}, function(response) {
+                console.log('[Popover] Resume response:', response);
+                updatePopoverData();
+            });
+        });
+        
+        $('#tasks-list').on('click', '.task-delete-btn', function() {
+            var taskId = $(this).closest('li').data('task-id');
+            console.log('[Popover] Delete clicked for task:', taskId);
+            chrome.runtime.sendMessage({action: "deleteTask", data: taskId}, function(response) {
+                console.log('[Popover] Delete response:', response);
+                updatePopoverData();
+            });
+        });
+        
+        console.log('[Popover] ✓ All', tasks.length, 'tasks rendered');
+    } catch (e) {
+        console.error('[Popover] Error rendering tasks:', e.message);
+        console.error('[Popover] Stack:', e.stack);
+    }
+    
+    updateUIButtons();
+    
+    var totalDownSpeed = 0;
+    var totalUpSpeed = 0;
+    for (var i = 0; i < tasks.length; i++) {
+        if (tasks[i].status !== 'paused' && tasks[i].status !== 'finished') {
+            totalDownSpeed += (tasks[i].speedDownload || 0);
+            totalUpSpeed += (tasks[i].speedUpload || 0);
+        }
+    }
+    
+    $('#download-speed').text(bytesToString(totalDownSpeed) + '/s');
+    $('#upload-speed').text(bytesToString(totalUpSpeed) + '/s');
+}
+
+function updatePopoverData() {
+    console.log('[Popover] updatePopoverData() called');
+    
+    chrome.runtime.sendMessage({action: "ping"}, function(response) {
+        if (chrome.runtime.lastError) {
+            console.error('[Popover] SW unavailable (ping):', chrome.runtime.lastError.message);
+            return;
+        }
+        console.log('[Popover] ✓ SW responding to ping');
+    });
+    
+    setTimeout(() => {
+        console.log('[Popover] Requesting device info from SW...');
+        chrome.runtime.sendMessage({action: "getDeviceInfo"}, function(deviceInfo) {
+            console.log('[Popover] getDeviceInfo response:', deviceInfo);
+            
+            if (chrome.runtime.lastError) {
+                console.error('[Popover] Error getting device info:', chrome.runtime.lastError.message);
+                return;
+            }
+            updateDeviceInfo(deviceInfo);
+        });
+        
+        console.log('[Popover] Requesting tasks from SW...');
+        chrome.runtime.sendMessage({action: "getTasks"}, function(tasks) {
+            console.log('[Popover] getTasks response:', tasks);
+            
+            if (chrome.runtime.lastError) {
+                console.error('[Popover] Error getting tasks:', chrome.runtime.lastError.message);
+                return;
+            }
+            updateTasks(tasks);
+        });
+    }, 100);
+}
+
+console.log('[Popover] Helper functions defined - STEP 4');
+
+try {
+    if (extension.getLocalizedString("textDirection") == "rtl") {
+        textDirection = "rtl";
+        $(document.body).removeClass("ltr").addClass("rtl");
+    }
+    
+    console.log('[Popover] Text direction set - STEP 5');
+    
+    // CRITICAL FIX: Wait for viewModel to be created by popover-popovermodel.js
+    var initializationAttempts = 0;
+    var initializePopover = function() {
+        initializationAttempts++;
+        
+        if (typeof viewModel === 'undefined') {
+            if (initializationAttempts > 100) {
+                console.error('[Popover] ❌ FATAL: viewModel never created after 100 attempts (5 seconds)');
+                return;
+            }
+            setTimeout(initializePopover, 50);
+            return;
+        }
+        
+        console.log('[Popover] ✓ viewModel found!');
+        
+        extension.storage.get("hideSeedingTorrents", function (storageItems) {
+            if (typeof viewModel !== 'undefined') {
+                viewModel.hideSeedingTorrents(storageItems["hideSeedingTorrents"] === true);
+            }
+        });
+        
+        // IMPORTANT: Set popoverVisible BEFORE initial data update!
+        // This prevents the first getTasks response from being blocked
+        popoverVisible = true;
+        if (!popoverUpdateInterval) {
+            popoverUpdateInterval = setInterval(updatePopoverData, 2000);
+        }
+        
+        console.log('[Popover] Starting initial data update...');
+        updatePopoverData();
+        
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                popoverVisible = false;
+                if (popoverUpdateInterval) {
+                    clearInterval(popoverUpdateInterval);
+                    popoverUpdateInterval = null;
+                }
+            } else {
+                popoverVisible = true;
+                updatePopoverData();
+                if (!popoverUpdateInterval) {
+                    popoverUpdateInterval = setInterval(updatePopoverData, 2000);
+                }
+            }
+        });
+        
+        console.log('[Popover] Setting up button handlers...');
+        
+        // Use a timer to ensure DOM is ready
+        setTimeout(function() {
+            console.log('[Popover] Binding button handlers...');
+            
+            var addTaskBtn = document.getElementById('add-task-btn');
+            var addTaskForm = document.getElementById('add-task-form');
+            var urlInput = document.getElementById('url-input');
+            var openWebuiBtn = document.getElementById('open-webui');
+            var pauseBtn = document.getElementById('pause-all');
+            var resumeBtn = document.getElementById('resume-all');
+            var clearBtn = document.getElementById('clear-finished');
+            var settingsBtn = document.getElementById('open-settings');
+            var noConnectionDiv = document.getElementById('no-connection');
+            
+            console.log('[Popover] DOM Elements found:');
+            console.log('  - addTaskBtn:', !!addTaskBtn);
+            console.log('  - addTaskForm:', !!addTaskForm);
+            console.log('  - urlInput:', !!urlInput);
+            console.log('  - openWebuiBtn:', !!openWebuiBtn);
+            console.log('  - settingsBtn:', !!settingsBtn);
+            
+            // ADD TASK BUTTON - CLICK HANDLER
+            if (addTaskBtn) {
+                console.log('[Popover] ✓ Found addTaskBtn, binding click handler');
+                $(addTaskBtn).click(function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('[Popover] *** ADD TASK BUTTON CLICKED ***');
+                    console.log('[Popover] Current form visibility');
+                    
+                    if (!addTaskForm) {
+                        console.error('[Popover] ERROR: addTaskForm element not found!');
+                        return false;
+                    }
+                    
+                    // Toggle the .active class which controls visibility via CSS margin-top
+                    if ($(addTaskForm).hasClass('active')) {
+                        console.log('[Popover] Hiding form');
+                        $(addTaskForm).removeClass('active');
+                        addTaskForm.style.display = 'none';
+                    } else {
+                        console.log('[Popover] Showing form');
+                        addTaskForm.style.display = 'block';  // Remove inline display:none
+                        $(addTaskForm).addClass('active');
+                        if (urlInput) {
+                            console.log('[Popover] Focusing URL input');
+                            setTimeout(function() {
+                                urlInput.focus();
+                            }, 100);
+                        } else {
+                            console.warn('[Popover] URL input not found!');
+                        }
+                    }
+                    return false;
+                });
+            } else {
+                console.error('[Popover] ❌ ERROR: addTaskBtn element not found!');
+            }
+            
+            // FORM SUBMIT HANDLER
+            if (addTaskForm) {
+                console.log('[Popover] ✓ Found addTaskForm, binding submit handler');
+                $(addTaskForm).submit(function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('[Popover] *** FORM SUBMITTED (submit event) ***');
+                    submitAddTaskForm();
+                    return false;
+                });
+                
+                // Also bind to button click as backup
+                var submitButton = addTaskForm.querySelector('button[type="submit"]');
+                if (submitButton) {
+                    console.log('[Popover] ✓ Found submit button, binding click handler');
+                    $(submitButton).click(function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('[Popover] *** FORM SUBMITTED (button click) ***');
+                        submitAddTaskForm();
+                        return false;
+                    });
+                }
+            } else {
+                console.error('[Popover] ❌ ERROR: addTaskForm element not found!');
+            }
+            
+            function submitAddTaskForm() {
+                var url = urlInput ? urlInput.value.trim() : '';
+                console.log('[Popover] URL entered:', url);
+                
+                if (url) {
+                    console.log('[Popover] Sending addTask message to SW');
+                    chrome.runtime.sendMessage({
+                        action: "addTask",
+                        data: {
+                            url: url,
+                            username: null,
+                            password: null,
+                            unzipPassword: null,
+                            destinationFolder: null
+                        }
+                    }, function(response) {
+                        console.log('[Popover] addTask response:', response);
+                        if (response && response.success) {
+                            console.log('[Popover] ✓ Task added successfully');
+                            if (urlInput) urlInput.value = '';
+                            $(addTaskForm).removeClass('active');
+                            addTaskForm.style.display = 'none';
+                            updatePopoverData();
+                        } else {
+                            console.error('[Popover] Task add failed:', response);
+                        }
+                    });
+                } else {
+                    console.warn('[Popover] No URL entered');
+                }
+            }
+            
+            // OPEN WEBUI BUTTON
+            if (openWebuiBtn) {
+                openWebuiBtn.onclick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('[Popover] *** OPEN WEBUI CLICKED ***');
+                    
+                    chrome.runtime.sendMessage({action: "getSettings"}, function(settings) {
+                        console.log('[Popover] Settings:', settings);
+                        var dsUrl = '';
+                        
+                        if (settings.quickConnectId && settings.quickConnectId.length > 0) {
+                            dsUrl = 'https://quickconnect.to/' + settings.quickConnectId;
+                        } else {
+                            var protocol = settings.protocol || 'http://';
+                            //var url = settings.url || 'localhost';
+                            var url = settings.url;
+                            var port = settings.port || 5000;
+                            dsUrl = protocol + url + ':' + port + '/index.cgi?launchApp=SYNO.SDS.DownloadStation.Application';
+                        }
+                        
+                        console.log('[Popover] Opening URL:', dsUrl);
+                        chrome.tabs.create({url: dsUrl});
+                    });
+                };
+            }
+            
+            // PAUSE BUTTON
+            if (pauseBtn) {
+                pauseBtn.onclick = function(e) {
+                    e.preventDefault();
+                    console.log('[Popover] *** PAUSE CLICKED ***');
+                    var ids = [];
+                    for (var i = 0; i < currentTasks.length; i++) {
+                        if (currentTasks[i].status === 'downloading' || currentTasks[i].status === 'waiting') {
+                            ids.push(currentTasks[i].id);
+                        }
+                    }
+                    if (ids.length > 0) {
+                        chrome.runtime.sendMessage({action: "pauseTask", data: ids}, function(response) {
+                            updatePopoverData();
+                        });
+                    }
+                };
+            }
+            
+            // RESUME BUTTON
+            if (resumeBtn) {
+                resumeBtn.onclick = function(e) {
+                    e.preventDefault();
+                    console.log('[Popover] *** RESUME CLICKED ***');
+                    var ids = [];
+                    for (var i = 0; i < currentTasks.length; i++) {
+                        if (currentTasks[i].status === 'paused') {
+                            ids.push(currentTasks[i].id);
+                        }
+                    }
+                    if (ids.length > 0) {
+                        chrome.runtime.sendMessage({action: "resumeTask", data: ids}, function(response) {
+                            updatePopoverData();
+                        });
+                    }
+                };
+            }
+            
+            // CLEAR BUTTON
+            if (clearBtn) {
+                clearBtn.onclick = function(e) {
+                    e.preventDefault();
+                    console.log('[Popover] *** CLEAR FINISHED CLICKED ***');
+                    chrome.runtime.sendMessage({action: "clearFinishedTasks"}, function(response) {
+                        updatePopoverData();
+                    });
+                };
+            }
+            
+            // SETTINGS BUTTON
+            if (settingsBtn) {
+                settingsBtn.onclick = function(e) {
+                    e.preventDefault();
+                    console.log('[Popover] *** SETTINGS CLICKED ***');
+                    chrome.runtime.openOptionsPage();
+                };
+            }
+            
+            // NO CONNECTION MESSAGE CLICK
+            if (noConnectionDiv) {
+                noConnectionDiv.onclick = function(e) {
+                    e.preventDefault();
+                    console.log('[Popover] *** NO CONNECTION CLICKED - OPENING SETTINGS ***');
+                    chrome.runtime.openOptionsPage();
+                };
+            }
+            
+            console.log('[Popover] ✓ ALL BUTTON HANDLERS BOUND');
+            
+        }, 50);
+        
+        console.log('[Popover] ✓ Initialization complete!');
+    };
+    
+    console.log('[Popover] Starting initialization checks...');
+    initializePopover();
+    
+} catch (exc) {
+    console.error('[Popover] EXCEPTION:', exc.message);
+    console.error('[Popover] Stack:', exc.stack);
+}
+
+console.log('[Popover] popover.js END');
