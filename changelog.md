@@ -12,7 +12,7 @@
 - Moved Icon-xx.png images to images folder
 
 ## 3.0.14 - by 007revad
-- Removed Analytics that 15 out 65 virus scanners flagged as a Trojan
+- Removed Google Analytics that 15 out 65 virus scanners flagged as a Trojan
 
 ## 2.2.13
 - Resolved JavaScript error in SVG documents
