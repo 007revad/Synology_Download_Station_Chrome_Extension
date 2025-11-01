@@ -3,7 +3,7 @@
 		"message": "ltr"
 	},
 	"chromeExtensionName": {
-		"message": "Synology Download Station for Google Chrome™"
+		"message": "Synology Download Station Chrome Extension"
 	},
 	"chromeExtensionDescription": {
 		"message": "ブラウザーでSynology DiskStationのダウンロードを管理する。"
