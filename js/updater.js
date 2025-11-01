@@ -12,24 +12,23 @@ function ExtensionUpdater ()
 		});
 	};
 	
-	this.update = function (fromVersion, toVersion) {
-		
-		if(this.compareVersion(fromVersion, toVersion) == -1)
-		{
-			for (var i = 0; i < this.changes.length; i++)
-			{
-				var change = this.changes[i];
-				if(this.compareVersion(fromVersion, change.version) <= 0 && this.compareVersion(toVersion, change.version) >= 0)
-				{
-					change.updateFunction();
-					console.log("Update function %s executed.", change.version);
-					extension.storage.set({ extensionVersion: change.version });
-				}
-			}
-			console.log("Extension updated from %s to %s.", fromVersion, toVersion);
-			_gaq.push(['_trackEvent', 'Startup', 'Updated', 'From ' + fromVersion + ' to ' + toVersion]);
-		}
-	};
+	//this.update = function (fromVersion, toVersion) {
+	//	
+	//	if(this.compareVersion(fromVersion, toVersion) == -1)
+	//	{
+	//		for (var i = 0; i < this.changes.length; i++)
+	//		{
+	//			var change = this.changes[i];
+	//			if(this.compareVersion(fromVersion, change.version) <= 0 && this.compareVersion(toVersion, change.version) >= 0)
+	//			{
+	//				change.updateFunction();
+	//				console.log("Update function %s executed.", change.version);
+	//				extension.storage.set({ extensionVersion: change.version });
+	//			}
+	//		}
+	//		console.log("Extension updated from %s to %s.", fromVersion, toVersion);
+	//	}
+	//};
 	
 	this.compareVersion = function (version, compareToVersion) {
 		var v1parts = version.toString().split('.');
