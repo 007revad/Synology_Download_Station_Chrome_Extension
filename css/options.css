@@ -12,8 +12,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #donate-button {
 	position: absolute;
-	right: 0;
-	top: 1.5em;
+	right: 125;
+	top: 2.5em;
+}
+
+#donate-button2 {
+	position: absolute;
+	right: 13;
+	top: 2.5em;
 }
 
 /*.form-horizontal input[type="text"],
