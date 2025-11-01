@@ -1,3 +1,4 @@
+// MV3: Removed window dependencies, use chrome.runtime.sendMessage for all background communication
 ko.bindingHandlers.bsTooltip = {
 	init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
 		
@@ -124,7 +125,8 @@ $(document).ready(function(){
 		event.stopPropagation();
 	});
 	
-	var getParams = $.deparam(window.location.search.replace("?", ""));
+	// MV3: Use location directly (available in content scripts), or get from chrome.runtime
+	var getParams = $.deparam((typeof location !== "undefined" ? location : { search: "" }).search.replace("?", ""));
 	
 	viewModel = new DownloadDialogViewModel();
 	viewModel.checkSupportedFeatures();
@@ -143,7 +145,11 @@ $(document).ready(function(){
 	
 	$('#add-download').bind('hidden.bs.modal', "#add-download", function (event) {
 		if($(event.target).get(0) === $("#add-download").get(0)){
-			extension.sendMessageToBackground("sendRemoveDialogMessage", { dialogId: getParams.id });
+			// MV3: Use chrome.runtime.sendMessage
+			chrome.runtime.sendMessage({
+				action: "sendRemoveDialogMessage",
+				data: { dialogId: getParams.id }
+			});
 		}
 	});
 	
@@ -229,7 +235,11 @@ function DownloadDialogViewModel()
 		self.submittingDownload(true);
 		self.submitDownloadError(null);
 		
-		extension.sendMessageToBackground("addTask", messageData, function(response)
+		// MV3: Use chrome.runtime.sendMessage
+		chrome.runtime.sendMessage({
+			action: "addTask",
+			data: messageData
+		}, function(response)
 		{
 			self.submittingDownload(false);
 			
@@ -256,7 +266,10 @@ function DownloadDialogViewModel()
 	});
 	
 	this.checkSupportedFeatures = function() {
-    	extension.sendMessageToBackground("getSupportedFeatures", null, function(features){
+    	// MV3: Use chrome.runtime.sendMessage
+    	chrome.runtime.sendMessage({
+    		action: "getSupportedFeatures"
+    	}, function(features){
         	self.customDestinationFolderSupported(features.destinationFolder);
     	});
 	}
@@ -320,7 +333,11 @@ function DownloadDialogViewModel()
 			path: this.currentFolder().path(),
 			name: this.newFolderName()
 		};
-		extension.sendMessageToBackground("createFolder", message, function(response) {
+		// MV3: Use chrome.runtime.sendMessage
+		chrome.runtime.sendMessage({
+			action: "createFolder",
+			data: message
+		}, function(response) {
 			self.newFolderSubmitting(false);
 			
 			if(!response.success)
@@ -377,7 +394,11 @@ function Folder(details, parent) {
 		this.errorMessage(null);
         this.loadingFolders(true);
         
-		extension.sendMessageToBackground("listFolders", this.path(), function(response) {
+		// MV3: Use chrome.runtime.sendMessage
+		chrome.runtime.sendMessage({
+			action: "listFolders",
+			data: this.path()
+		}, function(response) {
 			
 			if(!response.success)
 			{
@@ -412,7 +433,11 @@ function Folder(details, parent) {
 			name: this.name.unsaved()
 		};
 		
-		extension.sendMessageToBackground("rename", message, function(response) {
+		// MV3: Use chrome.runtime.sendMessage
+		chrome.runtime.sendMessage({
+			action: "rename",
+			data: message
+		}, function(response) {
     		self.name.saving(false);
 			
 			if(!response.success)
@@ -475,7 +500,11 @@ function Folder(details, parent) {
 			path: this.path()
 		};
 		
-		extension.sendMessageToBackground("delete", message, function(response) {
+		// MV3: Use chrome.runtime.sendMessage
+		chrome.runtime.sendMessage({
+			action: "delete",
+			data: message
+		}, function(response) {
 			
 			self.remove.removing(false);
 			
