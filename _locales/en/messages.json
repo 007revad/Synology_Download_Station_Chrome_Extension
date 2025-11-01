@@ -4,7 +4,7 @@
 		"description": "'ltr' for left-to-right languages, 'rtl' for right-to-left languages (without quotes). This value is used to determine how to display text in the extension."
 	},
 	"chromeExtensionName": {
-		"message": "Synology Download Station for Google Chrome™",
+		"message": "Synology Download Station Chrome Extension",
 		"description": "Name of the chrome version of the extension, must have ™ (TM) after 'Chrome' to comply with Googles rules"
 	},
 	"chromeExtensionDescription": {
