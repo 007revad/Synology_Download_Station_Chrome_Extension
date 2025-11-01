@@ -15,7 +15,7 @@ New version DownloadStation_Chrome_Extension version 4.x.x is Chrome manifest 3 
 
 
 ### How to install the extension
-1. Download the latest v4 or later [DownloadStation_Chrome_Extension.zip](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases) file.
+1. Download the latest version 4 or later [DownloadStation_Chrome_Extension.zip](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases) file.
 2. Unpack the DownloadStation_Chrome_Extension.zip archive. Remember the location of the "Synology_Download_Station" folder.
 3. Open the Extensions page by either:
     - Type `chrome://extensions` in chrome's address bar, or
