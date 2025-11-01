@@ -1,8 +1,17 @@
 # Changelog
-## 3.0.15
+
+## 4.0.16 - by 007revad
+- Updated to Chrome manifest 3.
+- Changed to show the 100 newest downloads.
+- Changed progressbar for finished downloads to grey.
+- Added check for newer version (runs when extension loaded and once every 24 hours).
+- Shows in options if there's a newer available from GitHub and provides a link to it.
+- Added buymecoffee and PayPal donate buttons for those who want to support me.
+
+## 3.0.15 - by 007revad
 - Moved Icon-xx.png images to images folder
 
-## 3.0.14
+## 3.0.14 - by 007revad
 - Removed Analytics that 15 out 65 virus scanners flagged as a Trojan
 
 ## 2.2.13
