@@ -3,10 +3,10 @@
 		"message": "rtl"
 	},
 	"chromeExtensionName": {
-		"message": "Synology Download Station Chrome Extension"
+		"message": "محطة التنزيل Synology Download Station  للمتصفح جوجل كروم Chrome"
 	},
 	"chromeExtensionDescription": {
-		"message": "تحكم في تنزيل الملفات على وحدة الخزن Synology Disk Station من خلال متصفح جوجل كروم Google Chrome™."
+		"message": "تحكم في تنزيل الملفات على وحدة الخزن Synology Disk Station من خلال متصفح جوجل كروم Chrome."
 	},
 	"settingsGroupConnection": {
 		"message": "الاتصال"
