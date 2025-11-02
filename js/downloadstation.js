@@ -30,20 +30,24 @@ var DownloadStation = (function () {
                 ? this._settings.protocol + this._settings.url + ":" + this._settings.port : null
         };
         var self = this;
-        window.addEventListener("online", function () {
-            self.startBackgroundUpdate();
-        }, false);
-        window.addEventListener("offline", function () {
-            if (self.connected) {
-                clearTimeout(self._disconnectTimeout);
-                self._sid = null;
-                self.deviceInfo.loggedIn = false;
+        // MV3: window.addEventListener may not work in service worker context
+        // Use navigator.onLine status checks instead
+        if (typeof window !== "undefined") {
+            window.addEventListener("online", function () {
+                self.startBackgroundUpdate();
+            }, false);
+            window.addEventListener("offline", function () {
+                if (self.connected) {
+                    clearTimeout(self._disconnectTimeout);
+                    self._sid = null;
+                    self.deviceInfo.loggedIn = false;
                 self.tasks = [];
                 self.connected = false;
                 self.trigger(["connectionLost", "tasksUpdated"]);
             }
             self.stopBackgroundUpdate();
         }, false);
+        }
     }
     DownloadStation.prototype._setStatus = function (newStatus) {
         if (newStatus !== this.deviceInfo.status) {
@@ -63,14 +67,11 @@ var DownloadStation = (function () {
             callback(true);
             return;
         }
-        var xhr = $.ajax({
-            url: url,
-            username: username,
-            password: password,
-            timeout: 5000,
-            type: "HEAD"
-        });
-        xhr.done(function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open("HEAD", url, true, username, password);
+        xhr.timeout = 5000;
+        
+        xhr.onload = function () {
             var contentType = xhr.getResponseHeader('Content-Type') || '';
             var contentLength = xhr.getResponseHeader('Content-Length');
             var urlWithoutParameters = url.removeUrlParameters();
@@ -81,10 +82,17 @@ var DownloadStation = (function () {
                 callback(true);
             else
                 callback(false);
-        })
-            .fail(function () {
+        };
+        
+        xhr.onerror = function () {
             callback(false);
-        });
+        };
+        
+        xhr.ontimeout = function () {
+            callback(false);
+        };
+        
+        xhr.send();
     };
     DownloadStation.prototype._getDsmVersionString = function (number) {
         if (isNaN(number))
@@ -418,12 +426,13 @@ var DSFile = (function () {
         catch (e) {
             console.log("Blob constructor not supported, falling back to BlobBuilder");
             // Old browsers
-            var w = window;
-            var blobBuilder = w.BlobBuilder ||
-                w.WebKitBlobBuilder ||
-                w.MozBlobBuilder ||
-                w.MSBlobBuilder;
-            if (w.BlobBuilder) {
+            if (typeof window !== 'undefined') {
+                var w = window;
+                var blobBuilder = w.BlobBuilder ||
+                    w.WebKitBlobBuilder ||
+                    w.MozBlobBuilder ||
+                    w.MSBlobBuilder;
+                    if (w.BlobBuilder) {
                 try {
                     var bb = new blobBuilder();
                     bb.append(this.data);
@@ -436,6 +445,7 @@ var DSFile = (function () {
             }
             else {
                 console.log("BlobBuilder not supported");
+            }
             }
         }
     };

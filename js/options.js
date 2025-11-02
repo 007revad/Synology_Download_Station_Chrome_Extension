@@ -1,5 +1,6 @@
 /// <reference path="../../typings/jquery/jquery.d.ts"/>
 /// <reference path="../../typings/showdown/showdown.d.ts"/>
+// MV3: All background communication uses chrome.runtime.sendMessage, no window dependencies
 $(document).ready(function() {
 	if(location.hash.length > 0)
 		$("#menu a[href='" + location.hash + "']").tab("show");
@@ -22,7 +23,11 @@ $(document).ready(function() {
 	
 	$("#about-extension-version").text(extension.getExtensionVersion());
 	
+	// Fetch and display latest version
+	getLatestVersion();
+	
 	$('#donate-button').attr('href', DONATION_URL);
+	$('#donate-button2').attr('href', DONATION_URL2);
 	
 	loadChangelog();
 	
@@ -32,14 +37,16 @@ $(document).ready(function() {
 	};
 
 	// External links
+	// MV3: Use chrome.tabs.create instead of window.open
 	$('a:external').click(function(evt) {
 		evt.preventDefault();
 		var url = $(this).attr('href');
 		
-		if(url)
-			_gaq.push(['_trackEvent' , 'Button' , 'External link', url ] );
-			
-		window.open(url, '_blank');
+		if (IS_CHROME) {
+			chrome.tabs.create({ url: url });
+		} else if (IS_SAFARI) {
+			window.open(url, '_blank');
+		}
 	});
 	
 	$("a").each(function(index, element) {
@@ -47,9 +54,7 @@ $(document).ready(function() {
 		
 		if(url.indexOf("download-station-extension.com") != -1) {
 			var medium = "unknown";
-			if(IS_OPERA)
-				medium = "Opera";
-			else if(IS_CHROME)
+			if(IS_CHROME)
 				medium = "Chrome";
 			else if(IS_SAFARI)
 				medium = "Safari";
@@ -108,14 +113,21 @@ $(document).ready(function() {
 		
 		var newOptions = getConnectionFormData();
 		
-		extension.sendMessageToBackground("testConnection", newOptions, function(response) {
+		// MV3: Use chrome.runtime.sendMessage instead of extension.sendMessageToBackground
+		chrome.runtime.sendMessage({
+			action: "testConnection",
+			data: newOptions
+		}, function(response) {
 			var form = $("form#connection");
 				$("#test-connection .fa-spinner", form).hide();
 				$("#test-connection .fa-flask", form).show();
 				
 				$("button", form).prop("disabled", false);
 				
-				if(response.success === true)
+				if(!response) {
+					showDialog(extension.getLocalizedString("testDialogFailed"), "No response from background", "fa-exclamation-triangle");
+				}
+				else if(response.success === true)
 					showDialog(extension.getLocalizedString("testDialogSuccess"), response.message, "fa-check-circle");
 				else
 					showDialog(extension.getLocalizedString("testDialogFailed"), response.message, "fa-exclamation-triangle");
@@ -136,7 +148,12 @@ $(document).ready(function() {
 		$("button", this).attr("disabled", true);
 		$("button[type=submit] .fa-spinner", this).show();
 		$("button[type=submit] .fa-save", this).hide();
-		extension.sendMessageToBackground("saveConnectionSettings", newOptions, function(response) {
+		
+		// MV3: Use chrome.runtime.sendMessage
+		chrome.runtime.sendMessage({
+			action: "saveConnectionSettings",
+			data: newOptions
+		}, function(response) {
 			var form = $("form#connection");
 			$("button .fa-save", form).show();
 			$("button .fa-spinner", form).hide();
@@ -148,69 +165,6 @@ $(document).ready(function() {
 			else
 				showDialog(extension.getLocalizedString("testDialogFailed"), response.message, "fa-exclamation-triangle");
 		});
-	});
-	
-	var emailCheckXhr = null;
-	var emailCheckTimeout = null;
-	$(document.body).on("input", "#email", function(evt) {
-		clearTimeout(emailCheckTimeout);
-		
-		if(emailCheckXhr != null) {
-			emailCheckXhr.abort();
-		}
-		
-		var input = $(this);
-		var formgroup = input.closest(".form-group");
-		
-		$("#email-addon").addClass("hidden");
-		$("#email-addon-success").addClass("hidden");
-		$("#email-addon-checking").removeClass("hidden");
-		$("#email-check-failed").addClass("hidden");
-		formgroup.removeClass("has-success");
-		
-		var email = input.val();
-		
-		if(email) {
-			emailCheckTimeout = setTimeout(function(){
-				emailCheckXhr = $.post(DONATION_CHECK_URL, { email: email })
-					.done(function(data) {
-						if(data.result == true) {
-							$("#email-addon").addClass("hidden");
-							$("#email-addon-success").removeClass("hidden");
-							$("#email-addon-checking").addClass("hidden");
-							$("#email-check-failed").addClass("hidden");
-							formgroup.addClass("has-success");
-						}
-						else {
-							$("#email-addon").removeClass("hidden");
-							$("#email-addon-success").addClass("hidden");
-							$("#email-addon-checking").addClass("hidden");
-							$("#email-check-failed").removeClass("hidden");
-							formgroup.removeClass("has-success");
-						}
-					}).fail(function(jqXHR, textStatus, errorThrown) {
-						if (textStatus != "abort") {
-							$("#email-addon").removeClass("hidden");
-							$("#email-addon-success").addClass("hidden");
-							$("#email-addon-checking").addClass("hidden");
-							$("#email-check-failed").addClass("hidden");
-							formgroup.removeClass("has-success");
-							
-							_gaq.push(['_trackEvent', 'Donation check', 'Check failed', textStatus + ' - ' + errorThrown]);
-						}
-					})
-					.always(function(){
-						emailCheckXhr = null;
-					});
-			}, 1000);
-		}
-		else {
-			$("#email-addon").removeClass("hidden");
-			$("#email-addon-success").addClass("hidden");
-			$("#email-addon-checking").addClass("hidden");
-			$("#email-check-failed").addClass("hidden");
-			formgroup.removeClass("has-success");
-		}
 	});
 	
 	$(document.body).on("submit", "#other-settings", function(evt) {
@@ -228,7 +182,11 @@ $(document).ready(function() {
 		$("button[type=submit] .fa-spinner", this).show();
 		$("button[type=submit] .fa-save", this).hide();
 		
-		extension.sendMessageToBackground("saveOtherSettings", newOptions, function(response) {
+		// MV3: Use chrome.runtime.sendMessage
+		chrome.runtime.sendMessage({
+			action: "saveOtherSettings",
+			data: newOptions
+		}, function(response) {
 			var form = $("form#other-settings");
 			$("button .fa-save", form).show();
 			$("button .fa-spinner", form).hide();
@@ -272,7 +230,10 @@ $(document).ready(function() {
 	}
 	
 	// !Load settings
-	extension.sendMessageToBackground("getSettings", null, function(response) {
+	// MV3: Use chrome.runtime.sendMessage
+	chrome.runtime.sendMessage({
+		action: "getSettings"
+	}, function(response) {
 		setOptionFields(response);
 	});
 });
@@ -303,6 +264,7 @@ function getConnectionFormData() {
 	});
 	
 	newOptions.updateInBackground = newOptions.updateInBackground == "on";
+	//newOptions.updateInBackground = newOptions.updateInBackground == "off";
 	newOptions.backgroundUpdateInterval = parseInt(newOptions.backgroundUpdateInterval);
 	if(isNaN(newOptions.backgroundUpdateInterval) || newOptions.backgroundUpdateInterval < 5)
 		newOptions.backgroundUpdateInterval = 20;
@@ -319,6 +281,12 @@ function getOtherSettingsFormData() {
 	});
 	
 	newOptions.hideSeedingTorrents = newOptions.hideSeedingTorrents == "on";
+    // Notify popover of setting change
+    chrome.runtime.sendMessage({
+        action: "settingChanged",
+        setting: "hideSeedingTorrents",
+        value: newOptions.hideSeedingTorrents
+    });
 	newOptions.openProtocols = [];
 	
 	$("input[type=checkbox][name=openProtocols]:checked").each(function(index, element) {
@@ -328,7 +296,66 @@ function getOtherSettingsFormData() {
 	return newOptions;
 }
 
+function getLatestVersion() {
+    chrome.runtime.sendMessage({
+        action: "getLatestVersion"
+    }, function(response) {
+        if (response) {
+            var latestVersion = response.replace(/^v/, '');  // Remove 'v' prefix
+            var currentVersion = extension.getExtensionVersion();
+            if (compareVersion(latestVersion, currentVersion) > 0) {
+                $("#about-latest-version").text(latestVersion);
+                // Show the version display after setting the text
+                document.getElementById('about-latest-version').parentElement.style.display = 'block';
+            }
+        }
+    });
+}
+
+function compareVersion(latestTag, currentVersion) {
+	var v1parts = latestTag.toString().split('.');
+	var v2parts = currentVersion.toString().split('.');
+	
+	while(v1parts.length < v2parts.length) {
+		v1parts.push(0);
+	}
+	
+	while(v2parts.length < v1parts.length) {
+		v2parts.push(0);
+	}
+	
+	for (var i = 0; i < v1parts.length; ++i) {
+		var v1part = parseInt(v1parts[i]);
+		var v2part = parseInt(v2parts[i]);
+		
+		if(isNaN(v1part))
+			v1part = 0;
+		if(isNaN(v2part))
+			v2part = 0;
+		
+		if (v1part == v2part) {
+			continue;
+		}
+		else if (v1part > v2part) {
+			return 1;
+		}
+		else {
+			return -1;
+		}
+	}
+	
+	return 0;
+}
+
 function setOptionFields(options) {
+    if (!options) options = {};
+    if (!options.openProtocols) options.openProtocols = [];
+    if (!options.protocol) options.protocol = 'http://';
+    //if (!options.url) options.url = 'localhost';
+    if (!options.url) options.url = '';
+    //if (!options.port) options.port = 5000;
+    if (!options.port) options.port = '';
+    if (!options.backgroundUpdateInterval) options.backgroundUpdateInterval = 20;
 	
 	var quickConnectEnabled = options.quickConnectId != null && options.quickConnectId.length > 0;
 	
@@ -342,6 +369,7 @@ function setOptionFields(options) {
 		$("input[name=protocol][type=radio][value='" + options.protocol + "']").prop("checked", true);
 		$('#url').val(options['url']);
 		$('#port').val(options['port'] || 5000);
+		//$('#port').val(options['port']);
 	}
 	
 	$('#username').val(options.username);
@@ -398,18 +426,3 @@ function loadChangelog() {
 	xhr.open("GET", extension.getResourceURL("changelog.md"), true);
 	xhr.send();
 }
-
-// !Google Analytics
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', ANALYTICS_ID]);
-_gaq.push(['_trackPageview']);
-
-(function() {
-	var ga = document.createElement('script');
-	ga.type = 'text/javascript';
-	ga.async = true;
-	ga.src = 'https://ssl.google-analytics.com/ga.js';
-	
-	var s = document.getElementsByTagName('script')[0];
-	s.parentNode.insertBefore(ga, s);
-})();

@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Synology Download Station extension settings</title>
@@ -19,14 +19,27 @@
 
 <body>
 	<div class="container">
-		<h1><img src="Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station</h1>
+		<!-- <h1><img src="images/Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station - by 007revad</h1> -->
+		<h1><img src="images/Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station</h1>
 		
-		<a id="donate-button" href="#" target="_blank"><img src="css/img/btn_donate.gif" alt="Donate" /></a>
+		<!-- <a id="donate-button" href="#" target="_blank"><img src="css/img/btn_donate.gif" alt="Donate" /></a> -->
+		<a id="donate-button" href="#" target="_blank"><img src="css/img/bmc-button.gif" alt="BuyMeCoffee" /></a>
+		<a id="donate-button2" href="#" target="_blank"><img src="css/img/paypal-button.gif" alt="Donate via PayPal" /></a>
 		
 		<hr />
+
+        <!-- New version notification -->
+        <div class="alert alert-warning" style="display: none;">
+            <strong>New version available:</strong> <span id="about-latest-version"></span> &nbsp; &nbsp;
+            <a href="https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases" target="_blank">Click here to Download</a>
+        </div>
 		
 		<div class="alert alert-warning">
-    		<strong>Important:</strong> This extension only supports DSM 4.2 and later. Is your device running an older DSM version? Please check <a href="https://www.synology.com/support/download" target="_blank">Synology.com</a> to see if you can update your DSM version or download an old version of this extension from <a href="https://www.download-station-extension.com/" target="_blank">download-station-extension.com</a>.
+    		<strong>Requirements:</strong>
+            <ul>
+                <li>Chrome version 88 and later. May also work in Safari.</li>
+                <li>DSM 4.2 and later.</li>
+            </ul>
 		</div>
 		
 		<div class="tabbable tabs-left">
@@ -111,7 +124,8 @@
 							<div class="col-sm-offset-3 col-sm-9">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" id="updateInBackground" name="updateInBackground" checked />
+										<!-- <input type="checkbox" id="updateInBackground" name="updateInBackground" checked /> -->
+										<input type="checkbox" id="updateInBackground" name="updateInBackground" />
 										<span data-message="lblUpdateInBackground"></span>
 									</label>
 								</div>
@@ -153,7 +167,7 @@
 							</div>
 						</div>
 						
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label class="control-label col-sm-3" for="email" data-message="lblEmail"></label>
 							<div class="col-sm-6">
 								<div class="input-group">
@@ -166,7 +180,7 @@
 								</div>
 								<span id="email-check-failed" class="hidden help-block text-warning">A donation with your email address could not be found. You can find the correct address in your confirmation email. Haven't received the confirmation yet? It can sometimes take a while for PayPal or Bitcoin to process the payment. You can check the status in your PayPal account.</span>
 							</div>
-						</div>
+						</div> -->
 						
 						<div class="form-group row">
 							<label class="control-label col-sm-3" data-message="lblOpenWithDownloadStation"></label>
@@ -257,7 +271,9 @@
 			</div>
 		</div>
 		
-		<div class="text-center muted"><small>Version <span id="about-extension-version"></span></small></div>
+		<!-- <div class="text-center muted"><small>Version <span id="about-extension-version"></span></small></div> -->
+		<div class="text-center muted">Version <span id="about-extension-version"></span></div>
+        <!-- <div class="text-center muted" style="display: none;">New version available <span id="about-latest-version"></span></div> -->
 	</div>
 	
 	<div id="license-modal" class="modal fade out" tabindex="-1" role="dialog" aria-hidden="true">
@@ -265,6 +281,8 @@
 			<div class="modal-content"></div>
 		</div>
 	</div>
+
+    <script src="js/version-display.js"></script>
 </body>
 
 </html>

@@ -8,20 +8,29 @@
 	var dseCurrentIcon = null;
     var bodyOverflowStyle = document.body.style.overflow;
 	
-	extension.onMessage(function(event) {
-		if(event.name == "hud" && top === self) {
-			showHud(event.message);
+	// MV3: Replace deprecated chrome.extension.onMessage with chrome.runtime.onMessage
+	chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+		console.log('Content script received message:', request);
+		
+		// Check if message is from background and we're in top frame
+		if(request.name == "hud" && top === self) {
+			showHud(request.message);
 		}
-		else if (event.name == "openDownloadDialog" && top === self) {
-			showNewTaskDialog(event.message.url);
+		else if (request.name == "openDownloadDialog" && top === self) {
+			showNewTaskDialog(request.message.url);
 		}
-		else if (event.name == "removeDialog") {
-			$("iframe#" + event.message.dialogId).remove();
+		else if (request.name == "removeDialog") {
+			$("iframe#" + request.message.dialogId).remove();
 			document.body.style.overflow = bodyOverflowStyle;
 		}
+		
+		return true; // Keep message channel open
 	});
 	
-	extension.sendMessageToBackground("getProtocols", null, function(protocols) {
+	// MV3: Replace extension.sendMessageToBackground with chrome.runtime.sendMessage
+	chrome.runtime.sendMessage({
+		action: "getProtocols"
+	}, function(protocols) {
 		bindProtocolEvents(protocols);
 	});
 	
@@ -83,9 +92,13 @@
 		for(var i = 0; i < protocols.length; i++) {
 			$("body").on("click", "a[href^='" + protocols[i] + "']", function(event) {
 				event.preventDefault();
-				extension.sendMessageToBackground("addTaskWithHud", {
-					url: $(this).prop("href"),
-					taskType: protocols[i]
+				// MV3: Replace extension.sendMessageToBackground with chrome.runtime.sendMessage
+				chrome.runtime.sendMessage({
+					action: "addTaskWithHud",
+					data: {
+						url: $(this).prop("href"),
+						taskType: protocols[i]
+					}
 				});
 			});
 		}

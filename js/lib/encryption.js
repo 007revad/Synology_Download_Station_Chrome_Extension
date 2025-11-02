@@ -1,4 +1,4 @@
-SYNO = window.SYNO || {};
+SYNO = (typeof globalThis !== "undefined" && globalThis.SYNO) || {};
 
 (function(){
 	"use-strict";
@@ -81,7 +81,7 @@ SYNO = window.SYNO || {};
 			}
 		}
 	})();
-	SYNO = window.SYNO || {};
+	SYNO = (typeof window !== "undefined" ? window.SYNO : globalThis.SYNO) || {};
 	SYNO.Encryption = SYNO.Encryption || {};
 	SYNO.Encryption.BigInteger = (function() {
 		var H;
@@ -764,7 +764,7 @@ SYNO = window.SYNO || {};
 		d.ONE = b(1);
 		return d
 	})();
-	SYNO = window.SYNO || {};
+	SYNO = (typeof window !== "undefined" ? window.SYNO : globalThis.SYNO) || {};
 	SYNO.Encryption = SYNO.Encryption || {};
 	SYNO.Encryption.SecureRandom = (function() {
 		function g() {
@@ -821,8 +821,8 @@ SYNO = window.SYNO || {};
 			b = new Array();
 			f = 0;
 			var n;
-			if (navigator.appName == "Netscape" && navigator.appVersion < "5" && window.crypto) {
-				var i = window.crypto.random(32);
+			if (typeof navigator !== "undefined" && navigator.appName == "Netscape" && navigator.appVersion < "5" && (typeof globalThis !== "undefined" && globalThis.crypto)) {
+				var i = (typeof globalThis !== "undefined" && globalThis.crypto) ? globalThis.crypto.random(32) : [];
 				for (n = 0; n < i.length; ++n) {
 					b[f++] = i.charCodeAt(n) & 255
 				}
@@ -858,7 +858,7 @@ SYNO = window.SYNO || {};
 		a.rng_seed_time = o;
 		return a
 	})();
-	SYNO = window.SYNO || {};
+	SYNO = (typeof window !== "undefined" ? window.SYNO : globalThis.SYNO) || {};
 	SYNO.Encryption = SYNO.Encryption || {};
 	SYNO.Encryption.RSA = (function() {
 		function c(i, h) {
@@ -945,7 +945,7 @@ SYNO = window.SYNO || {};
 		e.prototype.encrypt = d;
 		return e
 	})();
-	SYNO = window.SYNO || {};
+	SYNO = (typeof window !== "undefined" ? window.SYNO : globalThis.SYNO) || {};
 	SYNO.Encryption = SYNO.Encryption || {};
 	SYNO.Encryption.CipherKey = "";
 	SYNO.Encryption.RSAModulus = "";
