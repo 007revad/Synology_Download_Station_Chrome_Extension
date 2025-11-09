@@ -88,7 +88,7 @@ jQueryShim.ajax = function(options) {
         xhrRef = mockXhr;
         
         const controller = new AbortController();
-        const timeout = options.timeout || 20000;
+        const timeout = options.timeout || 30000;  // 30 seconds - SW suspension limit
         const timeoutId = setTimeout(() => controller.abort(), timeout);
         fetchOptions.signal = controller.signal;
         
@@ -126,7 +126,10 @@ jQueryShim.ajax = function(options) {
             })
             .catch(error => {
                 clearTimeout(timeoutId);
-                console.error('[SW] AJAX Error:', error.message, 'URL:', url);
+                // Treat abort errors as connection failures, not fatal errors
+                const isAbort = error.name === 'AbortError' || error.message.includes('signal is aborted');
+                const logLevel = isAbort ? '[SW] AJAX Timeout/Abort (expected):' : '[SW] AJAX Error:';
+                console.warn(logLevel, error.message, 'URL:', url);
                 
                 if (options.error) {
                     options.error(error);

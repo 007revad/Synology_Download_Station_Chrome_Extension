@@ -88,11 +88,27 @@ try {
                 console.log('[SW] Periodic task update...');
                 downloadStation.loadTasks((success, data) => {
                     console.log('[SW] Task update complete:', success, downloadStation.tasks ? downloadStation.tasks.length : 0, 'tasks');
+                    if (success) {
+                        updateToolbarIcon();
+                    } else {
+                        console.warn('[SW] Task update failed - marking as disconnected');
+                        downloadStation.connected = false;
+                        updateToolbarIcon();
+                        // Force reconnection on next cycle
+                        scheduleTaskUpdate();
+                        return;
+                    }
                     scheduleTaskUpdate();
                 });
             } else {
-                console.log('[SW] Not connected, rescheduling...');
-                scheduleTaskUpdate();
+                console.log('[SW] Not connected, attempting reconnection...');
+                downloadStation.loadTasks((success, data) => {
+                    console.log('[SW] Reconnection attempt:', success);
+                    if (success) {
+                        updateToolbarIcon();
+                    }
+                    scheduleTaskUpdate();
+                });
             }
         }, 12000); // 12 seconds
     }

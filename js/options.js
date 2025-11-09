@@ -30,6 +30,7 @@ $(document).ready(function() {
 	$('#donate-button2').attr('href', DONATION_URL2);
 	
 	loadChangelog();
+	loadOtherScripts();
 	
 	// Creating custom :external selector
 	$.expr[':'].external = function(obj){
@@ -424,5 +425,20 @@ function loadChangelog() {
 		}
 	};
 	xhr.open("GET", extension.getResourceURL("changelog.md"), true);
+	xhr.send();
+}
+
+function loadOtherScripts() {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+		if( xhr.readyState === XMLHttpRequest.DONE ) {
+			if ( (xhr.status >= 200 && xhr.status < 300 ) || xhr.status === 0 ) {
+				var converter = new showdown.Converter();
+				var html = converter.makeHtml(xhr.responseText);
+				$("#myotherscripts-content").html(html);
+			}
+		}
+	};
+	xhr.open("GET", extension.getResourceURL("my-other-scripts.md"), true);
 	xhr.send();
 }

@@ -218,7 +218,9 @@ function updateTasks(tasks) {
             console.log('[Popover] Pause clicked for task:', taskId);
             chrome.runtime.sendMessage({action: "pauseTask", data: [taskId]}, function(response) {
                 console.log('[Popover] Pause response:', response);
-                updatePopoverData();
+                if (response && response.success) {
+                    updatePopoverData();
+                }
             });
         });
         
@@ -227,7 +229,9 @@ function updateTasks(tasks) {
             console.log('[Popover] Resume clicked for task:', taskId);
             chrome.runtime.sendMessage({action: "resumeTask", data: [taskId]}, function(response) {
                 console.log('[Popover] Resume response:', response);
-                updatePopoverData();
+                if (response && response.success) {
+                    updatePopoverData();
+                }
             });
         });
         
@@ -235,9 +239,14 @@ function updateTasks(tasks) {
             var taskId = $(this).closest('li').data('task-id');
             console.log('[Popover] Delete clicked for task:', taskId);
             chrome.runtime.sendMessage({action: "deleteTask", data: taskId}, function(response) {
-                console.log('[Popover] Delete response:', response);
-                updatePopoverData();
-            });
+            console.log('[Popover] deleteTask response:', response);
+                if (response && response.success) {
+                    console.log('[Popover] Task deleted successfully, updating...');
+                    updatePopoverData();
+                } else {
+                    console.error('[Popover] deleteTask failed:', response);
+                }
+            });        
         });
         
         console.log('[Popover] ✓ All', tasks.length, 'tasks rendered');
@@ -515,7 +524,9 @@ try {
                     }
                     if (ids.length > 0) {
                         chrome.runtime.sendMessage({action: "pauseTask", data: ids}, function(response) {
-                            updatePopoverData();
+                            if (response && response.success) {
+                                updatePopoverData();
+                            }
                         });
                     }
                 };
@@ -534,7 +545,9 @@ try {
                     }
                     if (ids.length > 0) {
                         chrome.runtime.sendMessage({action: "resumeTask", data: ids}, function(response) {
-                            updatePopoverData();
+                            if (response && response.success) {
+                                updatePopoverData();
+                            }
                         });
                     }
                 };
@@ -546,7 +559,9 @@ try {
                     e.preventDefault();
                     console.log('[Popover] *** CLEAR FINISHED CLICKED ***');
                     chrome.runtime.sendMessage({action: "clearFinishedTasks"}, function(response) {
-                        updatePopoverData();
+                        if (response && response.success) {
+                            updatePopoverData();
+                        }
                     });
                 };
             }
