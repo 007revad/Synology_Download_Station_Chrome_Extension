@@ -1,7 +1,7 @@
 <h1><img src="images/Icon-128.png" alt="" style="width: 64px; height: 64px;" /> Synology Download Station Chrome Extension</h1>
 
 
-<a href="https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases"><img src="https://img.shields.io/github/release/007revad/Synology_HDD_db.svg"></a>
+<a href="https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases"><img src="https://img.shields.io/github/release/007revad/Synology_Download_Station_Chrome_Extensio.svg"></a>
 [![Github Releases](https://img.shields.io/github/downloads/007revad/synology_download_station_chrome_Extension/total.svg)](https://github.com/007revad/Synology_Download_Station_Chrome_Extension/releases)
 ![Badge](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2F007revad%2FSynology_Download_Station_Chrome_Extension&label=Visitors&icon=github&color=%23198754&message=&style=flat&tz=Australia%2FSydney)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/paypalme/007revad)
