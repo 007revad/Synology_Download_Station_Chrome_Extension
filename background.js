@@ -179,26 +179,26 @@ try {
     function registerMessageHandler() {
         chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             console.log('[SW] Message received:', request.action);
-            
-            // Ensure downloadStation is initialized before handling message
+        
+            // Ensure DownloadStation is initialized before handling message
             if (!downloadStation) {
                 console.log('[SW] SW not initialized, initializing now...');
                 initializeDownloadStation().then(() => {
-                    handleMessage(request, sendResponse);
+                    handleMessage(request, sender, sendResponse);  // add sender parameter
                 }).catch((err) => {
                     console.error('[SW] Init error:', err);
                     sendResponse({ success: false, message: 'Initialization failed' });
                 });
             } else {
-                handleMessage(request, sendResponse);
+                handleMessage(request, sender, sendResponse);  // add sender parameter
             }
-            
+        
             // Always return true to indicate async response
             return true;
         });
     }
     
-    function handleMessage(request, sendResponse) {
+    function handleMessage(request, sender, sendResponse) {  // add sender parameter
         try {
             switch(request.action) {
                 case 'ping':
@@ -348,6 +348,25 @@ try {
                     });
                     return true; // Async
                 
+                case 'addTaskWithHud':
+                    if (!downloadStation) {
+                        sendHudToTab(sender.tab.id, 'cross', 'Could not connect to Download Station', true);
+                        sendResponse({ success: false, data: 'couldNotConnect' });
+                        return;
+                    }
+                    console.log('[SW] Adding task with HUD for URL:', request.data.url);
+                    sendHudToTab(sender.tab.id, 'progress', 'Adding download task...', false);
+                    downloadStation.createTask(request.data.url, null, null, null, null, (success, data) => {
+                        console.log('[SW] addTaskWithHud callback:', success, data);
+                        if (success) {
+                            sendHudToTab(sender.tab.id, 'check', 'Download task accepted', true);
+                        } else {
+                            sendHudToTab(sender.tab.id, 'cross', 'Error: ' + data, true);
+                        }
+                        sendResponse({ success: success, data: data });
+                    });
+                    return true; // Async                
+                
                 case 'settingChanged':
                     console.log('[SW] Setting changed:', request.setting, '=', request.value);
                     if (request.setting === 'hideSeedingTorrents') {
@@ -364,6 +383,13 @@ try {
                     }
                     sendResponse({ success: true, message: 'Setting change acknowledged' });
                     break;
+
+                case 'getProtocols':
+                    chrome.storage.local.get('openProtocols', (items) => {
+                        const protocols = Array.isArray(items.openProtocols) ? items.openProtocols : [];
+                        sendResponse(protocols);
+                    });
+                    return true; // Async
                     
                 default:
                     console.warn('[SW] Unknown action:', request.action);
@@ -385,8 +411,31 @@ try {
 // When the extension is first installed, open the options page in a new tab
 chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason === 'install') {
-        chrome.tabs.create({
-            url: "options.html"
+        chrome.storage.local.set({
+            protocol: 'http://',
+            firstLaunch: false,
+            hideSeedingTorrents: false,
+            updateInBackground: false,
+            openProtocols: ['magnet:?', 'ed2k://', 'thunder://', 'flashget://', 'qqdl://'],
+            backgroundUpdateInterval: 20,
+            notifiedTasks: []
+        });
+        chrome.tabs.create({ url: 'options.html' });
+    } else if (details.reason === 'update') {
+        // Migrate: ensure openProtocols exists for users updating from older versions
+        chrome.storage.local.get('openProtocols', (items) => {
+            if (!Array.isArray(items.openProtocols)) {
+                chrome.storage.local.set({
+                    openProtocols: ['magnet:?', 'ed2k://', 'thunder://', 'flashget://', 'qqdl://']
+                });
+            }
         });
     }
 });
+
+function sendHudToTab(tabId, icon, text, autoHide) {
+    chrome.tabs.sendMessage(tabId, {
+        name: 'hud',
+        message: { action: 'show', icon: icon, text: text, autoHide: autoHide }
+    }).catch(() => {}); // ignore if tab is gone
+}

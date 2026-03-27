@@ -1,7 +1,7 @@
 {
     "name": "Synology Download Station",
     "description": "__MSG_chromeExtensionDescription__",
-    "version": "4.0.17",
+    "version": "4.0.18",
     "manifest_version": 3,
     "minimum_chrome_version": "88",
     "default_locale": "en",
@@ -33,7 +33,7 @@
         "js": ["js/content-scripts/content.js"],
         "css": ["css/cssreset-context-min.css", "css/hud.css"],
         "all_frames": true,
-        "run_at": "document_start"
+        "run_at": "document_end"
     }],
     "permissions": [
         "alarms",
@@ -42,7 +42,7 @@
         "storage",
         "tabs",
         "scripting",
-        "storage"
+        "declarativeNetRequest"
     ],
     "host_permissions": [
         "http://*/",

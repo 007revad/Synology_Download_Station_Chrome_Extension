@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.0.18 - by 007revad
+- Bug fix for downloading Magnet, Emule, Thunder, Flashget and QQDL links.
+
 ### 4.0.17 - by 007revad
 - Increased timeout from 20 to 30 seconds for DownloadStation API requests.
 - Bug fix for AJAX Timeout/Abort errors.
