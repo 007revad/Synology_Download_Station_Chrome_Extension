@@ -18,7 +18,7 @@ New version DownloadStation_Chrome_Extension version 4.x.x is Chrome manifest 3 
 - Changed to show the 100 newest downloads (instead of the 100 oldest in the previous versions).
 - Changed progressbar for finished downloads to grey.
 - Added check if newer version available (runs when extension loaded and once every 24 hours).
-- Shows in options if there's a newer available from GitHub and provides a link to it.
+- Shows in options if there's a newer version available from GitHub and provides a link to it.
 - Added buymecoffee and PayPal donate buttons for those who want to support me.
 
 ### How to install the extension
