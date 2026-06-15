@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.0.19 - by 007revad
+- Bug fix for icon changing to gray when Download Station is offline but never changing back to the color when Download Station is online again.
+
 ### 4.0.18 - by 007revad
 - Bug fix for downloading Magnet, Emule, Thunder, Flashget and QQDL links.
 

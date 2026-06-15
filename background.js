@@ -28,26 +28,26 @@ try {
     let latestVersion = null;
     
     // Update toolbar icon based on connection status
-    function updateToolbarIcon() {
-        if (downloadStation && downloadStation.connected && downloadStation.deviceInfo && downloadStation.deviceInfo.loggedIn) {
-            console.log('[SW] Updating icon to CONNECTED');
-            chrome.action.setIcon({ 
-                path: { 
-                    '19': 'images/Icon-19.png', 
-                    '38': 'images/Icon-38.png' 
-                } 
-            });
-        } else {
-            console.log('[SW] Updating icon to DISCONNECTED');
-            chrome.action.setIcon({ 
-                path: { 
-                    '19': 'images/Icon-19-disconnected.png', 
-                    '38': 'images/Icon-38-disconnected.png' 
-                } 
-            });
-        }
-    }
-    
+    function updateToolbarIcon(retryCount = 0) {
+        const isConnected = downloadStation && downloadStation.connected && 
+                            downloadStation.deviceInfo && downloadStation.deviceInfo.loggedIn;
+        
+        const icons = isConnected
+            ? { '19': 'images/Icon-19.png', '38': 'images/Icon-38.png' }
+            : { '19': 'images/Icon-19-disconnected.png', '38': 'images/Icon-38-disconnected.png' };
+        
+        console.log(`[SW] Updating icon to ${isConnected ? 'CONNECTED' : 'DISCONNECTED'}`);
+        
+        chrome.action.setIcon({ path: icons }).catch((err) => {
+            console.warn(`[SW] setIcon failed: ${err.message}`);
+            if (retryCount < 3) {
+                setTimeout(() => updateToolbarIcon(retryCount + 1), 1000 * (retryCount + 1));
+            } else {
+                console.error('[SW] setIcon failed after 3 retries, giving up');
+            }
+        });
+    }    
+
     // Get latest GitHub release version number
     function getLatestVersion() {
         if (latestVersion != null) {
@@ -102,13 +102,18 @@ try {
                 });
             } else {
                 console.log('[SW] Not connected, attempting reconnection...');
-                downloadStation.loadTasks((success, data) => {
-                    console.log('[SW] Reconnection attempt:', success);
-                    if (success) {
-                        updateToolbarIcon();
-                    }
-                    scheduleTaskUpdate();
-                });
+                try {
+                    downloadStation.loadTasks((success) => {
+                        console.log('[SW] Reconnection attempt:', success);
+                        if (success) {
+                            updateToolbarIcon();
+                        }
+                        scheduleTaskUpdate();
+                    });
+                } catch (e) {
+                    console.error('[SW] Reconnection call threw:', e.message);
+                    scheduleTaskUpdate(); // Ensure the loop survives even if loadTasks throws
+                }
             }
         }, 12000); // 12 seconds
     }
@@ -158,11 +163,22 @@ try {
         // Handle keepalive alarm
         if (alarm.name === 'keepalive') {
             console.log('[SW] Keepalive alarm fired - SW staying alive');
-            if (downloadStation && downloadStation.connected) {
-                downloadStation.loadTasks(() => {
-                    console.log('[SW] Keepalive task update done');
-                    updateToolbarIcon();
-                });
+            if (downloadStation) {
+                if (downloadStation.connected) {
+                    downloadStation.loadTasks(() => {
+                        console.log('[SW] Keepalive task update done');
+                        updateToolbarIcon();
+                    });
+                } else {
+                    // NAS was offline — attempt reconnection
+                    console.log('[SW] Keepalive: not connected, attempting reconnection...');
+                    downloadStation.loadTasks((success) => {
+                        console.log('[SW] Keepalive reconnection attempt:', success);
+                        if (success) {
+                            updateToolbarIcon();
+                        }
+                    });
+                }
             }
             setKeepaliveAlarm(); // Reschedule
         }
