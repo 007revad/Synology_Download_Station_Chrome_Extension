@@ -31,9 +31,9 @@ jobs:
       - name: Create zip
         id: create_zip
         run: |
-          zip_name="${{ github.event.repository.name }}_script_${{ steps.get_tag.outputs.tag }}.zip"
+          zip_name="${{ github.event.repository.name }}_${{ steps.get_tag.outputs.tag }}.zip"
           echo "name=$zip_name" >> $GITHUB_OUTPUT
-          zip "$zip_name" _locales css fonts images js \
+          zip -r "$zip_name" _locales css fonts images js \
             background.js changelog.md download-dialog.html \
             LICENSE license.html manifest.json my-other-scripts.md \
             options.html popover.html README.md
