@@ -1,0 +1,48 @@
+name: Build n Release Zip
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build-zip:
+    name: Build zip
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get release tag
+        id: get_tag
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            echo "tag=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+          else
+            tag=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest \
+              | jq -r .tag_name)
+            echo "tag=$tag" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create zip
+        id: create_zip
+        run: |
+          zip_name="${{ github.event.repository.name }}_script_${{ steps.get_tag.outputs.tag }}.zip"
+          echo "name=$zip_name" >> $GITHUB_OUTPUT
+          zip "$zip_name" _locales css fonts images js \
+            background.js changelog.md download-dialog.html \
+            LICENSE license.html manifest.json my-other-scripts.md \
+            options.html popover.html README.md
+
+      - name: Upload zip to release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_tag.outputs.tag }}
+          files: ${{ steps.create_zip.outputs.name }}
+          make_latest: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
