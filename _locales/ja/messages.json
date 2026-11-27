@@ -355,7 +355,7 @@
 		"message": "圧縮ファイルを解凍するためのパスワードを入力します（オプション、自動解凍は、Download Stationの設定で有効にできます）"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "あなたのDSMバージョンは、解凍パスワードをサポートしていません。入力した解凍パスワードを使うには、DSM 4.2またはそれ以降が必要です。"
+		"message": "あなたのDSMバージョンは、解凍パスワードをサポートしていません。入力した解凍パスワードを使うには、DSM 6.2またはそれ以降が必要です。"
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "キャンセル"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "パスワードを記憶する(このブラウザのプロファイルに暗号化されずに保存されます)。チェックを外すとメモリ内にのみ保持され、ブラウザの起動ごとに再入力が必要です。"
+	},
+	"warnHttp": {
+		"message": "HTTPではセッションとダウンロードの詳細が暗号化されずにネットワーク上に送信されます。可能であればHTTPSを使用してください。"
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "ログインがブロックされました: DiskStationがパスワードの暗号化に対応しておらず、接続もHTTPSではありません。オプションでHTTPSに切り替えてください。"
+	},
+	"api_error_passwordNotEntered": {
+		"message": "パスワードが保存されていません。拡張機能のオプションを開いてパスワードを入力してください。"
 	}
 }

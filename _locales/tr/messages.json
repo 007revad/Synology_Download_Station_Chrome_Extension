@@ -352,7 +352,7 @@
 		"message": "Arşiv şifresini giriniz (Opsiyonel, Disk Station'da otomatik çıkartma etkinleştirilmişse)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "DSM versiyonunuz şifreli arşiv çıkartmayı desteklemiyor. Bunun için en az DSM 4.2 yi yüklemelisiniz."
+		"message": "DSM versiyonunuz şifreli arşiv çıkartmayı desteklemiyor. Bunun için en az DSM 6.2 yi yüklemelisiniz."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "İptal"
@@ -368,5 +368,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Şifreyi hatırla (bu tarayıcının profilinde şifrelenmeden saklanır). Yalnızca bellekte tutmak için işareti kaldırın; tarayıcı her başladığında yeniden girmeniz gerekir."
+	},
+	"warnHttp": {
+		"message": "HTTP, oturumunuzu ve indirme ayrıntılarınızı ağ üzerinden şifrelenmeden gönderir. Mümkünse HTTPS kullanın."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Giriş engellendi: DiskStation şifre şifrelemesi sunmadı ve bağlantı HTTPS değil. Seçeneklerden HTTPS'ye geçin."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Şifre kaydedilmedi. Uzantı seçeneklerini açın ve şifrenizi girin."
 	}
 }

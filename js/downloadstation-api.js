@@ -534,6 +534,15 @@ var DownloadStationAPI = (function (_super) {
             client_time: clientTime,
             timezone: getGMTOffset(new Date())
         };
+        if (!this._settings.password && this._settings.rememberPassword === false) {
+            // Password was not saved to disk and has not been entered since the browser started
+            this.deviceInfo.loggedIn = false;
+            this._setStatus('passwordNotEntered');
+            this.trigger("loginStatusChange");
+            if (typeof callback === 'function')
+                callback(false, 'passwordNotEntered');
+            return;
+        }
         this._setStatus("loggingIn");
         this._apiCall("SYNO.API.Encryption", "getinfo", 1, { format: "module" }, function (success, data) {
             if (success) {
@@ -544,6 +553,16 @@ var DownloadStationAPI = (function (_super) {
                 var encryptedParams = SYNO.Encryption.EncryptParam(params, cipherKey, rsaModulus, cipherToken, timeBias);
                 encryptedParams.client_time = clientTime;
                 params = encryptedParams;
+            }
+            else if (_this._settings.protocol !== 'https://') {
+                // DSM did not give us an encryption key and the connection is plain HTTP.
+                // Never send the password in the clear.
+                _this.deviceInfo.loggedIn = false;
+                _this._setStatus('unencryptedLoginBlocked');
+                _this.trigger("loginStatusChange");
+                if (typeof callback === 'function')
+                    callback(false, 'unencryptedLoginBlocked');
+                return;
             }
             var authApiInfo = _this._apiInfo['SYNO.API.Auth'];
             var authApiVersion = 2;
@@ -634,14 +653,16 @@ var DownloadStationAPI = (function (_super) {
                         var timeStampB = parseInt(b.additional.detail.create_time);
                         return (timeStampA > timeStampB) ? -1 : (timeStampA < timeStampB) ? 1 : 0;
                     });
-                    console.log('[DownloadStation] After sort by create_time DESC - First task:', data.tasks[0].title, 'Last task:', data.tasks[data.tasks.length-1].title);
+                    if (data.tasks.length > 0) {
+                        console.log('[DownloadStation] After sort by create_time DESC - First task:', data.tasks[0].title, 'Last task:', data.tasks[data.tasks.length-1].title);
+                    }
                     
                     // Keep only the newest 100 tasks
                     data.tasks = data.tasks.slice(0, 100);
                     console.log('[DownloadStation] After keeping newest 100 - Count:', data.tasks.length);
                 }
                 
-                _this.tasks = _this._createTaskObjects(data.tasks);
+                _this.tasks = _this._createTaskObjects(data.tasks || []);
                 console.log('[DownloadStation] After createTaskObjects - First task:', _this.tasks[0] ? _this.tasks[0].title : 'none', 'Last task:', _this.tasks[_this.tasks.length-1] ? _this.tasks[_this.tasks.length-1].title : 'none');
             }
             else {

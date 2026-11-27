@@ -355,7 +355,7 @@
 		"message": "Intast adgangskode for at udpakke komprimerede filer (valgfrit, automatisk udpakning kan aktiveres i Download Stations indstillinger)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Din DSM version understøtter ikke unzip-adgangskoder. Du skal have DSM 4.2 eller en senere version for at indtaste en unzip-adgangskode"
+		"message": "Din DSM version understøtter ikke unzip-adgangskoder. Du skal have DSM 6.2 eller en senere version for at indtaste en unzip-adgangskode"
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Fortryd"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Husk adgangskode (gemmes ukrypteret i denne browsers profil). Fjern markeringen for kun at beholde den i hukommelsen; du skal så indtaste den igen, hver gang browseren starter."
+	},
+	"warnHttp": {
+		"message": "HTTP sender din session og dine downloaddetaljer ukrypteret over netværket. Brug HTTPS, hvis det er muligt."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Login blokeret: din DiskStation tilbød ikke kryptering af adgangskoden, og forbindelsen er ikke HTTPS. Skift til HTTPS i indstillingerne."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Adgangskoden er ikke gemt. Åbn udvidelsens indstillinger, og indtast din adgangskode."
 	}
 }

@@ -355,7 +355,7 @@
 		"message": "압축해제할 파일의 암호를 입력( 선택사항, 자동 풀기는 다운로드 스테이션 설정에서 켤 수 있습니다.)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "사용중인 DSM의 버전이 압축해제 비밀번호를 지원하지 않습니다. DSM 4.2 혹은 이후에 나온 버전이 필요합니다."
+		"message": "사용중인 DSM의 버전이 압축해제 비밀번호를 지원하지 않습니다. DSM 6.2 혹은 이후에 나온 버전이 필요합니다."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "취소"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "암호 기억 (이 브라우저 프로필에 암호화되지 않은 상태로 저장됨). 선택을 해제하면 메모리에만 보관되며, 브라우저를 시작할 때마다 다시 입력해야 합니다."
+	},
+	"warnHttp": {
+		"message": "HTTP는 세션과 다운로드 정보를 암호화하지 않고 네트워크로 전송합니다. 가능하면 HTTPS를 사용하세요."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "로그인이 차단되었습니다: 디스크스테이션이 암호 암호화를 제공하지 않았고 연결도 HTTPS가 아닙니다. 옵션에서 HTTPS로 전환하세요."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "암호가 저장되지 않았습니다. 확장 프로그램 옵션을 열고 암호를 입력하세요."
 	}
 }

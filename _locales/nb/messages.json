@@ -349,7 +349,7 @@
 		"message": "Sett inn passord for å pakke ut filene (valgfritt; auto-utpakking kan velges under innstillinger i Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Din DSM versjon støtter ikke passord beskyttet ZIP filer. Du trenger DSM 4.2 eller nyere for å pakke ut passord beskyttet ZIP filer)"
+		"message": "Din DSM versjon støtter ikke passord beskyttet ZIP filer. Du trenger DSM 6.2 eller nyere for å pakke ut passord beskyttet ZIP filer)"
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Avbryt"
@@ -365,5 +365,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Husk passord (lagres ukryptert i profilen til denne nettleseren). Fjern avmerkingen for å beholde det kun i minnet; du må da skrive det inn på nytt hver gang nettleseren starter."
+	},
+	"warnHttp": {
+		"message": "HTTP sender økten og nedlastingsdetaljene dine ukryptert over nettverket. Bruk HTTPS hvis mulig."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Pålogging blokkert: DiskStation tilbød ikke passordkryptering, og tilkoblingen er ikke HTTPS. Bytt til HTTPS i innstillingene."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Passordet er ikke lagret. Åpne innstillingene for utvidelsen og skriv inn passordet ditt."
 	}
 }

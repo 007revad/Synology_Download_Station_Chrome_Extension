@@ -349,7 +349,7 @@
 		"message": "Masukkan kata sandi untuk mengekstrak berkas terkompresi (opsional, auto-ekstraksi bisa diaktifkan pada setelan Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Versi DSM anda tidak mendukung kata sandi unzip. Anda membutuhkan DSM 4.2 atau diatasnya untuk bisa memasukkan kata sandi unzip."
+		"message": "Versi DSM anda tidak mendukung kata sandi unzip. Anda membutuhkan DSM 6.2 atau diatasnya untuk bisa memasukkan kata sandi unzip."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Batal"
@@ -365,5 +365,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Ingat kata sandi (disimpan tanpa enkripsi di profil peramban ini). Hapus centang untuk menyimpannya hanya di memori; Anda harus memasukkannya kembali setiap kali peramban dimulai."
+	},
+	"warnHttp": {
+		"message": "HTTP mengirim sesi dan detail unduhan Anda tanpa enkripsi melalui jaringan. Gunakan HTTPS jika memungkinkan."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Login diblokir: DiskStation Anda tidak menyediakan enkripsi kata sandi dan koneksi bukan HTTPS. Beralih ke HTTPS di opsi."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Kata sandi tidak disimpan. Buka opsi ekstensi dan masukkan kata sandi Anda."
 	}
 }

@@ -205,6 +205,8 @@ $(document).ready(function() {
 		extension.storage.addEventListener(function(changes) {
 			for(var key in changes)
 			{
+				if(key == "password")
+					continue;
 				var elements = $("[name='" + key + "']");
 				var inputType = elements.prop("type");
 				var newValue = changes[key].newValue;
@@ -239,6 +241,14 @@ $(document).ready(function() {
 	});
 });
 
+function updateHttpWarning()
+{
+	var isHttp = $("input[name=protocol][type=radio]:checked").val() == "http://";
+	$("#http-warning").toggle(isHttp && $("#manual-settings").is(":visible"));
+}
+
+$(document).on("change", "input[name=protocol]", updateHttpWarning);
+
 function toggleQuickConnect(enabled)
 {
 	$("#enableQuickConnect").toggleClass("btn-primary active disabled", enabled);
@@ -249,6 +259,7 @@ function toggleQuickConnect(enabled)
 		
 	$("#quickconnect-settings").toggle(enabled);
 	$("#quickconnect-settings input").prop("disabled", enabled == false);
+	updateHttpWarning();
 	
 	$("#quickConnectId").prop("required", enabled);
 	$("#url").prop("required", enabled == false);
@@ -266,6 +277,10 @@ function getConnectionFormData() {
 	
 	newOptions.updateInBackground = newOptions.updateInBackground == "on";
 	//newOptions.updateInBackground = newOptions.updateInBackground == "off";
+	newOptions.rememberPassword = newOptions.rememberPassword == "on";
+	// A blank password field means "keep the saved password" (it is never sent back to this page)
+	if(!newOptions.password)
+		delete newOptions.password;
 	newOptions.backgroundUpdateInterval = parseInt(newOptions.backgroundUpdateInterval);
 	if(isNaN(newOptions.backgroundUpdateInterval) || newOptions.backgroundUpdateInterval < 5)
 		newOptions.backgroundUpdateInterval = 20;
@@ -351,7 +366,7 @@ function compareVersion(latestTag, currentVersion) {
 function setOptionFields(options) {
     if (!options) options = {};
     if (!options.openProtocols) options.openProtocols = [];
-    if (!options.protocol) options.protocol = 'http://';
+    if (!options.protocol) options.protocol = 'https://';
     //if (!options.url) options.url = 'localhost';
     if (!options.url) options.url = '';
     //if (!options.port) options.port = 5000;
@@ -374,7 +389,11 @@ function setOptionFields(options) {
 	}
 	
 	$('#username').val(options.username);
-	$('#password').val(options.password);
+	// The saved password is never sent to this page; show a placeholder instead
+	$('#password').val('');
+	$('#password').attr('placeholder', options.hasPassword ? '\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022' : '');
+	$('#rememberPassword').prop('checked', options.rememberPassword !== false);
+	updateHttpWarning();
 	
 	$('#email').val(options.email);
 	$('#backgroundUpdateInterval').val(options.backgroundUpdateInterval);

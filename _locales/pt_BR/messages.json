@@ -355,7 +355,7 @@
 		"message": "Entre a senha para extrair arquivos compactados (opcional, auto-extração pode ser ativada nas configurações da Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Sua versão de DSM não suporta descompactar senhas. Você necessita a DSM 4.2 ou uma versão mais recente para descompactar senhas."
+		"message": "Sua versão de DSM não suporta descompactar senhas. Você necessita a DSM 6.2 ou uma versão mais recente para descompactar senhas."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Cancelar"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Lembrar senha (salva sem criptografia no perfil deste navegador). Desmarque para mantê-la apenas na memória; você precisará digitá-la novamente toda vez que o navegador iniciar."
+	},
+	"warnHttp": {
+		"message": "O HTTP envia sua sessão e os detalhes dos downloads sem criptografia pela rede. Use HTTPS, se possível."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Login bloqueado: seu DiskStation não ofereceu criptografia de senha e a conexão não é HTTPS. Mude para HTTPS nas opções."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Senha não salva. Abra as opções da extensão e digite sua senha."
 	}
 }

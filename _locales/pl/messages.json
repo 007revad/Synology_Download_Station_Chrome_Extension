@@ -355,7 +355,7 @@
 		"message": "Podaj hasło do archiwów (opcjonalnie, automatyczne rozpakowywanie może być włączone w ustawieniach Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Twoja wersja DSM nie rozpakowuje zaszyfrowanych plików. Wymagana Wersja DSM 4.2 lub nowsza do podania hasła do archiwum."
+		"message": "Twoja wersja DSM nie rozpakowuje zaszyfrowanych plików. Wymagana Wersja DSM 6.2 lub nowsza do podania hasła do archiwum."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Anuluj"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Zapamiętaj hasło (zapisywane bez szyfrowania w profilu tej przeglądarki). Odznacz, aby przechowywać je tylko w pamięci; po każdym uruchomieniu przeglądarki trzeba je będzie wpisać ponownie."
+	},
+	"warnHttp": {
+		"message": "HTTP wysyła dane sesji i pobierania przez sieć bez szyfrowania. Jeśli to możliwe, użyj HTTPS."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Logowanie zablokowane: DiskStation nie oferuje szyfrowania hasła, a połączenie nie korzysta z HTTPS. Przełącz na HTTPS w opcjach."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Hasło nie zostało zapisane. Otwórz opcje rozszerzenia i wpisz hasło."
 	}
 }

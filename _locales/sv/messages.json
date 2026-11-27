@@ -355,7 +355,7 @@
 		"message": "Ange lösenordet för uppackning av komprimerade filer (Valfritt, automatisk uppackning kan aktiveras i Download Stations inställningar)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Versionen av din DSM stödjer inte Unzip lösenord. Du behöver DSM v4.2 eller nyare version för detta."
+		"message": "Versionen av din DSM stödjer inte Unzip lösenord. Du behöver DSM v6.2 eller nyare version för detta."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Avbryt"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Kom ihåg lösenordet (sparas okrypterat i den här webbläsarens profil). Avmarkera för att bara behålla det i minnet; du måste då ange det igen varje gång webbläsaren startar."
+	},
+	"warnHttp": {
+		"message": "HTTP skickar din session och dina nedladdningsuppgifter okrypterat över nätverket. Använd HTTPS om möjligt."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Inloggningen blockerades: din DiskStation erbjöd ingen lösenordskryptering och anslutningen är inte HTTPS. Byt till HTTPS i inställningarna."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Lösenordet har inte sparats. Öppna tilläggets inställningar och ange ditt lösenord."
 	}
 }

@@ -352,7 +352,7 @@
 		"message": "输入用来解压压缩文件的密码（可选，可在Download Station的设置里开启自动解压功能）"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "你当前使用的DSM版本不支持解压密码，请升级到4.2以上版本。"
+		"message": "你当前使用的DSM版本不支持解压密码，请升级到6.2以上版本。"
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "取消"
@@ -368,5 +368,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "记住密码（以未加密形式保存在此浏览器的配置文件中）。取消勾选则仅保存在内存中；每次浏览器启动时需要重新输入。"
+	},
+	"warnHttp": {
+		"message": "HTTP 会在网络上以未加密方式传输您的会话和下载详情。请尽可能使用 HTTPS。"
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "登录已被阻止：您的 DiskStation 未提供密码加密，且当前连接不是 HTTPS。请在选项中切换到 HTTPS。"
+	},
+	"api_error_passwordNotEntered": {
+		"message": "密码未保存。请打开扩展程序选项并输入密码。"
 	}
 }

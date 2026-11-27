@@ -355,7 +355,7 @@
 		"message": "Introduza uma senha para extrair os ficheiros comprimidos (opcional, extração automática pode ser ativada nas configurações do Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "A sua versão da DSM não suporta senhas descomprimidas. Deverá possuir a DSM 4.2 ou mais recente para introduzir uma senha descomprimida."
+		"message": "A sua versão da DSM não suporta senhas descomprimidas. Deverá possuir a DSM 6.2 ou mais recente para introduzir uma senha descomprimida."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Cancelar"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Memorizar senha (guardada sem encriptação no perfil deste navegador). Desmarque para a manter apenas na memória; terá de a introduzir novamente sempre que o navegador iniciar."
+	},
+	"warnHttp": {
+		"message": "O HTTP envia a sua sessão e os detalhes das transferências sem encriptação pela rede. Utilize HTTPS, se possível."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Início de sessão bloqueado: a sua DiskStation não ofereceu encriptação de senha e a ligação não é HTTPS. Mude para HTTPS nas opções."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Senha não guardada. Abra as opções da extensão e introduza a sua senha."
 	}
 }

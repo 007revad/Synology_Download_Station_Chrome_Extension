@@ -355,7 +355,7 @@
 		"message": "Vul het wachtwoord in om beveiligde gecomprimeerde bestanden automatisch uit te pakken (optioneel, automatisch uitpakken kan ingeschakeld worden in de instellingen van Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Je DSM versie ondersteund automatisch uitpakken niet. DSN 4.2 of nieuwer is vereist om een unzip wachtwoord op te geven."
+		"message": "Je DSM versie ondersteund automatisch uitpakken niet. DSN 6.2 of nieuwer is vereist om een unzip wachtwoord op te geven."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Annuleren"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Wachtwoord onthouden (wordt onversleuteld opgeslagen in het profiel van deze browser). Schakel uit om het alleen in het geheugen te bewaren; je moet het dan elke keer opnieuw invoeren wanneer de browser start."
+	},
+	"warnHttp": {
+		"message": "HTTP verstuurt je sessie en downloadgegevens onversleuteld over het netwerk. Gebruik indien mogelijk HTTPS."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Inloggen geblokkeerd: je DiskStation bood geen wachtwoordversleuteling aan en de verbinding is niet HTTPS. Schakel in de opties over naar HTTPS."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Wachtwoord niet opgeslagen. Open de opties van de extensie en voer je wachtwoord in."
 	}
 }

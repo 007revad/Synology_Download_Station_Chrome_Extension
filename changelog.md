@@ -1,5 +1,17 @@
 # Changelog
 
+### 4.1.20 - by 007revad
+
+- Changed to default to HTTPS instead of HTTP.
+- Changed to refuse unencrypted logins over HTTP.
+- Added option to not save the password (saves to memory only). Chrome does not encrypt saved passwords.
+- Changed to never return the password by getSettings.
+- Changed to not save the settings (including the password) to the log.
+- Changed to show the real error if "Test connection" fails instead of showing "Failed".
+- Bug fix for stale session between tests.
+- Bug fix for duplicate-callback flood.
+- Bug fix for an empty-task-list crashing the extension.
+
 ### 4.0.19 - by 007revad
 - Bug fix for icon changing to gray when Download Station is offline but never changing back to the color when Download Station is online again.
 

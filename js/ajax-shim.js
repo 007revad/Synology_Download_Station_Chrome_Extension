@@ -28,7 +28,6 @@ jQueryShim.extend = function(target, source) {
 };
 
 jQueryShim.ajax = function(options) {
-    let doneCallback, failCallback;
     let xhrRef = null;
     
     const promise = new Promise((resolve, reject) => {
@@ -119,9 +118,7 @@ jQueryShim.ajax = function(options) {
                 if (options.success) {
                     options.success(parsed);
                 }
-                if (doneCallback) {
-                    doneCallback(parsed);
-                }
+                // .done() callbacks run once, via the promise (see done() below)
                 resolve(parsed);
             })
             .catch(error => {
@@ -134,9 +131,7 @@ jQueryShim.ajax = function(options) {
                 if (options.error) {
                     options.error(error);
                 }
-                if (failCallback) {
-                    failCallback(error);
-                }
+                // .fail() callbacks run once, via the promise (see fail() below)
                 reject(error);
             });
     });
@@ -144,12 +139,14 @@ jQueryShim.ajax = function(options) {
     // Return jQuery-compatible object
     return {
         done: function(cb) {
-            doneCallback = cb;
-            promise.then(cb).catch(() => {});
+            // Each callback must run exactly once. (Previously it was called both directly
+            // and via the promise, which doubled every API call and flooded the NAS.)
+            promise.then(cb, function() {}).catch(function(e) {
+                console.error('[SW] Error in ajax done handler:', e && e.message, e && e.stack);
+            });
             return this;
         },
         fail: function(cb) {
-            failCallback = cb;
             promise.catch(cb);
             return this;
         },

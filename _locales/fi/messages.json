@@ -355,7 +355,7 @@
 		"message": "Syötä salasana pakattujen tiedostojen purkua varten (vapaaehtoinen, automaattinen purku voidaan ottaa käyttöön Download Station:n asetuksista)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "DSM versio ei tue purkamisen salanaa. Päivitä DSM versioon 4.2 tai uudempaan käyttääksesi purkamisen salasanaa."
+		"message": "DSM versio ei tue purkamisen salanaa. Päivitä DSM versioon 6.2 tai uudempaan käyttääksesi purkamisen salasanaa."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Peruuta"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Muista salasana (tallennetaan salaamattomana tämän selaimen profiiliin). Poista valinta, jos haluat säilyttää sen vain muistissa; silloin se on syötettävä uudelleen aina, kun selain käynnistyy."
+	},
+	"warnHttp": {
+		"message": "HTTP lähettää istuntosi ja lataustietosi verkon yli salaamattomina. Käytä HTTPS:ää, jos mahdollista."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Kirjautuminen estetty: DiskStation ei tarjonnut salasanan salausta, eikä yhteys ole HTTPS. Vaihda HTTPS:ään asetuksissa."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Salasanaa ei ole tallennettu. Avaa laajennuksen asetukset ja syötä salasanasi."
 	}
 }

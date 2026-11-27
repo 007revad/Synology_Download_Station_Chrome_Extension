@@ -349,7 +349,7 @@
 		"message": "Adjon meg kitömörítési jelszót (nem kötelező, az automatikus kibontás engedélyezhető a beállításokban)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Az ön DSM verziója nem támogatja a kibontási jelszót. DSM 4.2 vagy újabb verzió szükséges a kibontási jelszó alkalmazásához."
+		"message": "Az ön DSM verziója nem támogatja a kibontási jelszót. DSM 6.2 vagy újabb verzió szükséges a kibontási jelszó alkalmazásához."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Mégsem"
@@ -365,5 +365,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Jelszó megjegyzése (titkosítatlanul kerül mentésre a böngésző profiljában). Törölje a jelölést, ha csak a memóriában szeretné tartani; ilyenkor minden böngészőindításkor újra meg kell adnia."
+	},
+	"warnHttp": {
+		"message": "A HTTP a munkamenetet és a letöltések adatait titkosítatlanul küldi a hálózaton. Ha lehetséges, használjon HTTPS-t."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "A bejelentkezés blokkolva: a DiskStation nem kínált jelszótitkosítást, és a kapcsolat nem HTTPS. Váltson HTTPS-re a beállításokban."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "A jelszó nincs elmentve. Nyissa meg a bővítmény beállításait, és adja meg a jelszavát."
 	}
 }

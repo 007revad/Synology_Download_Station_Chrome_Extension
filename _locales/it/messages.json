@@ -355,7 +355,7 @@
 		"message": "Inserire una password per il file compresso (è possibile attivare l'auto estrazione nelle impostazione del Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "La tua versione di DSM non supporta le passwords degli archivi. DSM 4.2 o maggiore è necessario per poter inserire una password di scompattamento."
+		"message": "La tua versione di DSM non supporta le passwords degli archivi. DSM 6.2 o maggiore è necessario per poter inserire una password di scompattamento."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Elimina"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Ricorda la password (salvata non crittografata nel profilo di questo browser). Deseleziona per mantenerla solo in memoria; dovrai reinserirla ogni volta che il browser si avvia."
+	},
+	"warnHttp": {
+		"message": "HTTP invia la sessione e i dettagli dei download non crittografati sulla rete. Usa HTTPS se possibile."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Accesso bloccato: la tua DiskStation non ha offerto la crittografia della password e la connessione non è HTTPS. Passa a HTTPS nelle opzioni."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Password non salvata. Apri le opzioni dell'estensione e inserisci la tua password."
 	}
 }

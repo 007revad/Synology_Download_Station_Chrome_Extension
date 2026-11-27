@@ -1,9 +1,9 @@
 {
     "name": "Synology Download Station",
     "description": "__MSG_chromeExtensionDescription__",
-    "version": "4.0.19",
+    "version": "4.1.20",
     "manifest_version": 3,
-    "minimum_chrome_version": "88",
+    "minimum_chrome_version": "102",
     "default_locale": "en",
     "homepage_url": "https://github.com/007revad/Synology_Download_Station_Chrome_Extension",
     "options_page": "options.html",

@@ -290,7 +290,7 @@
 		"description": "Message shown while the extension is connecting."
 	},
 	"api_error_dsmVersionTooOld": {
-		"message": "Your DSM version is not supported by this extension. Only DSM 4.2 and later are supported."
+		"message": "Your DSM version is not supported by this extension. Only DSM 6.2 and later are supported."
 	},
 	"api_error_quickConnectMainServerUnavailable": {
 		"message": "QuickConnect service unavailable.",
@@ -477,7 +477,7 @@
 	},
 	"dialogAdvancedTooltipUsername": {
 		"message": "HTTP or FTP username",
-		"description": "Tooltip for the username field explaning that HTTP and FTP usernames can be entered and that the field is optional."
+		"description": "Tooltip for the username field explaining that HTTP and FTP usernames can be entered and that the field is optional."
 	},
 	"dialogAdvancedLblPassword": {
 		"message": "Password",
@@ -485,7 +485,7 @@
 	},
 	"dialogAdvancedTooltipPassword": {
 		"message": "HTTP or FTP password",
-		"description": "Tooltip for the password field explaning that HTTP and FTP usernames can be entered and that the field is optional."
+		"description": "Tooltip for the password field explaining that HTTP and FTP usernames can be entered and that the field is optional."
 	},
 	"dialogAdvancedLblUnzipPassword": {
 		"message": "Unzip password",
@@ -493,7 +493,7 @@
 	},
 	"dialogAdvancedTooltipUnzipPassword": {
 		"message": "Enter a password for extracting compressed files (optional, auto-extracting can be enabled in Download Station's settings)",
-		"description": "Tooltip for the unzip password field explaning that the unzip password will be used by Download Station to extract the downloaded file if this is enabled in Download Station."
+		"description": "Tooltip for the unzip password field explaining that the unzip password will be used by Download Station to extract the downloaded file if this is enabled in Download Station."
 	},
 	"dialogAdvancedLblDestinationFolder": {
 		"message": "Destination folder",
@@ -524,5 +524,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Remember password (saved unencrypted in this browser's profile). Untick to keep it in memory only; you will need to re-enter it each time the browser starts."
+	},
+	"warnHttp": {
+		"message": "HTTP sends your session and download details unencrypted over the network. Use HTTPS if possible."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Login blocked: your DiskStation did not offer password encryption and the connection is not HTTPS. Switch to HTTPS in the options."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Password not saved. Open the extension options and enter your password."
 	}
 }

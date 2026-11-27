@@ -355,7 +355,7 @@
 		"message": "ادخل كلمة المرور لفتح الملفات المضغوطة (اختياري، فتح الضغط التلقائي يفعل عن طريق تظبيطات محطة التنزيل Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "نسخة الDSM لا تدعم ميزة فتح الضغط unzip. تحتاج الى DSM 4.2 او احدث لاتخال كلمة مرور للـ unzip."
+		"message": "نسخة الDSM لا تدعم ميزة فتح الضغط unzip. تحتاج الى DSM 6.2 او احدث لاتخال كلمة مرور للـ unzip."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "الغي"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "تذكّر كلمة الدخول (تُحفظ بدون تشفير في ملف تعريف هذا المتصفح). ألغِ التحديد لإبقائها في الذاكرة فقط؛ وستحتاج إلى إعادة إدخالها في كل مرة يبدأ فيها المتصفح."
+	},
+	"warnHttp": {
+		"message": "يرسل HTTP بيانات الجلسة وتفاصيل التنزيل دون تشفير عبر الشبكة. استخدم HTTPS إن أمكن."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "تم حظر تسجيل الدخول: لم يوفر DiskStation تشفير كلمة الدخول والاتصال ليس عبر HTTPS. بدّل إلى HTTPS في الخيارات."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "لم تُحفظ كلمة الدخول. افتح خيارات الإضافة وأدخل كلمة الدخول."
 	}
 }

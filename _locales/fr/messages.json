@@ -355,7 +355,7 @@
 		"message": "Entrer un mot de passe pour l'extraction des fichiers compressés (facultatif, l'auto-extraction peut être activée dans les options de Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Votre version de DSM ne supporte pas l'extraction avec mots de passe. Vous avez besoin de la version DSM 4.2 (ou ultérieur) pour ajouter un mot de passe d'extraction."
+		"message": "Votre version de DSM ne supporte pas l'extraction avec mots de passe. Vous avez besoin de la version DSM 6.2 (ou ultérieur) pour ajouter un mot de passe d'extraction."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Annuler"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Mémoriser le mot de passe (enregistré non chiffré dans le profil de ce navigateur). Décochez pour le conserver uniquement en mémoire ; vous devrez le ressaisir à chaque démarrage du navigateur."
+	},
+	"warnHttp": {
+		"message": "HTTP envoie votre session et les détails de vos téléchargements sans chiffrement sur le réseau. Utilisez HTTPS si possible."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Connexion bloquée : votre DiskStation n'a pas proposé le chiffrement du mot de passe et la connexion n'est pas en HTTPS. Passez à HTTPS dans les options."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Mot de passe non enregistré. Ouvrez les options de l'extension et saisissez votre mot de passe."
 	}
 }

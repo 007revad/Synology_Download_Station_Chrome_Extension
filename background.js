@@ -118,12 +118,56 @@ try {
         }, 12000); // 12 seconds
     }
     
+    // Load all settings. The password lives in chrome.storage.local if the user
+    // chose to remember it, otherwise only in chrome.storage.session (memory only,
+    // cleared when the browser closes, and not readable by content scripts).
+    function loadAllSettings(callback) {
+        chrome.storage.local.get(null, (local) => {
+            chrome.storage.session.get('password', (sess) => {
+                const items = Object.assign({}, local || {});
+                if (sess && typeof sess.password === 'string' && sess.password.length > 0) {
+                    items.password = sess.password;
+                }
+                callback(items);
+            });
+        });
+    }
+    
+    // Save connection settings. A missing/empty password means "keep the current one".
+    function saveConnectionSettings(data, done) {
+        const incoming = Object.assign({}, data);
+        const newPassword = (typeof incoming.password === 'string' && incoming.password.length > 0) ? incoming.password : null;
+        delete incoming.password;
+        incoming.rememberPassword = incoming.rememberPassword !== false;
+        
+        loadAllSettings((current) => {
+            const password = newPassword !== null ? newPassword : (current.password || null);
+            chrome.storage.local.set(incoming, () => {
+                const finish = () => {
+                    if (downloadStation) {
+                        resetSessionIfConnectionChanged(password !== null ? Object.assign({}, incoming, { password: password }) : incoming);
+                        downloadStation._settings = Object.assign(downloadStation._settings, incoming);
+                        if (password !== null) downloadStation._settings.password = password;
+                    }
+                    done();
+                };
+                if (password === null) {
+                    chrome.storage.local.remove('password', () => chrome.storage.session.remove('password', finish));
+                } else if (incoming.rememberPassword) {
+                    chrome.storage.local.set({ password: password }, () => chrome.storage.session.remove('password', finish));
+                } else {
+                    chrome.storage.session.set({ password: password }, () => chrome.storage.local.remove('password', finish));
+                }
+            });
+        });
+    }
+    
     // Initialize downloadStation with error handling
     function initializeDownloadStation() {
         if (initPromise) return initPromise;
         
         initPromise = new Promise((resolve) => {
-            chrome.storage.local.get(null, (items) => {
+            loadAllSettings((items) => {
                 console.log('[SW] Settings loaded:', items ? Object.keys(items) : 'empty');
                 try {
                     downloadStation = new DownloadStationAPI(items || {});
@@ -214,6 +258,21 @@ try {
         });
     }
     
+    // If the connection target or login changed, throw away the old session and cached API info,
+    // otherwise the old (possibly other-account / other-port) session gets reused and no new login is tried.
+    function resetSessionIfConnectionChanged(newSettings) {
+        if (!downloadStation || !newSettings) return;
+        const keys = ['protocol', 'url', 'port', 'username', 'password', 'quickConnectId'];
+        const current = downloadStation._settings || {};
+        const changed = keys.some((k) => (k in newSettings) && newSettings[k] !== current[k]);
+        if (changed) {
+            downloadStation._sid = null;
+            downloadStation._apiInfoFetched = false;
+            downloadStation.deviceInfo.dsmVersion = null;
+            downloadStation.deviceInfo.loggedIn = false;
+        }
+    }
+    
     function handleMessage(request, sender, sendResponse) {  // add sender parameter
         try {
             switch(request.action) {
@@ -236,6 +295,7 @@ try {
                     }
                     if (request.data) {
                         console.log('[SW] Updating settings:', Object.keys(request.data));
+                        resetSessionIfConnectionChanged(request.data);
                         downloadStation._settings = Object.assign(downloadStation._settings, request.data);
                     }
                     console.log('[SW] Calling getDsmVersion...');
@@ -245,7 +305,7 @@ try {
                             if (success) {
                                 updateToolbarIcon();
                             }
-                            sendResponse({ success: success, message: success ? 'Connected' : 'Failed', data: data });
+                            sendResponse({ success: success, message: success ? 'Connected' : (chrome.i18n.getMessage('api_error_' + data) || String(data)), data: data });
                         } catch (e) {
                             console.error('[SW] Error sending response:', e.message);
                         }
@@ -264,11 +324,8 @@ try {
                     return true; // Async
                     
                 case 'saveConnectionSettings':
-                    chrome.storage.local.set(request.data, () => {
+                    saveConnectionSettings(request.data, () => {
                         console.log('[SW] Connection settings saved');
-                        if (downloadStation) {
-                            downloadStation._settings = Object.assign(downloadStation._settings, request.data);
-                        }
                         sendResponse({ success: true, message: 'Saved' });
                     });
                     return true; // Async
@@ -284,9 +341,13 @@ try {
                     return true; // Async
                     
                 case 'getSettings':
-                    chrome.storage.local.get(null, (items) => {
+                    loadAllSettings((items) => {
                         console.log('[SW] Returning settings');
-                        sendResponse(items || {});
+                        // Never hand the password out; just say whether one is saved
+                        const safeItems = Object.assign({}, items);
+                        safeItems.hasPassword = typeof safeItems.password === 'string' && safeItems.password.length > 0;
+                        delete safeItems.password;
+                        sendResponse(safeItems);
                     });
                     return true; // Async
                 
@@ -428,7 +489,8 @@ try {
 chrome.runtime.onInstalled.addListener(function(details) {
     if (details.reason === 'install') {
         chrome.storage.local.set({
-            protocol: 'http://',
+            protocol: 'https://',
+            rememberPassword: true,
             firstLaunch: false,
             hideSeedingTorrents: false,
             updateInBackground: false,

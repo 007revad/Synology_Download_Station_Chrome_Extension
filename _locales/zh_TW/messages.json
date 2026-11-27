@@ -355,7 +355,7 @@
 		"message": "輸入密碼以解壓縮檔案（可選取，自動解壓縮可於Download Station的設定開啟）"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "您的DSM版本不支援解壓縮密碼。您需要DSM 4.2或以後的版本才可以輸入解壓縮密碼。"
+		"message": "您的DSM版本不支援解壓縮密碼。您需要DSM 6.2或以後的版本才可以輸入解壓縮密碼。"
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "取消"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "記住密碼（以未加密形式儲存在此瀏覽器的設定檔中）。取消勾選則僅保留在記憶體中；每次瀏覽器啟動時都需要重新輸入。"
+	},
+	"warnHttp": {
+		"message": "HTTP 會在網路上以未加密方式傳送您的工作階段與下載詳細資料。請盡可能使用 HTTPS。"
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "登入已被封鎖：您的 DiskStation 未提供密碼加密，且目前的連線不是 HTTPS。請在選項中切換為 HTTPS。"
+	},
+	"api_error_passwordNotEntered": {
+		"message": "密碼未儲存。請開啟擴充功能選項並輸入密碼。"
 	}
 }

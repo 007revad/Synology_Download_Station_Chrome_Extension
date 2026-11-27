@@ -355,7 +355,7 @@
 		"message": "Zadejte heslo pro  rozbalování kompresovaných souboru (volitelné, automatické rozbalování může být povoleno v nastavení Download Station)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Vaše verze DSM nepodporuje heslo pro rozbalení. Potřebujete DSM 4.2 a novější pro zadání heslo pro rozbalení."
+		"message": "Vaše verze DSM nepodporuje heslo pro rozbalení. Potřebujete DSM 6.2 a novější pro zadání heslo pro rozbalení."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Zrušit"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Zapamatovat heslo (uloží se nešifrované v profilu tohoto prohlížeče). Zrušením zaškrtnutí se heslo ponechá jen v paměti; po každém spuštění prohlížeče ho budete muset zadat znovu."
+	},
+	"warnHttp": {
+		"message": "HTTP posílá údaje o vaší relaci a stahování po síti nešifrovaně. Pokud je to možné, použijte HTTPS."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Přihlášení zablokováno: DiskStation nenabídla šifrování hesla a připojení není přes HTTPS. V nastavení přepněte na HTTPS."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Heslo není uloženo. Otevřete nastavení rozšíření a zadejte své heslo."
 	}
 }

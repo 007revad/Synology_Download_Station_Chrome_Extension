@@ -355,7 +355,7 @@
 		"message": "Füge ein Passwort zum Entpacken von komprimierten Dateien ein (optional, automatisches Entpacken kann in den Download Station Einstellungen aktiviert werden)"
 	},
 	"dialogAdvancedTooltipUnzipPasswordUnsupportedMessage": {
-		"message": "Ihre DSM Version unterstützt keine Unzip Passwörter. Sie brauchen DSM 4.2 oder neuer, um ein Unzip Passwort verwenden zu können."
+		"message": "Ihre DSM Version unterstützt keine Unzip Passwörter. Sie brauchen DSM 6.2 oder neuer, um ein Unzip Passwort verwenden zu können."
 	},
 	"dialogAdvancedBtnCancel": {
 		"message": "Abbrechen"
@@ -371,5 +371,17 @@
 				"example": "100"
 			}
 		}
+	},
+	"lblRememberPassword": {
+		"message": "Passwort merken (wird unverschlüsselt im Profil dieses Browsers gespeichert). Deaktivieren, um es nur im Arbeitsspeicher zu halten; Sie müssen es dann bei jedem Start des Browsers erneut eingeben."
+	},
+	"warnHttp": {
+		"message": "HTTP überträgt Ihre Sitzung und Download-Details unverschlüsselt über das Netzwerk. Verwenden Sie nach Möglichkeit HTTPS."
+	},
+	"api_error_unencryptedLoginBlocked": {
+		"message": "Anmeldung blockiert: Ihre DiskStation bot keine Passwortverschlüsselung an und die Verbindung verwendet kein HTTPS. Wechseln Sie in den Einstellungen zu HTTPS."
+	},
+	"api_error_passwordNotEntered": {
+		"message": "Passwort nicht gespeichert. Öffnen Sie die Einstellungen der Erweiterung und geben Sie Ihr Passwort ein."
 	}
 }

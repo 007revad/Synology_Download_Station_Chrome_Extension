@@ -492,7 +492,6 @@ try {
                     console.log('[Popover] *** OPEN WEBUI CLICKED ***');
                     
                     chrome.runtime.sendMessage({action: "getSettings"}, function(settings) {
-                        console.log('[Popover] Settings:', settings);
                         var dsUrl = '';
                         
                         if (settings.quickConnectId && settings.quickConnectId.length > 0) {
